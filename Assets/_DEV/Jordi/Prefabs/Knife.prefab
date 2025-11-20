@@ -248,7 +248,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AttachTransform: {fileID: 7386200347895514061}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
   m_LimitLinearVelocity: 0
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
@@ -313,4 +313,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c6e2e9cecd8684d8d81ce0a209def4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knife
-  saladPiecePrefab: {fileID: 3940055530161914359, guid: 81e915ee43bf3104a96eba03eb09add7, type: 3}
