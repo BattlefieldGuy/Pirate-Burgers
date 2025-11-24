@@ -603,6 +603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1598976329}
+  - component: {fileID: 1598976330}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -625,6 +626,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1095567556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1598976330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598976328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c58368ad568a847b3899751d8eccfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OrderTimer
+  OrderTimeLimit: 60
+  TimeSpent: 0
+  WarningPercentage: 0.75
+  running: 0
+  CurrentPhase: 0
 --- !u!1 &1670224273
 GameObject:
   m_ObjectHideFlags: 0
