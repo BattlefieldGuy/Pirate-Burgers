@@ -313,4 +313,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c6e2e9cecd8684d8d81ce0a209def4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knife
+  GrabInteractable: {fileID: 4562645893756447675}
   velocityThreshold: 2
