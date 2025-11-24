@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Knife : MonoBehaviour
 {
+    public XRGrabInteractable GrabInteractable;
 
     [SerializeField] private float velocityThreshold;
     private bool knifeCanCut;
@@ -16,10 +18,20 @@ public class Knife : MonoBehaviour
     {
         //checks the velocity of the knive towards the forward
         float _forwardVelocity = Vector3.Dot(ControllerVelocityManager.Instance.Velocity, transform.forward);
-        if (_forwardVelocity > velocityThreshold)
+        if (_forwardVelocity > velocityThreshold && GrabInteractable.isSelected)
             knifeCanCut = true;
         else
             knifeCanCut = false;
+
+        //if you dont have the knife in hand an if you throw it
+        if(!GrabInteractable.isSelected)
+        {
+            _forwardVelocity = Vector3.Dot(rb.linearVelocity, transform.forward);
+            if (_forwardVelocity > velocityThreshold)
+                knifeCanCut |= true;
+            else
+                knifeCanCut = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

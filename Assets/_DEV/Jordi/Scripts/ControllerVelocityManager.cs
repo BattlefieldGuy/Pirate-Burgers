@@ -27,11 +27,13 @@ public class ControllerVelocityManager : MonoBehaviour
 
     private void Update()
     {
+        //if devices are not found try finding again till found
         if (!leftDevice.isValid || !rightDevice.isValid)
         {
             FindDevices();
         }
 
+        //check the velocity of your main hand
         if (!LeftHanded)
             CheckVelocity(rightDevice);
         else
