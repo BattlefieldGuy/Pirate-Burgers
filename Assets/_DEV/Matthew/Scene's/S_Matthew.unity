@@ -748,7 +748,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15a1b5add6e8624aa034c482a3d6e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BonnetjesManager
-  Ingridients: []
+  MainIngridients: []
+  CurrentCustomers: 0
+  maxCustomers: 9
+  spawnIntervalMin: 10
+  spawnIntervalMax: 15
+  customerMoneyValue: 0
+  customerMoneyMin: 10
+  customerMoneyMax: 10
+  customerPatienceValue: 0
+  customerPatienceMin: 30
+  customerPatienceMax: 60
+  customerPickinessValue: 0
+  customerPickinessMin: 0.1
+  customerPickinessMax: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,12 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BonnetjesManager : MonoBehaviour
 {
-    // Ingridients
-    public List<string> MainIngridients = new List<string>();
+    [System.Serializable]
+    public class List
+    {
+        public List<string> MainIngridients;
+        public List<string> SecondaryIngridients;
+    }
 
-    public List<string> SecondaryIngridients = new List<string>();
+
+    // Ingridients
+    public List<List> MainIngridients = new List<List>();
+
 
     // Customers Variables
     public int CurrentCustomers = 0;
@@ -42,6 +50,11 @@ public class BonnetjesManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void CustomerTimeManager()//add costumer as parameter
+    {
+        //Manage customer time and patience result
     }
 
 
