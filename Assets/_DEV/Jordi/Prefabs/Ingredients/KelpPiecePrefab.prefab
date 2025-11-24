@@ -278,7 +278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6057509762378803776}
   m_Layer: 0
-  m_Name: SaladPiecePrefab
+  m_Name: KelpPiecePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

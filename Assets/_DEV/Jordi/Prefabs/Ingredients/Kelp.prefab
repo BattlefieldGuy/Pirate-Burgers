@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8441492165133737216}
   - component: {fileID: 8388652914996649231}
   m_Layer: 0
-  m_Name: Salad
+  m_Name: Kelp
   m_TagString: Sliceable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
