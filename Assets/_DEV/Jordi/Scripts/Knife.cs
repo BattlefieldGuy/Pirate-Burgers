@@ -22,16 +22,6 @@ public class Knife : MonoBehaviour
             knifeCanCut = true;
         else
             knifeCanCut = false;
-
-        //if you dont have the knife in hand an if you throw it
-        if(!GrabInteractable.isSelected)
-        {
-            _forwardVelocity = Vector3.Dot(rb.linearVelocity, transform.forward);
-            if (_forwardVelocity > velocityThreshold)
-                knifeCanCut |= true;
-            else
-                knifeCanCut = false;
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
