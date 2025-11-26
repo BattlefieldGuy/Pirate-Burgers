@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "name": "Test",
+    "maps": [
+        {
+            "name": "Keys",
+            "id": "50620862-852d-48da-bc51-df34fb071ef0",
+            "actions": [
+                {
+                    "name": "Enter",
+                    "type": "Button",
+                    "id": "827b76b2-dbf5-40a6-8128-e7f0beb69020",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Delete",
+                    "type": "Button",
+                    "id": "52616746-e0e4-4319-a384-67f7c1b96e43",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "69aa64ac-4f8a-4918-a207-f041b8bfd70a",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f930836-1438-4c73-8132-00033f3813c3",
+                    "path": "<Keyboard>/delete",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delete",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
