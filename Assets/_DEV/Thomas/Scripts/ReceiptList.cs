@@ -1,7 +1,6 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
-using System.Collections;
+using UnityEngine;
+using static BonnetjesManager;
 
 public class ReceiptList : MonoBehaviour
 {
@@ -46,7 +45,7 @@ public class ReceiptList : MonoBehaviour
 
     public void ClearReceipt(int ordernumber)
     {
-        if(receipts.Count <= 0 && receipts.Count >= ordernumber) return;
+        if (receipts.Count <= 0 && receipts.Count >= ordernumber) return;
         receipts[ordernumber].receiptData.Fuckoff();
         receipts.RemoveAt(ordernumber);
         UpdateAllReceipts();
@@ -68,7 +67,7 @@ public class ReceiptList : MonoBehaviour
         newReceiptData.UpdateCardInfo();
         newReceiptData.transform.parent = transform;
         newReceiptData.transform.localPosition = StartingPoint.localPosition;
-        
+
     }
 
     public void AddRandomOrder()
@@ -81,15 +80,23 @@ public class ReceiptList : MonoBehaviour
 
     public void Update()
     {
-        if(testButton)
+        if (testButton)
         {
             testButton = false;
             AddRandomOrder();
         }
-        if(RemoveFirstOrder)
+        if (RemoveFirstOrder)
         {
             RemoveFirstOrder = false;
             ClearReceipt(0);
         }
+    }
+
+
+    public void Test(Item item_)
+    {
+        Debug.Log(item_.name);
+        Debug.Log(item_.MainIngredients.ToString());
+        Debug.Log(item_.SecondaryIngredients);
     }
 }
