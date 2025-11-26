@@ -18,7 +18,7 @@ public class Knife : MonoBehaviour
     {
         //checks the velocity of the knive towards the forward
         float _forwardVelocity = Vector3.Dot(ControllerVelocityManager.Instance.Velocity, transform.forward);
-        if (_forwardVelocity > velocityThreshold && GrabInteractable.isSelected)
+        if (_forwardVelocity > velocityThreshold)
             knifeCanCut = true;
         else
             knifeCanCut = false;

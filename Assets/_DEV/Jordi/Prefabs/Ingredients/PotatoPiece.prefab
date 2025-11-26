@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 5325303381759883036}
   - component: {fileID: 1739974888870632714}
   - component: {fileID: 2492459737573797557}
-  - component: {fileID: 5626036125220992329}
   m_Layer: 0
   m_Name: Potato (1)
   m_TagString: Untagged
@@ -145,7 +144,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &1739974888870632714
@@ -302,19 +301,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &5626036125220992329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934859923873720737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 0}
 --- !u!1 &6105475997411075894
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +315,6 @@ GameObject:
   - component: {fileID: 5714112222458920390}
   - component: {fileID: 9025767748989303753}
   - component: {fileID: 6673883008257653988}
-  - component: {fileID: 701130010073102730}
   m_Layer: 0
   m_Name: Potato (2)
   m_TagString: Untagged
@@ -427,7 +412,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &9025767748989303753
@@ -584,16 +569,3 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &701130010073102730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6105475997411075894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 0}
