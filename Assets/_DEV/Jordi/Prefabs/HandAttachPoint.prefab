@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandAttach
   attachRadius: 0.1
-  HandLayer:
+  handLayer:
     serializedVersion: 2
     m_Bits: 2147483648

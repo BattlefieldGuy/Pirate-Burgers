@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5516941219616998422}
   - component: {fileID: 4964137379203048714}
   - component: {fileID: 7176752455528534468}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7386200347895514061}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 3879878678582391738}
   - component: {fileID: 4562645893756447675}
   - component: {fileID: 8790592440086200914}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Knife
   m_TagString: HandAttachable
   m_Icon: {fileID: 0}
@@ -171,8 +171,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.23018, y: 1.317, z: 1.869}
-  m_LocalScale: {x: 0.1, y: 0.7, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: -0.06, y: 0.42000002, z: 0.06000001}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7386200347895514061}
   - {fileID: 1760524374133911771}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Colliders:
   - {fileID: 457714195056190843}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 1073741824
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 2344488847472652117}
   - component: {fileID: 2729527215369285922}
   - component: {fileID: 457714195056190843}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
