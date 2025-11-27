@@ -2,6 +2,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static BonnetjesManager;
 
 public class ReceiptData : MonoBehaviour
 {
@@ -12,13 +13,12 @@ public class ReceiptData : MonoBehaviour
 
     Transform startPoint;
 
-
-    public string Foodname;
-    public Sprite FoodSprite;
+    public Item foodItem;
     public int Ordernumber;
 
-    [SerializeField] Image image;
-    [SerializeField] TMP_Text ordername;
+    [SerializeField] TMP_Text FoodName;
+    [SerializeField] TMP_Text Title;
+    [SerializeField] TMP_Text SecondIng;
 
     public void Awake()
     {
@@ -33,12 +33,30 @@ public class ReceiptData : MonoBehaviour
         transform.DOLocalMove(new Vector3(transform.localPosition.x, -10, transform.localPosition.z), 0.5f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.InQuad);
     }
 
+    public string IngredientsCombined(Item item)
+    {
+        string ReturnString = "";
+        foreach (string Ingredient in item.MainIngredients)
+        {
+            ReturnString += Ingredient + ", ";
+        }
+        for(int i = 0; i < item.SecondaryIngredients.Count; i++)
+        {
+            ReturnString += item.SecondaryIngredients[i];
+            if(i != item.SecondaryIngredients.Count - 1)
+            {
+                ReturnString += ", ";
+            }
+        }
+        return ReturnString;
+    }
+
     public void UpdateCardInfo()
     {
 
-
-        ordername.text = Foodname;
-        image.sprite = FoodSprite;
+        Title.text = Ordernumber.ToString();
+        FoodName.text = foodItem.name;
+        SecondIng.text = IngredientsCombined(foodItem);
 
         //Move to position based on ordernumber using an InOutSine ease over .5seconds
         transform.DOLocalMoveX(startPoint.localPosition.x + (1.9f * Ordernumber), 0.5f).SetEase(Ease.InOutSine);

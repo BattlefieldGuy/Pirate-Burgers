@@ -78,7 +78,7 @@ public class BonnetjesManager : MonoBehaviour
         Item item_ = ItemList[Random.Range(0, ItemList.Count)];
 
         if (receiptList != null)
-            receiptList.Test(item_);
+            receiptList.AddOrder(item_);
     }
 
     #region --- ENUMARATORS ---

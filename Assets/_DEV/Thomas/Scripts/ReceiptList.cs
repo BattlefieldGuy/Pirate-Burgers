@@ -4,21 +4,12 @@ using static BonnetjesManager;
 
 public class ReceiptList : MonoBehaviour
 {
-    //Testing Variables, feel free to remove later on
-    [SerializeField]
-    List<string> foodnames = new List<string>()
-    {
-        "Borgir",
-        "Salmon (raw)",
-        "Whale (whole)",
-        "Squid heart",
-        "Whale liver"
-    };
 
-    [SerializeField] List<Sprite> foodSprites = new List<Sprite>();
+    /// <summary>
+    /// adds and removes receipts from the list and updates them accordingly
+    /// </summary>
 
     [Header("I was too lazy to learn how to make custom inspectors so have a boolean lmao")]
-    public bool testButton;
     public bool RemoveFirstOrder;
     //The rest
 
@@ -26,7 +17,8 @@ public class ReceiptList : MonoBehaviour
     public class Receipt
     {
         public ReceiptData receiptData;
-        public int Ordernumber;
+        public int orderNumber;
+        public Item item;
     }
 
     [SerializeField] List<Receipt> receipts = new List<Receipt>();
@@ -51,18 +43,17 @@ public class ReceiptList : MonoBehaviour
         UpdateAllReceipts();
     }
 
-    public void AddOrder(string FoodName, Sprite sprite) //Change parameters as needed
+    public void AddOrder(Item item) //Change parameters as needed
     {
         GameObject newReceiptGO = Instantiate(receiptPrefab, transform);
         ReceiptData newReceiptData = newReceiptGO.GetComponent<ReceiptData>();
         Receipt newReceipt = new Receipt()
         {
+            orderNumber = receipts.Count,
             receiptData = newReceiptData,
-            Ordernumber = receipts.Count
+            item = item
         };
-        newReceiptData.Foodname = FoodName;
-        newReceiptData.FoodSprite = sprite;
-        newReceiptData.Ordernumber = newReceipt.Ordernumber;
+        newReceiptData.Ordernumber = newReceipt.orderNumber;
         receipts.Add(newReceipt);
         newReceiptData.UpdateCardInfo();
         newReceiptData.transform.parent = transform;
@@ -70,21 +61,8 @@ public class ReceiptList : MonoBehaviour
 
     }
 
-    public void AddRandomOrder()
-    {
-        string RandomTitle = foodnames[Random.Range(0, foodnames.Count)];
-        Sprite RandomSprite = foodSprites[Random.Range(0, foodSprites.Count)];
-
-        AddOrder(RandomTitle, RandomSprite);
-    }
-
     public void Update()
     {
-        if (testButton)
-        {
-            testButton = false;
-            AddRandomOrder();
-        }
         if (RemoveFirstOrder)
         {
             RemoveFirstOrder = false;
