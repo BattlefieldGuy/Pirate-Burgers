@@ -23,9 +23,6 @@ public class BonnetjesManager : MonoBehaviour
         public List<string> SecondaryIngredients;
     }
 
-    //Test
-    public List<string> TestItem = new List<string>();
-
 
     // Items
     public List<Item> ItemList = new List<Item>();
@@ -35,8 +32,21 @@ public class BonnetjesManager : MonoBehaviour
     private ReceiptList receiptList;
 
 
+    #region -- RECEIPT VARIABLES --
+    // Receipt Variables are used to adjust receipt generation during playtime
+    [Header("Receipt Variables")]
+    [Space(5), Tooltip("Set Starter receipt interval"), SerializeField]
+    private float receiptInterval = 5f;
+
+    [Space(5), Range(0f, 20f), SerializeField]
+    private float intervalOffsetRange = 5f;
+
+    #endregion
+
     #region -- CUSTOMER VARIABLES --
     // Customers Variables are used for testing purposes and can also be used to adjust receipt generation during playtime
+    [Space(30)]
+    [Header("Customer Variables")]
     public int CurrentCustomers = 0;
 
     [SerializeField] private int maxCustomers = 5;
@@ -71,6 +81,7 @@ public class BonnetjesManager : MonoBehaviour
     }
 
 
+
     public void MakeItem()
     {
         // Create a new item with random ingredients
@@ -88,6 +99,7 @@ public class BonnetjesManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         MakeItem();
+        StartCoroutine(enumerator());
     }
 
     #endregion

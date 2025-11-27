@@ -243,11 +243,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e46408184b6ef48a7191a407483da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReceiptData
-  Foodname: 
-  FoodSprite: {fileID: 0}
+  foodItem:
+    name: 
+    MainIngredients: []
+    SecondaryIngredients: []
   Ordernumber: 0
-  image: {fileID: 0}
-  ordername: {fileID: 0}
+  FoodName: {fileID: 0}
+  Title: {fileID: 0}
+  SecondIng: {fileID: 0}
 --- !u!1 &363890604
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,20 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b5d261ce36e084b8fc46ce1da76978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReceiptList
-  foodnames:
-  - Borgir
-  - Salmon (raw)
-  - Whale (whole)
-  - Squid heart
-  - Whale liver
-  foodSprites:
-  - {fileID: 21300000, guid: 43617243dd9fa254da856d28c7f5112e, type: 3}
-  - {fileID: 21300000, guid: b6fb088505130fa41838f44c96944d06, type: 3}
-  - {fileID: 21300000, guid: 93434e2a7c6ca5b4a9893b6322125748, type: 3}
-  - {fileID: 21300000, guid: 630101cad86b1644c8f4ca3a61b6da36, type: 3}
-  - {fileID: 21300000, guid: ae6e7817b04953f4bb686a329174dcc5, type: 3}
-  - {fileID: 21300000, guid: cb22df49919d39c4f8635c84cc619ba9, type: 3}
-  testButton: 0
   RemoveFirstOrder: 0
   receipts: []
   receiptPrefab: {fileID: 8481318299139116054, guid: a596d0d1154a1b349b25e3ed388275af, type: 3}
@@ -910,8 +899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15a1b5add6e8624aa034c482a3d6e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BonnetjesManager
-  TestItem:
-  - 
   ItemList:
   - name: Burger
     MainIngredients:
@@ -920,6 +907,8 @@ MonoBehaviour:
     - fish
     - squid
     - shark
+  receiptInterval: 5
+  intervalOffsetRange: 10
   CurrentCustomers: 0
   maxCustomers: 9
   spawnIntervalMin: 10
