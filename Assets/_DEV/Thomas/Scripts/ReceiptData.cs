@@ -14,7 +14,7 @@ public class ReceiptData : MonoBehaviour
     Transform startPoint;
 
     public Item foodItem;
-    public int Ordernumber;
+    public int Ordernumber = 0;
 
     [SerializeField] TMP_Text FoodName;
     [SerializeField] TMP_Text Title;
@@ -53,8 +53,7 @@ public class ReceiptData : MonoBehaviour
 
     public void UpdateCardInfo()
     {
-
-        Title.text = Ordernumber.ToString();
+        Title.text = "Order : "+ Ordernumber.ToString();
         FoodName.text = foodItem.name;
         SecondIng.text = IngredientsCombined(foodItem);
 

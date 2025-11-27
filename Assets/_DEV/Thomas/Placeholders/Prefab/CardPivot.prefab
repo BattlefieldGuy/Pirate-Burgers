@@ -670,8 +670,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e46408184b6ef48a7191a407483da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReceiptData
-  Foodname: 
-  FoodSprite: {fileID: 0}
+  foodItem:
+    name: 
+    MainIngredients: []
+    SecondaryIngredients: []
   Ordernumber: 0
-  image: {fileID: 0}
-  ordername: {fileID: 8447624482440510827}
+  FoodName: {fileID: 8447624482440510827}
+  Title: {fileID: 6807397901249935046}
+  SecondIng: {fileID: 3635065474425411179}

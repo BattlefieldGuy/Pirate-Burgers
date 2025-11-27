@@ -43,7 +43,7 @@ public class ReceiptList : MonoBehaviour
         UpdateAllReceipts();
     }
 
-    public void AddOrder(Item item) //Change parameters as needed
+    public void AddOrder(Item _item) //Change parameters as needed
     {
         GameObject newReceiptGO = Instantiate(receiptPrefab, transform);
         ReceiptData newReceiptData = newReceiptGO.GetComponent<ReceiptData>();
@@ -51,9 +51,10 @@ public class ReceiptList : MonoBehaviour
         {
             orderNumber = receipts.Count,
             receiptData = newReceiptData,
-            item = item
+            item = _item
         };
         newReceiptData.Ordernumber = newReceipt.orderNumber;
+        newReceiptData.foodItem = _item;
         receipts.Add(newReceipt);
         newReceiptData.UpdateCardInfo();
         newReceiptData.transform.parent = transform;
