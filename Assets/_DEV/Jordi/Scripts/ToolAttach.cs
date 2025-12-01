@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ToolAttach : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class ToolAttach : MonoBehaviour
             {
                 if(!hit.transform.IsChildOf(AttachedTool.transform))
                 {
+                    canAttach = false;
                     AttachedTool.transform.SetParent(null);
                     AttachedTool.GetComponent<Rigidbody>().isKinematic = false;
                     SetToolLayer(AttachedTool, 31);
@@ -38,7 +40,8 @@ public class ToolAttach : MonoBehaviour
                     tool.transform.position = this.transform.position;
                     tool.transform.SetParent(this.transform);
                     AttachedTool = tool;
-                    canAttach = false;
+                    if (AttachedTool.GetComponent<XRGrabInteractable>())
+                        AttachedTool.GetComponent<XRGrabInteractable>().enabled = false;
                     StartCoroutine(AttachCooldown());
                 }
             }

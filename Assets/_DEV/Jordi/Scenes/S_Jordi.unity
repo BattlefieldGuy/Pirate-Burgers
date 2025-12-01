@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4673246368122507597, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -3133,7 +3137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 1073741825
   m_Handedness: 2
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
@@ -5704,7 +5708,7 @@ MonoBehaviour:
   m_AimTargetObject: {fileID: 0}
   m_PhysicsLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2147483649
   m_PhysicsTriggerInteraction: 1
   m_CastRadius: 0.1
 --- !u!1 &4065709320853090925
@@ -9172,7 +9176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 1073741825
   m_Handedness: 1
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
