@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Salad : MonoBehaviour, ISliceable
+public class Sliceable : MonoBehaviour
 {
     [field: SerializeField] public GameObject PiecePrefab { get; set; }
 
-    //for loop will be replaced by just one instantiate
+    //slice the ingredient in pieces
     public void OnSlice()
     {
         GameObject clone = Instantiate(PiecePrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
