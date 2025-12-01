@@ -952,16 +952,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b15a1b5add6e8624aa034c482a3d6e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BonnetjesManager
-  TestItem:
-  - 
   ItemList:
-  - name: Burger
+  - name: Basic Burger
     MainIngredients:
     - bread
     SecondaryIngredients:
     - fish
-    - squid
-    - shark
+    - tomato
+    - pickle
+    - kelp
+    - mustard
+  - name: Fish & Chips
+    MainIngredients:
+    - Potato
+    - Salmon
+    SecondaryIngredients: []
+  - name: SquidBowl
+    MainIngredients:
+    - Squid
+    SecondaryIngredients:
+    - kelp
+    - tomato
+    - fish
+  receiptInterval: 5
+  intervalOffsetRange: 10
   CurrentCustomers: 0
   maxCustomers: 9
   spawnIntervalMin: 10

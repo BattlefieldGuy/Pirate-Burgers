@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Sliceable
+  - HandAttachable
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - HandAttachable
   m_SortingLayers:
   - name: Default
     uniqueID: 0

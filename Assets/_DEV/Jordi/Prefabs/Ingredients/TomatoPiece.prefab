@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 7981516864585023522}
   - component: {fileID: 1553234738094475639}
   - component: {fileID: 2214616864434935272}
-  - component: {fileID: 1893755697929124424}
   m_Layer: 0
   m_Name: Tomato (1)
   m_TagString: Untagged
@@ -301,19 +300,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &1893755697929124424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5711285342220063322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 0}
 --- !u!1 &5992039059194897631
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +314,6 @@ GameObject:
   - component: {fileID: 1490706032156878373}
   - component: {fileID: 8297105415485592817}
   - component: {fileID: 5598021752383419266}
-  - component: {fileID: 1273825944779771306}
   m_Layer: 0
   m_Name: Tomato (2)
   m_TagString: Untagged
@@ -582,16 +567,3 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &1273825944779771306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992039059194897631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 0}
