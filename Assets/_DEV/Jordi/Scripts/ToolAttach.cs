@@ -27,19 +27,33 @@ public class ToolAttach : MonoBehaviour
             Collider[] hits = Physics.OverlapSphere(this.transform.position, attachRadius, toolLayer);
             foreach (var hit in hits)
             {
-                if(hit.gameObject != AttachedTool)
+                if(!hit.transform.IsChildOf(AttachedTool.transform))
                 {
-                    Debug.Log(hit.transform.root);
                     AttachedTool.transform.SetParent(null);
                     AttachedTool.GetComponent<Rigidbody>().isKinematic = false;
-                    hit.transform.root.GetComponent<Rigidbody>().isKinematic = true;
-                    hit.transform.root.SetParent(this.transform);
+                    SetToolLayer(AttachedTool, 31);
+                    GameObject tool = hit.transform.root.gameObject;
+                    SetToolLayer(tool, 0);
+                    tool.GetComponent<Rigidbody>().isKinematic = true;
+                    tool.transform.position = this.transform.position;
+                    tool.transform.SetParent(this.transform);
+                    AttachedTool = tool;
                     canAttach = false;
                     StartCoroutine(AttachCooldown());
                 }
             }
         }
     }
+
+    private void SetToolLayer(GameObject obj, int layer)
+    {
+        obj.layer = layer;
+        foreach (Transform child in obj.transform)
+        {
+            SetToolLayer(child.gameObject, layer);
+        }
+    }
+
 
     IEnumerator AttachCooldown()
     {
