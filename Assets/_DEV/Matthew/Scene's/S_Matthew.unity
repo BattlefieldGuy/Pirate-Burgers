@@ -900,13 +900,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BonnetjesManager
   ItemList:
-  - name: Burger
+  - name: Basic Burger
     MainIngredients:
     - bread
     SecondaryIngredients:
     - fish
-    - squid
-    - shark
+    - tomato
+    - pickle
+    - kelp
+    - mustard
+  - name: Fish & Chips
+    MainIngredients:
+    - Potato
+    - Salmon
+    SecondaryIngredients: []
+  - name: SquidBowl
+    MainIngredients:
+    - Squid
+    SecondaryIngredients:
+    - kelp
+    - tomato
+    - fish
   receiptInterval: 5
   intervalOffsetRange: 10
   CurrentCustomers: 0
