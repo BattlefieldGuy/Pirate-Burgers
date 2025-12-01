@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2601906203005089166}
   - component: {fileID: 944981904686607371}
   - component: {fileID: 7420243918428054867}
-  - component: {fileID: 9210462979005967490}
   m_Layer: 0
   m_Name: Pickle (1)
   m_TagString: Untagged
@@ -270,19 +269,6 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &9210462979005967490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4550845499567735771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 0}
 --- !u!1 &6493998832718588698
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +316,6 @@ GameObject:
   - component: {fileID: 5686678215870400438}
   - component: {fileID: 8846483373556372004}
   - component: {fileID: 7483699579016990631}
-  - component: {fileID: 3978285725438061114}
   m_Layer: 0
   m_Name: Pickle (2)
   m_TagString: Untagged
@@ -586,16 +571,3 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &3978285725438061114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557316671975097114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 0}
