@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static BonnetjesManager;
 
@@ -27,26 +28,24 @@ public class OrderChecker : MonoBehaviour
 
     public Item ReceiptItem;
 
-    public Item Activeorder;
-
-    public bool MatchingOrder = false;
+    public Item ActiveOrder;
 
     public bool CheckMatchingOrders()
     {
+        bool orderMatches = true;
         if (HasReceipt)
         {
-            if (Activeorder.MainIngredients == ReceiptItem.MainIngredients && Activeorder.SecondaryIngredients == ReceiptItem.SecondaryIngredients)
-            {
-                MatchingOrder = true;
-                return true;
-            }
-            else
-            {
-                MatchingOrder = false;
-                return false;
-            }
+            for(int i = 0; i < ActiveOrder.MainIngredients.Count; i++) 
+                if (!ReceiptItem.MainIngredients.Contains(ActiveOrder.MainIngredients[i])) orderMatches = false;
+            for (int i = 0; i < ReceiptItem.MainIngredients.Count; i++)
+                if (!ActiveOrder.MainIngredients.Contains(ReceiptItem.MainIngredients[i])) orderMatches = false;
+            for (int i = 0; i < ActiveOrder.SecondaryIngredients.Count; i++)
+                if (!ReceiptItem.SecondaryIngredients.Contains(ActiveOrder.SecondaryIngredients[i])) orderMatches = false;
+            for (int i = 0; i < ReceiptItem.SecondaryIngredients.Count; i++)
+                if (!ActiveOrder.SecondaryIngredients.Contains(ReceiptItem.SecondaryIngredients[i])) orderMatches = false;
         }
-        return false;
+        else orderMatches = false;
+        return orderMatches;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -55,7 +54,7 @@ public class OrderChecker : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Dish"))
         {
             Debug.Log("Foood");
-            Activeorder = other.gameObject.GetComponent<Recipe>().Dish;
+            ActiveOrder = other.gameObject.GetComponent<Recipe>().Dish;
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Receipt"))
         {
