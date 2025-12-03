@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sliceable
   - HandAttachable
+  - MainIngredient
   layers:
   - Default
   - TransparentFX
@@ -17,6 +18,7 @@ TagManager:
   - 
   - 
   - 
+  - Ingredients
   - 
   - 
   - 
@@ -26,9 +28,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Dish
+  - Receipt
   - 
   - 
   - 

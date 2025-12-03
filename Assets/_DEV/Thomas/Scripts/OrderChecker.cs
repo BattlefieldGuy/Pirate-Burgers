@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static BonnetjesManager;
 
@@ -22,26 +23,42 @@ public class OrderChecker : MonoBehaviour
             }
         }
     }
+
     bool HasReceipt = false;
 
-    [SerializeField] Item Receiptitem;
+    public Item ReceiptItem;
 
-    [SerializeField] Item Activeorder;
+    public Item ActiveOrder;
 
-    bool MatchingOrder = false;
-
-    void CheckMatchingOrders()
+    public bool CheckMatchingOrders()
     {
+        bool orderMatches = true;
         if (HasReceipt)
         {
-            if (Activeorder == Receiptitem)
-            {
-                MatchingOrder = true;
-            }
-            else
-            {
-                MatchingOrder = false;
-            }
+            for(int i = 0; i < ActiveOrder.MainIngredients.Count; i++) 
+                if (!ReceiptItem.MainIngredients.Contains(ActiveOrder.MainIngredients[i])) orderMatches = false;
+            for (int i = 0; i < ReceiptItem.MainIngredients.Count; i++)
+                if (!ActiveOrder.MainIngredients.Contains(ReceiptItem.MainIngredients[i])) orderMatches = false;
+            for (int i = 0; i < ActiveOrder.SecondaryIngredients.Count; i++)
+                if (!ReceiptItem.SecondaryIngredients.Contains(ActiveOrder.SecondaryIngredients[i])) orderMatches = false;
+            for (int i = 0; i < ReceiptItem.SecondaryIngredients.Count; i++)
+                if (!ActiveOrder.SecondaryIngredients.Contains(ReceiptItem.SecondaryIngredients[i])) orderMatches = false;
+        }
+        else orderMatches = false;
+        return orderMatches;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger entered");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Dish"))
+        {
+            Debug.Log("Foood");
+            ActiveOrder = other.gameObject.GetComponent<Recipe>().Dish;
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Receipt"))
+        {
+            ReceiptItem = other.gameObject.GetComponent<ReceiptData>().foodItem;
         }
     }
 
@@ -49,11 +66,11 @@ public class OrderChecker : MonoBehaviour
     {
         if (loggedReceipt != null)
         {
-            Receiptitem = loggedReceipt.foodItem;
+            ReceiptItem = loggedReceipt.foodItem;
         }
         else
         {
-            Receiptitem = null;
+            ReceiptItem = null;
         }
     }
 
