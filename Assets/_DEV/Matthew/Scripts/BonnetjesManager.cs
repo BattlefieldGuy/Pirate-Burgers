@@ -6,7 +6,7 @@ using UnityEngine;
 public class BonnetjesManager : MonoBehaviour
 {
     /// <summary>
-    /// This script is responsible for managing the receipts and other this related to receipts.
+    /// This scrip is responsible for managing the receipts and other this related to receipts.
     /// 
     /// It houses a list of possible items that can be ordered, each with main and secondary ingredients.
     /// every item is represented by the Item class, which contains the item's name and its ingredients.
