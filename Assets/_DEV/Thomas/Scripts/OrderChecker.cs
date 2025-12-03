@@ -22,26 +22,44 @@ public class OrderChecker : MonoBehaviour
             }
         }
     }
+
     bool HasReceipt = false;
 
-    [SerializeField] Item Receiptitem;
+    public Item ReceiptItem;
 
-    [SerializeField] Item Activeorder;
+    public Item Activeorder;
 
-    bool MatchingOrder = false;
+    public bool MatchingOrder = false;
 
-    void CheckMatchingOrders()
+    public bool CheckMatchingOrders()
     {
         if (HasReceipt)
         {
-            if (Activeorder == Receiptitem)
+            if (Activeorder.MainIngredients == ReceiptItem.MainIngredients && Activeorder.SecondaryIngredients == ReceiptItem.SecondaryIngredients)
             {
                 MatchingOrder = true;
+                return true;
             }
             else
             {
                 MatchingOrder = false;
+                return false;
             }
+        }
+        return false;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger entered");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Dish"))
+        {
+            Debug.Log("Foood");
+            Activeorder = other.gameObject.GetComponent<Recipe>().Dish;
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Receipt"))
+        {
+            ReceiptItem = other.gameObject.GetComponent<ReceiptData>().foodItem;
         }
     }
 
@@ -49,11 +67,11 @@ public class OrderChecker : MonoBehaviour
     {
         if (loggedReceipt != null)
         {
-            Receiptitem = loggedReceipt.foodItem;
+            ReceiptItem = loggedReceipt.foodItem;
         }
         else
         {
-            Receiptitem = null;
+            ReceiptItem = null;
         }
     }
 
