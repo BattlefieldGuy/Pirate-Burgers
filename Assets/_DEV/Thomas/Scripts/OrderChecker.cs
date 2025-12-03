@@ -33,18 +33,22 @@ public class OrderChecker : MonoBehaviour
     public bool CheckMatchingOrders()
     {
         bool orderMatches = true;
-        if (HasReceipt)
-        {
-            for(int i = 0; i < ActiveOrder.MainIngredients.Count; i++) 
+            for(int i = 0; i < ActiveOrder.MainIngredients.Count; i++)
+            {
                 if (!ReceiptItem.MainIngredients.Contains(ActiveOrder.MainIngredients[i])) orderMatches = false;
+            };  
             for (int i = 0; i < ReceiptItem.MainIngredients.Count; i++)
+            {
                 if (!ActiveOrder.MainIngredients.Contains(ReceiptItem.MainIngredients[i])) orderMatches = false;
+            };
             for (int i = 0; i < ActiveOrder.SecondaryIngredients.Count; i++)
+            {
                 if (!ReceiptItem.SecondaryIngredients.Contains(ActiveOrder.SecondaryIngredients[i])) orderMatches = false;
+            };
             for (int i = 0; i < ReceiptItem.SecondaryIngredients.Count; i++)
-                if (!ActiveOrder.SecondaryIngredients.Contains(ReceiptItem.SecondaryIngredients[i])) orderMatches = false;
-        }
-        else orderMatches = false;
+            {
+               if (!ActiveOrder.SecondaryIngredients.Contains(ReceiptItem.SecondaryIngredients[i])) orderMatches = false;
+            };
         return orderMatches;
     }
 
@@ -55,6 +59,7 @@ public class OrderChecker : MonoBehaviour
         {
             Debug.Log("Foood");
             ActiveOrder = other.gameObject.GetComponent<Recipe>().Dish;
+            print("post-added");
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Receipt"))
         {
