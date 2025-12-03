@@ -2,7 +2,7 @@
 - Project name: Pirate-Burgers
 - Unity version: Unity 6000.2.12f1
 - Active game object:
-  - Name: ToolXrOrigin
+  - Name: Right Controller Visual
   - Tag: Untagged
-  - Layer: Ignore Raycast
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
