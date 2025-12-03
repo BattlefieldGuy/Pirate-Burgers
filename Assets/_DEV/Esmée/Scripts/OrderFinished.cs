@@ -20,7 +20,7 @@ public class OrderFinished : MonoBehaviour
             //order dissapears with customer
             Debug.Log("YAY");
         }
-        else if (BellPress.PressedBell && !correctOrder)
+        else if (BellPress.PressedBell && !orderChecker.CheckMatchingOrders())
         {
             //error message ofzo/boze klant
             Debug.Log("nay");
