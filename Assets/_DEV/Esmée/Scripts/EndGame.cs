@@ -10,10 +10,13 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        door.transform.DORotate(new Vector3(0, -80, 0), 3);
+        if(other.CompareTag("RealHand"))
+        {
+            door.transform.DORotate(new Vector3(0, -80, 0), 3);
 
-        StartCoroutine(FadeIn());
-        StartCoroutine(WaitASec());
+            StartCoroutine(FadeIn());
+            StartCoroutine(WaitASec());
+        }
     }
 
     IEnumerator FadeIn()
