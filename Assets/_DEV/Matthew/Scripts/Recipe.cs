@@ -14,15 +14,15 @@ public class Recipe : MonoBehaviour
     [SerializeField]
     private Item ingredients;
 
-    public void AddIngredient(GameObject _ingredient, bool _isMain)
+    public void AddIngredient(string _ingredient, bool _isMain)
     {
         if (_isMain)
         {
-            ingredients.MainIngredients.Add(_ingredient.name);
+            ingredients.MainIngredients.Add(_ingredient);
         }
         else
         {
-            ingredients.SecondaryIngredients.Add(_ingredient.name);
+            ingredients.SecondaryIngredients.Add(_ingredient);
         }
     }
 }
