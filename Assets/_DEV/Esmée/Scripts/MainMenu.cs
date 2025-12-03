@@ -3,18 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject sure;
     public void StartGame()
     {
         SceneManager.LoadScene("S_Main");
     }
 
-    public void ExitGame()
+    public void AreUSure()
+    {
+        sure.SetActive(true);
+    }
+
+    public void Yes()
     {
         Application.Quit();
     }
 
-    public void AreUSure()
+    public void No()
     {
-        //als dat qua ui gemaakt word kan je deze op de button zetten en dan daarna pas de application.quit;
+        sure.SetActive(false);
     }
 }
