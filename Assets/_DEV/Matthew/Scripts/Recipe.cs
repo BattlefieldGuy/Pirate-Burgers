@@ -11,29 +11,17 @@ public class Recipe : MonoBehaviour
     /// 
     /// </summary>
 
-    [SerializeField]
-    private Item ingredients;
-
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
+    public Item Dish;
 
     public void AddIngredient(string _ingredient, bool _isMain)
     {
         if (_isMain)
         {
-            ingredients.MainIngredients.Add(_ingredient);
+            Dish.MainIngredients.Add(_ingredient);
         }
         else
         {
-            ingredients.SecondaryIngredients.Add(_ingredient);
+            Dish.SecondaryIngredients.Add(_ingredient);
         }
     }
 }
