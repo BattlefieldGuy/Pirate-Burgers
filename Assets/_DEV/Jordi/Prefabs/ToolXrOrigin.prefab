@@ -3726,6 +3726,7 @@ Transform:
   - {fileID: 5422156782557808149}
   - {fileID: 2389042164364244757}
   - {fileID: 6465573534266569535}
+  - {fileID: 6294095086365607581}
   m_Father: {fileID: 5598318314316342755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3413303119689072527
@@ -4591,12 +4592,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0b55834a1216142ae7559e1d387f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolAttach
+  attachedTool: {fileID: 0}
+  toolTransformBeforeAttach: {fileID: 0}
   attachRadius: 0.06
   toolLayer:
     serializedVersion: 2
     m_Bits: 2147483648
   attachCooldownTime: 2
   toolSocket: {fileID: 6160808590297768569}
+  toolBelt: {fileID: 0}
 --- !u!1 &4347225019366114112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7077,12 +7081,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0b55834a1216142ae7559e1d387f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToolAttach
+  attachedTool: {fileID: 0}
+  toolTransformBeforeAttach: {fileID: 0}
   attachRadius: 0.06
   toolLayer:
     serializedVersion: 2
     m_Bits: 2147483648
   attachCooldownTime: 2
   toolSocket: {fileID: 998736466960752174}
+  toolBelt: {fileID: 0}
 --- !u!1 &5600267474457721629
 GameObject:
   m_ObjectHideFlags: 0
@@ -7778,6 +7785,52 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5974551715370037321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6294095086365607581}
+  - component: {fileID: 3591133346317057035}
+  m_Layer: 0
+  m_Name: ToolBelt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6294095086365607581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974551715370037321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.573, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187057075581793563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3591133346317057035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974551715370037321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e340d0af55e4a13468bad2c73a54f844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToolBelt
+  leftHand: {fileID: 4222956220894348672}
+  rightHand: {fileID: 5580991915015420310}
 --- !u!1 &5999463063782998370
 GameObject:
   m_ObjectHideFlags: 0
