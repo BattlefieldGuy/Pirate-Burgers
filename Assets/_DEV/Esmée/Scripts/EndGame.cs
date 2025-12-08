@@ -10,7 +10,7 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        door.transform.DORotate(new Vector3(0, -80, 0), 3);
+        door.transform.DORotate(new Vector3(0, 80, 0), 3);
 
         StartCoroutine(FadeIn());
         StartCoroutine(WaitASec());
@@ -31,7 +31,7 @@ public class EndGame : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        SceneManager.LoadScene("MainMenu"); //verander naam in correcte scenenaam
+        SceneManager.LoadScene("S_MainMenu"); //verander naam in correcte scenenaam
     }
 
 
