@@ -1,21 +1,35 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Knife : MonoBehaviour
 {
-    [SerializeField] private GameObject saladPiecePrefab;
+    public XRGrabInteractable GrabInteractable;
+
+    [SerializeField] private float velocityThreshold;
+    private bool knifeCanCut;
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        //checks the velocity of the knive towards the forward
+        float _forwardVelocity = Vector3.Dot(ControllerVelocityManager.Instance.Velocity, transform.forward);
+        if (_forwardVelocity > velocityThreshold)
+            knifeCanCut = true;
+        else
+            knifeCanCut = false;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.CompareTag("Sliceable"))
+        if(collision.transform.CompareTag("Sliceable") && knifeCanCut)
         {
-            //slice in half
-            for(int i = 0; i < 2; i++)
-            {
-                GameObject clone = Instantiate(saladPiecePrefab, collision.transform.position, collision.transform.rotation);
-                collision.gameObject.SetActive(false);
-                clone.transform.parent = null;
-                clone.transform.localScale = new Vector3(.25f, .25f, .25f);
-            }
+            //call the OnSlice function to cut ingredient
+            collision.transform.GetComponent<Sliceable>().OnSlice();
         }
     }
 }
