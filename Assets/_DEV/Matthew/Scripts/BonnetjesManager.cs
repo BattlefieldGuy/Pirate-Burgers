@@ -92,7 +92,7 @@ public class BonnetjesManager : MonoBehaviour
             receiptList.AddOrder(item_);
     }
 
-    #region --- ENUMARATORS ---
+    #region - ENUMARATORS -
 
     //Temp enum
     private IEnumerator enumerator()
