@@ -3,6 +3,8 @@ using UnityEngine;
 public class OrderFinished : MonoBehaviour
 {
     [SerializeField] private bool correctOrder;
+    [SerializeField] private ParticleSystem poof;
+    [SerializeField] private AudioSource yay;
     BellPress BellPress;
     void Start()
     {
@@ -14,18 +16,21 @@ public class OrderFinished : MonoBehaviour
     {
         if (BellPress.PressedBell && correctOrder)
         {
-            //order dissapears with customer
+            poof.Play();
+            yay.Play();
             Debug.Log("YAY");
+            //gold coins in face
+            if (other != null) Destroy(other.gameObject);
         }
         else if (BellPress.PressedBell && !correctOrder)
         {
-            //error message ofzo/boze klant
+            //boze klant audio
             Debug.Log("nay");
         }
-        else
-        {
-            //niks
-            Debug.Log("wachtiewacht");
-        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        correctOrder = false;
     }
 }
