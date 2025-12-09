@@ -205,10 +205,12 @@ MonoBehaviour:
     name: 
     MainIngredients: []
     SecondaryIngredients: []
+    RequiredMachines: []
   ActiveOrder:
     name: 
     MainIngredients: []
     SecondaryIngredients: []
+    RequiredMachines: []
 --- !u!1 &71044322
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +344,7 @@ MonoBehaviour:
     - Fish
     - Salmon
     - Shark
+    RequiredMachines: []
   Ordernumber: 0
   FoodName: {fileID: 0}
   Title: {fileID: 0}
@@ -714,10 +717,12 @@ MonoBehaviour:
     name: 
     MainIngredients: []
     SecondaryIngredients: []
+    RequiredMachines: []
   ActiveOrder:
     name: 
     MainIngredients: []
     SecondaryIngredients: []
+    RequiredMachines: []
 --- !u!4 &931940045
 Transform:
   m_ObjectHideFlags: 0
@@ -1246,10 +1251,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43148b584dae4c4f9ef5df0c09a1268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipeListConstructor
+  UnlockedMachines:
+  - Grill
+  - Stove
   recipeList:
-    name: 
-    MainIngredients: []
-    SecondaryIngredients: []
+  - name: Basic Burger
+    MainIngredients:
+    - bread
+    SecondaryIngredients:
+    - fish
+    - tomato
+    - pickle
+    - kelp
+    - mustard
+    RequiredMachines:
+    - Grill
+  - name: Squid Bowl
+    MainIngredients:
+    - Squid
+    SecondaryIngredients:
+    - Kelp
+    - Potato
+    - Dory
+    RequiredMachines:
+    - Stove
+  usableList: []
 --- !u!1 &1815925946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,11 +1330,13 @@ MonoBehaviour:
     - pickle
     - kelp
     - mustard
+    RequiredMachines: []
   - name: Fish & Chips
     MainIngredients:
     - Potato
     - Salmon
     SecondaryIngredients: []
+    RequiredMachines: []
   - name: SquidBowl
     MainIngredients:
     - Squid
@@ -1316,6 +1344,7 @@ MonoBehaviour:
     - kelp
     - tomato
     - fish
+    RequiredMachines: []
   receiptInterval: 5
   intervalOffsetRange: 10
   CurrentCustomers: 0
@@ -1464,6 +1493,7 @@ MonoBehaviour:
     - Fish
     - Salmon
     - Shark
+    RequiredMachines: []
 --- !u!54 &1908849980
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -19,13 +19,16 @@ public class BonnetjesManager : MonoBehaviour
     public class Item// Item structure
     {
         public string name;
+        // Main ingredients are the core ingredients that cannot be removed, secondary's are optional
         public List<string> MainIngredients;
         public List<string> SecondaryIngredients;
+        // List of machines required to make this item, Possible: Grill, Fryer, Stove, Oven,
+        public List<string> RequiredMachines;
     }
 
 
     // Items
-    public List<Item> ItemList = new List<Item>();
+    public List<Item> ItemList;
 
 
     //refs
@@ -77,7 +80,7 @@ public class BonnetjesManager : MonoBehaviour
     void Start()
     {
         receiptList = FindFirstObjectByType<ReceiptList>();
-        StartCoroutine(enumerator());//temp
+        //StartCoroutine(enumerator());//temp
     }
 
 
