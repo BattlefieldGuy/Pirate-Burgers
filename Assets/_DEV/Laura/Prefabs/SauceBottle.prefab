@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2977375714334119328}
   - component: {fileID: 2725396936693175957}
   - component: {fileID: 1738776891525423070}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: SauceBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

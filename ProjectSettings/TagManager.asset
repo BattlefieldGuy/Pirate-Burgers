@@ -8,6 +8,7 @@ TagManager:
   - HandAttachable
   - MainIngredient
   - RealHand
+  - SecondaryIngredient
   layers:
   - Default
   - TransparentFX
