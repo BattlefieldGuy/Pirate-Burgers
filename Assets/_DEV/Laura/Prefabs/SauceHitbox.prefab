@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8619570463086576523}
   - component: {fileID: 4543336866726661800}
   - component: {fileID: 7677573906919991783}
+  - component: {fileID: 258434841379529662}
   m_Layer: 10
   m_Name: Sauce
   m_TagString: SecondaryIngredient
@@ -124,6 +125,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d087398724f2e47971012ea1f37077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SauceHitbox
+--- !u!54 &258434841379529662
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3856711365029331180}
+  serializedVersion: 5
+  m_Mass: 0.0000001
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &8305344355710341756
 GameObject:
   m_ObjectHideFlags: 0
