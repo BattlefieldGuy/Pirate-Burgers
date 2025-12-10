@@ -7,6 +7,7 @@ public class ToolAttach : MonoBehaviour
     [SerializeField] private float attachRadius = 0.05f;
     [SerializeField] private LayerMask toolLayer;
     [SerializeField] private float attachCooldownTime;
+    [SerializeField] private Transform toolSocket;
 
     private bool canAttach;
     private GameObject attachedTool;
@@ -15,9 +16,13 @@ public class ToolAttach : MonoBehaviour
     private void Awake()
     {
         //get tool in hand and if null give warning
-        attachedTool = transform.GetChild(0).gameObject;
+        foreach (Transform child in this.transform)
+        {
+            if (child.CompareTag("HandAttachable"))
+                attachedTool = child.gameObject;
+        }
         if (attachedTool == null)
-            Debug.LogWarning("No tool in hand");
+            Debug.LogWarning("No tool in hand or not found");
     }
 
     private void Start()

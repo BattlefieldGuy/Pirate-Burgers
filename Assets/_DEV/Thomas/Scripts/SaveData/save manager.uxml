@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Foldout text="Foldout" binding-path="foodIds" />
+    <ui:Button text="Load Saved Ingredients" name="loadSave" binding-path="LoadIngredients" />
+    <ui:Button text="Save current Ingredients" name="saveData" binding-path="SaveIngredients" />
+</ui:UXML>

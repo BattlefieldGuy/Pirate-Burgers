@@ -10,10 +10,13 @@ public class EndGame : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        door.transform.DORotate(new Vector3(0, 80, 0), 3);
+        if(other.CompareTag("RealHand"))
+        {
+            door.transform.DORotate(new Vector3(0, -80, 0), 3);
 
-        StartCoroutine(FadeIn());
-        StartCoroutine(WaitASec());
+            StartCoroutine(FadeIn());
+            StartCoroutine(WaitASec());
+        }
     }
 
     IEnumerator FadeIn()
@@ -31,7 +34,7 @@ public class EndGame : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        SceneManager.LoadScene("S_MainMenu"); //verander naam in correcte scenenaam
+        SceneManager.LoadScene("MainMenu"); //verander naam in correcte scenenaam
     }
 
 
