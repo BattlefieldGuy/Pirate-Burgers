@@ -4,13 +4,16 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ToolAttach : MonoBehaviour
 {
+    public GameObject attachedTool;
+    public Transform toolTransformBeforeAttach;
+
     [SerializeField] private float attachRadius = 0.05f;
     [SerializeField] private LayerMask toolLayer;
     [SerializeField] private float attachCooldownTime;
     [SerializeField] private Transform toolSocket;
+    [SerializeField] private ToolBelt toolBelt;
 
     private bool canAttach;
-    private GameObject attachedTool;
     private Quaternion toolRotation;
 
     private void Awake()
@@ -42,7 +45,7 @@ public class ToolAttach : MonoBehaviour
                 if(!hit.transform.IsChildOf(attachedTool.transform))
                 {
                     canAttach = false;
-                    Detach();
+                    Detach(hit.transform.root.gameObject);
                     Attach(hit.transform.root.gameObject);
                     StartCoroutine(AttachCooldown());
                 }
@@ -52,6 +55,7 @@ public class ToolAttach : MonoBehaviour
 
     private void Attach(GameObject _tool)
     {
+        toolTransformBeforeAttach = _tool.transform;
         SetToolLayer(_tool, 0);
         _tool.GetComponent<Rigidbody>().isKinematic = true;
         _tool.transform.position = this.transform.position;
@@ -62,11 +66,9 @@ public class ToolAttach : MonoBehaviour
             attachedTool.GetComponent<XRGrabInteractable>().enabled = false;
     }
 
-    private void Detach()
+    private void Detach(GameObject _tool)
     {
-        toolRotation = attachedTool.transform.rotation;
-        attachedTool.transform.SetParent(null);
-        attachedTool.GetComponent<Rigidbody>().isKinematic = false;
+        toolBelt.ToolToBeltTransform(_tool);
         SetToolLayer(attachedTool, 31);
     }
 
