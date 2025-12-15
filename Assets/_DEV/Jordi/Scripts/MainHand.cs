@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 enum Hand
 {
@@ -12,11 +13,19 @@ public class MainHand : MonoBehaviour
     [SerializeField] private GameObject ToolObject;
     [SerializeField] private Hand thisHand;
 
+    private NearFarInteractor interactor;
+
+    private void Start()
+    {
+        interactor = this.transform.parent.GetComponentInChildren<NearFarInteractor>();
+    }
+
     private void Update()
     {
         //boolean that checks if lefthanded is true and returns false or true depending on which hand this is
         bool isRightHandActive = (HandManager.instance.LeftHanded) ? thisHand != Hand.right : thisHand == Hand.right;
         ControllerVisuals.SetActive(!isRightHandActive);
         ToolObject.SetActive(isRightHandActive);
+        interactor.gameObject.SetActive(isRightHandActive);
     }
 }
