@@ -11,7 +11,7 @@ public class ToolBelt : MonoBehaviour
 
     void Update()
     {
-        if (HandManager.instance.LeftHanded != lastLeftHanded)
+        if (HandManager.instance.LeftHanded != lastLeftHanded || activeToolAttach == null)
         {
             lastLeftHanded = HandManager.instance.LeftHanded;
 

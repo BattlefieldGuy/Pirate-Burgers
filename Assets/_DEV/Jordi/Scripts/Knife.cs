@@ -7,11 +7,10 @@ public class Knife : MonoBehaviour
 
     [SerializeField] private float velocityThreshold;
     private bool knifeCanCut;
-    private Rigidbody rb;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        GrabInteractable = this.GetComponent<XRGrabInteractable>();
     }
 
     private void FixedUpdate()
