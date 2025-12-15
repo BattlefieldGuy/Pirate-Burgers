@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
@@ -16,16 +17,15 @@ public class GrillGridManager : MonoBehaviour
     #region -- Variables --
 
     // Amount of ingredients allowed on the grill. Should be divisible by INGREDIENTSPERROW.
-    private static int INGREDIENTLIMIT = 5;
+    private static int INGREDIENTLIMIT = 25;
 
-    // Ingredient positioning variables. DISTANCEBETWEENROWS is equal to how much the z position of every
-    // ingredient is changed based on the row they're in.
+    // The amount of ingredients that should go in each row. For example, if you want a 5x5 grid of ingredients,
+    // set INGREDIENTLIMIT to 25, and INGREDIENTSPERROW to 5.
     private static int INGREDIENTSPERROW = 5;
-    private static float DISTANCEBETWEENROWS = 1.5f;
 
-    // The top left point of the grill, and the top right point of the grill.
-    [SerializeField] Transform grillLeft;
-    [SerializeField] Transform grillRight;
+    // The top left point of the grill, and the bottom right point of the grill.
+    [SerializeField] Transform grillTopLeft;
+    [SerializeField] Transform grillBottomRight;
 
     // All created transforms for gridPositions will be parented to this object.
     [SerializeField] Transform gridPosParent;
@@ -73,8 +73,11 @@ public class GrillGridManager : MonoBehaviour
                 index -= INGREDIENTSPERROW;
                 rowNumber++;
             }
-            newPos.position = Vector3.Lerp(grillLeft.position, grillRight.position, (float)index / ((float)INGREDIENTSPERROW - 1f));
-            newPos.position -= DISTANCEBETWEENROWS * rowNumber * transform.forward;
+            newPos.position = Vector3.Lerp(grillTopLeft.position, grillTopLeft.position + ((grillBottomRight.localPosition.x - grillTopLeft.localPosition.x) * transform.localScale.x * transform.right), (float)index / ((float)INGREDIENTSPERROW - 1f));
+            float zRowDistance = grillBottomRight.localPosition.z - grillTopLeft.localPosition.z;
+            zRowDistance *= transform.localScale.z;
+            zRowDistance /= ((float)INGREDIENTLIMIT / (float)INGREDIENTSPERROW - 1);
+            newPos.position += rowNumber * zRowDistance * transform.forward;
             gridPositions[i] = newPos;
         }
     }
