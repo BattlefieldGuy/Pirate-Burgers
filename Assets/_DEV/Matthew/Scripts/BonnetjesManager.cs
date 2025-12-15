@@ -80,7 +80,7 @@ public class BonnetjesManager : MonoBehaviour
     void Start()
     {
         receiptList = FindFirstObjectByType<ReceiptList>();
-        //StartCoroutine(enumerator());//temp
+        StartCoroutine(enumerator());//temp
     }
 
 
@@ -102,7 +102,7 @@ public class BonnetjesManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         MakeItem();
-        //StartCoroutine(enumerator());
+        StartCoroutine(enumerator());
     }
 
     #endregion

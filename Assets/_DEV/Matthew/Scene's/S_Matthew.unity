@@ -1207,171 +1207,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1572641535
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1572641536}
-  - component: {fileID: 1572641537}
-  m_Layer: 0
-  m_Name: RecipeListManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1572641536
+--- !u!4 &1572641536 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+  m_PrefabInstance: {fileID: 2890658856122881990}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572641535}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1016406136}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1572641537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572641535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43148b584dae4c4f9ef5df0c09a1268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RecipeListConstructor
-  UnlockedMachines:
-  - Grill
-  - 
-  - 
-  recipeList:
-  - name: Triple fish burger
-    MainIngredients:
-    - bread
-    SecondaryIngredients:
-    - Shark
-    - Salmon
-    - Dory
-    RequiredMachines:
-    - Grill
-  - name: Basic burger
-    MainIngredients:
-    - Bread
-    SecondaryIngredients:
-    - Dory
-    - Tomato
-    - Pickle
-    - Kelp
-    - Mustard
-    RequiredMachines:
-    - Grill
-  - name: Crab skewers
-    MainIngredients:
-    - Stick
-    SecondaryIngredients:
-    - Crab
-    - Pickle
-    - Potato
-    RequiredMachines:
-    - Grill
-  - name: Tentacle skewers
-    MainIngredients:
-    - Stick
-    SecondaryIngredients:
-    - Squid
-    - Tomato
-    - Pickles
-    RequiredMachines:
-    - Grill
-  - name: Fish n Chips
-    MainIngredients:
-    - Patato
-    - Salmon
-    SecondaryIngredients: []
-    RequiredMachines:
-    - Frier
-  - name: Fries
-    MainIngredients:
-    - Patato
-    SecondaryIngredients: []
-    RequiredMachines:
-    - Frier
-  - name: Tentacle fries
-    MainIngredients:
-    - Squid
-    SecondaryIngredients: []
-    RequiredMachines:
-    - Frier
-  - name: Squid bowl
-    MainIngredients:
-    - Squid
-    SecondaryIngredients:
-    - Kelp
-    - Potato
-    - Dory
-    RequiredMachines:
-    - Stove
-  - name: Shark steak
-    MainIngredients:
-    - Shark
-    SecondaryIngredients:
-    - Lemon juice
-    RequiredMachines:
-    - Stove
-  - name: Sea stew
-    MainIngredients:
-    - Water
-    SecondaryIngredients:
-    - Shark
-    - Squid
-    - Crab
-    - Dory
-    - Kelp
-    - Lemon juice
-    - Water
-    - Pickles
-    RequiredMachines:
-    - Stove
-  - name: Fish stew
-    MainIngredients:
-    - Water
-    SecondaryIngredients:
-    - Salmon
-    - Dory
-    - Kelp
-    RequiredMachines:
-    - Stove
-  - name: Shark stew
-    MainIngredients:
-    - Water
-    SecondaryIngredients:
-    - Shark
-    - Lemon juice
-    - Potato
-    RequiredMachines:
-    - Stove
-  - name: Vegan stew
-    MainIngredients:
-    - Water
-    SecondaryIngredients:
-    - Kelp
-    - Tomato
-    - Potato
-    - Pickles
-    RequiredMachines:
-    - Stove
-  usableList: []
 --- !u!1 &1815925946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1457,63 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &2890658856122881990
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1016406136}
+    m_Modifications:
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574629864159072282, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_Name
+      value: RecipeListManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

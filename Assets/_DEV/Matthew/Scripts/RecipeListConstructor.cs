@@ -68,6 +68,7 @@ public class RecipeListConstructor : MonoBehaviour
                 usableList?.Add(recipe);
             }
         }
+        SendUsableList(usableList);
     }
 
     private void SendUsableList(List<Item> _list)
