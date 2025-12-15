@@ -16,7 +16,7 @@ public class MainHand : MonoBehaviour
     {
         //boolean that checks if lefthanded is true and returns false or true depending on which hand this is
         bool isRightHandActive = (HandManager.instance.LeftHanded) ? thisHand != Hand.right : thisHand == Hand.right;
-        ControllerVisuals.SetActive(isRightHandActive);
-        ToolObject.SetActive(!isRightHandActive);
+        ControllerVisuals.SetActive(!isRightHandActive);
+        ToolObject.SetActive(isRightHandActive);
     }
 }
