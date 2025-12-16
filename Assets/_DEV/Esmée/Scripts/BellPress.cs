@@ -7,7 +7,9 @@ public class BellPress : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PressedBell = true;
-        dingding.Play();
+
+        if (dingding != null)
+            dingding.Play();
     }
 
     private void OnTriggerExit(Collider other)
