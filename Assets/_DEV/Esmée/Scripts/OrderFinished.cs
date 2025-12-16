@@ -18,8 +18,8 @@ public class OrderFinished : MonoBehaviour
     {
         if (BellPress.PressedBell && orderChecker.CheckMatchingOrders())
         {
-            poof.Play();
-            yay.Play();
+            if (poof != null) poof.Play();
+            if (yay != null) yay.Play();
             Debug.Log("YAY");
             //gold coins in face
             if (other != null) Destroy(other.gameObject);
