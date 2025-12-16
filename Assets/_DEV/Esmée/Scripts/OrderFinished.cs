@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class OrderFinished : MonoBehaviour
 {
-    [SerializeField] private bool correctOrder;
     [SerializeField] private ParticleSystem poof;
     [SerializeField] private AudioSource yay;
     BellPress BellPress;
@@ -30,10 +29,5 @@ public class OrderFinished : MonoBehaviour
             //boze klant audio
             Debug.Log("nay");
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        correctOrder = false;
     }
 }

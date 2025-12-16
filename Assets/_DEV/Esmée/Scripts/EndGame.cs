@@ -34,7 +34,7 @@ public class EndGame : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        SceneManager.LoadScene("S_MainMenu"); //verander naam in correcte scenenaam
+        SceneManager.LoadScene("S_MainMenu");
     }
 
 
