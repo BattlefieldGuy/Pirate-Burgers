@@ -8,6 +8,7 @@ public class EndGame : MonoBehaviour
     [SerializeField] private GameObject sphere;
     [SerializeField] private GameObject door;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RealHand"))

@@ -805,7 +805,9 @@ MonoBehaviour:
   - Try again
   - Try harder
   - Not today
-  score: 5
+  TotalOrders: 5
+  GoodOrders: 3
+  BadOrders: 1
 --- !u!1 &1005372844
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,6 +7122,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 4964401874645872753, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0039322292
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964401874645872753, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
+      propertyPath: m_Size.z
+      value: 0.0038975577
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964401874645872753, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
+      propertyPath: m_Center.y
+      value: -0.008801446
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964401874645872753, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
+      propertyPath: m_Center.z
+      value: 0.011369465
+      objectReference: {fileID: 0}
     - target: {fileID: 5423207493985821319, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.557
@@ -7130,7 +7148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5423207493985821319, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.188
+      value: -2.731
       objectReference: {fileID: 0}
     - target: {fileID: 5423207493985821319, guid: e4b877c426aa676418c8f4e9ab40469e, type: 3}
       propertyPath: m_LocalRotation.w
