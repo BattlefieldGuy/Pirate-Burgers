@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4312909023425897561}
   m_Layer: 0
-  m_Name: Left
+  m_Name: TopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8912414714816487606}
   m_Layer: 0
-  m_Name: Right
+  m_Name: BottomRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 555628018067118378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1, z: 0.3}
+  m_LocalPosition: {x: 0.3, y: 1, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb9300686ff42d4fa7e5e6870740b3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GrillGridManager
-  grillLeft: {fileID: 4312909023425897561}
-  grillRight: {fileID: 8912414714816487606}
+  grillTopLeft: {fileID: 4312909023425897561}
+  grillBottomRight: {fileID: 8912414714816487606}
   gridPosParent: {fileID: 496130080189467777}
   burgerPrefab: {fileID: 3014516984516240658, guid: 83a6f4062085fa641b1533be87d4cac0, type: 3}
 --- !u!114 &1258996159954102191
