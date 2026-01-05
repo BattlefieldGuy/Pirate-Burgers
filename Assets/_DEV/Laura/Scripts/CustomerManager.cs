@@ -50,6 +50,18 @@ public class CustomerManager : MonoBehaviour
         Destroy(customerObject);
     }
 
+    // Calls DeleteCustomer() on a customer based on the given receipt.
+    public void DeleteCustomerByReceipt(BonnetjesManager.Item receipt)
+    {
+        foreach(GameObject obj in spawnedCustomers)
+        {
+            if(obj.GetComponent<Customer>().receipt == receipt)
+            {
+                DeleteCustomer(obj);
+            }
+        }
+    }
+
     #region -- Customer Position Management --
 
     private void FixedUpdate()
