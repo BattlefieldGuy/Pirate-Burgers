@@ -4,14 +4,17 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ToolAttach : MonoBehaviour
 {
+    public GameObject attachedTool;
+    public Transform toolTransformBeforeAttach;
+    public Transform OverlapSphereTransform;
+
     [SerializeField] private float attachRadius = 0.05f;
     [SerializeField] private LayerMask toolLayer;
     [SerializeField] private float attachCooldownTime;
     [SerializeField] private Transform toolSocket;
+    [SerializeField] private ToolBelt toolBelt;
 
     private bool canAttach;
-    private GameObject attachedTool;
-    private Quaternion toolRotation;
 
     private void Awake()
     {
@@ -36,14 +39,14 @@ public class ToolAttach : MonoBehaviour
         //detach the currently used tool and attach the interacted tool
         if(canAttach)
         {
-            Collider[] hits = Physics.OverlapSphere(this.transform.position, attachRadius, toolLayer);
+            Collider[] hits = Physics.OverlapSphere(OverlapSphereTransform.position, attachRadius, toolLayer);
             foreach (var hit in hits)
             {
                 if(!hit.transform.IsChildOf(attachedTool.transform))
                 {
                     canAttach = false;
-                    Detach();
-                    Attach(hit.transform.root.gameObject);
+                    Detach(attachedTool);
+                    Attach(hit.transform.parent.gameObject);
                     StartCoroutine(AttachCooldown());
                 }
             }
@@ -52,21 +55,22 @@ public class ToolAttach : MonoBehaviour
 
     private void Attach(GameObject _tool)
     {
+        toolTransformBeforeAttach = _tool.transform;
         SetToolLayer(_tool, 0);
         _tool.GetComponent<Rigidbody>().isKinematic = true;
         _tool.transform.position = this.transform.position;
-        _tool.transform.rotation = toolRotation;
+        _tool.transform.rotation = toolSocket.transform.rotation;
         _tool.transform.SetParent(this.transform);
         attachedTool = _tool;
         if (attachedTool.GetComponent<XRGrabInteractable>())
             attachedTool.GetComponent<XRGrabInteractable>().enabled = false;
     }
 
-    private void Detach()
+    private void Detach(GameObject _tool)
     {
-        toolRotation = attachedTool.transform.rotation;
-        attachedTool.transform.SetParent(null);
-        attachedTool.GetComponent<Rigidbody>().isKinematic = false;
+        if (attachedTool.GetComponent<XRGrabInteractable>())
+            attachedTool.GetComponent<XRGrabInteractable>().enabled = true;
+        toolBelt.ToolToBeltTransform(_tool);
         SetToolLayer(attachedTool, 31);
     }
 
@@ -93,6 +97,6 @@ public class ToolAttach : MonoBehaviour
         Gizmos.color = Color.green;
 
         // Draw a sphere at the object's position
-        Gizmos.DrawWireSphere(transform.position, attachRadius);
+        Gizmos.DrawWireSphere(OverlapSphereTransform.position, attachRadius);
     }
 }
