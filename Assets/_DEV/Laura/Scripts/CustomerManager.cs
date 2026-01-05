@@ -7,13 +7,16 @@ using UnityEngine.Rendering;
 using UnityEngine.UIElements;
 using static UnityEngine.InputSystem.InputAction;
 
-public class CustomerPosManager : MonoBehaviour
+public class CustomerManager : MonoBehaviour
 {
     // Script that manages customer positions when they first come up to the window. Attach this to a GameObject in the scene,
     // then call functions from said object whenever a customer is added/removed.
 
     // Reference position for where the frontmost leftmost customer will be.
     [SerializeField] private Vector3 basePosition = Vector3.zero;
+
+    // Reference position for where each customer will be spawned.
+    [SerializeField] private Vector3 spawnPosition = Vector3.back * 100;
 
     // The amount of customers per row.
     private static int ROWCUSTOMERLIMIT = 3;
@@ -32,26 +35,22 @@ public class CustomerPosManager : MonoBehaviour
     private List<GameObject> spawnedCustomers = new();
     private List<Vector3> customerPositions = new();
 
-    // Testing variable and functions, should be managed by other customer scripts in the final game.
+    // Customer prefab.
     [SerializeField] private GameObject customerPrefab;
-    public void SpawnCustomers(CallbackContext context)
+    public void SpawnCustomer(BonnetjesManager.Item receipt)
     {
-        if (context.performed && !context.canceled)
-        {
-            AddNewCustomer(Instantiate(customerPrefab, Vector3.back * 100, Quaternion.identity));
-        }
-    }
-    public void DeleteCustomer(CallbackContext context)
-    {
-        if (context.performed && !context.canceled)
-        {
-            GameObject tempObject = spawnedCustomers[Random.Range(0, Mathf.Min(3, spawnedCustomers.Count))];
-            RemoveCustomer(tempObject);
-            Destroy(tempObject);
-        }
+        AddNewCustomer(Instantiate(customerPrefab, spawnPosition, Quaternion.identity));
+        spawnedCustomers[^1].GetComponent<Customer>().receipt = receipt;
     }
 
-    // Actual scripts:
+    // Call this when you a customer's order is done, and you just want to remove them from the scene.
+    public void DeleteCustomer(GameObject customerObject)
+    {
+        RemoveCustomer(customerObject);
+        Destroy(customerObject);
+    }
+
+    #region -- Customer Position Management --
 
     private void FixedUpdate()
     {
@@ -79,8 +78,9 @@ public class CustomerPosManager : MonoBehaviour
 
     public bool RemoveCustomer(GameObject customerObject)
     {
-        // Whenever a customer is done ordering and wants to leave, remove them with this script. Do this BEFORE you destroy
+        // Whenever a customer is done ordering and wants to leave, remove them with this function. Do this BEFORE you destroy
         // their GameObject, otherwise this function won't be able to properly remove them and move the line along.
+        // You can also just call DeleteCustomer() to simplify things.
         if (spawnedCustomers.Contains(customerObject))
         {
             int _totalCount = spawnedCustomers.Count;
@@ -123,4 +123,6 @@ public class CustomerPosManager : MonoBehaviour
         _position += new Vector3(xRandModifier, 0, zRandModifier);
         return _position;
     }
+
+    #endregion
 }
