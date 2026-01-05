@@ -8,9 +8,10 @@ public class EndGame : MonoBehaviour
     [SerializeField] private GameObject sphere;
     [SerializeField] private GameObject door;
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("RealHand"))
+        if (other.CompareTag("RealHand"))
         {
             door.transform.DORotate(new Vector3(0, -80, 0), 3);
 
@@ -34,7 +35,7 @@ public class EndGame : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        SceneManager.LoadScene("MainMenu"); //verander naam in correcte scenenaam
+        SceneManager.LoadScene("S_MainMenu");
     }
 
 

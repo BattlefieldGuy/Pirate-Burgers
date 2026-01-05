@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
-using static BonnetjesManager;
+using System.IO;
+// ReSharper disable All
 
 public enum SaveableTypes
 {
@@ -18,8 +18,27 @@ public class SaveManager : MonoBehaviour
     /// This'll be expanded as we include more items that require saving
     /// Objects keep their momentum on save so don't toss shit and save right after they'll fling away when loading again lmao
     /// 
+    ///
     /// THIS DOES NOT YET INCUDE LOADING AND SAVING ASSEMBLED FOODS
     /// </summary>
+    /// 
+
+    [System.Serializable]
+    public class CompleteSaveData
+    {
+        [System.Serializable]
+        public class jsonIngredient
+        {
+            public string id;
+            public string IngredientType;
+            public Vector3 worldPosition;
+            public Vector3 worldRotation;
+            public Vector3 LinearVelocity;
+            public Vector3 AngularVelocity;
+        }
+
+        public List<jsonIngredient> data;
+    }
 
     [System.Serializable]
     public class SavedIngredient
@@ -30,8 +49,14 @@ public class SaveManager : MonoBehaviour
         public Vector3 worldRotation;
         public Vector3 LinearVelocity;
         public Vector3 AngularVelocity;
-    } 
+    }
 
+    private string path;
+    string DefaultSaveName = "SaveSlot";
+
+    private CompleteSaveData currentSave;
+    string currentsaveName = "";
+    
 
     public static SaveManager Instance;
 
@@ -39,6 +64,7 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
+        path = Application.persistentDataPath;
         if (Instance == null)
         {
             Instance = this;
@@ -125,6 +151,7 @@ public class SaveManager : MonoBehaviour
             Saveable_Ingredient savable = FindIngredientByID(ingredient.id);
             if (savable != null)
             {
+                print("Found ID in the scene, updating...");
                 Rigidbody rb = savable.GetComponent<Rigidbody>();
                 savable.transform.position = ingredient.worldPosition;
                 savable.transform.eulerAngles = ingredient.worldRotation;
@@ -163,6 +190,7 @@ public class SaveManager : MonoBehaviour
             } else
             {
                 Debug.LogError("Could not find ingredient with ID: " + ingredient.id + " while saving. It may have been deleted.");
+                deleteIngredientID(ingredient.id);
             }
         }
     }
@@ -170,7 +198,75 @@ public class SaveManager : MonoBehaviour
 
     #region Json conversion
 
+    public void ConvertToJSON() 
+    {
+        SaveIngredients();
+        string saveName = currentsaveName == "" ? DefaultSaveName + (Directory.GetFiles(path).Length + 1).ToString() : currentsaveName;
+        CompleteSaveData savefile = new CompleteSaveData();
+        savefile.data = new List<CompleteSaveData.jsonIngredient>();
+        foreach (SavedIngredient ingredient in foodIds)
+        {
+            CompleteSaveData.jsonIngredient jsonIng = new CompleteSaveData.jsonIngredient();
+            jsonIng.id = ingredient.id;
+            jsonIng.IngredientType = ingredient.IngredientType;
+            jsonIng.worldPosition = ingredient.worldPosition;
+            jsonIng.worldRotation = ingredient.worldRotation;
+            jsonIng.LinearVelocity = ingredient.LinearVelocity;
+            jsonIng.AngularVelocity = ingredient.AngularVelocity;
+            savefile.data.Add(jsonIng);
+        }
+        string jsonString = JsonUtility.ToJson(savefile, true);
+        string fullpath = Path.Combine(path, saveName + ".json");
+        File.WriteAllText(fullpath, jsonString);
+        print("Saved as " + saveName);
+    }
 
+    public void loadFromJSON(string targetfile)
+    {
+        print("Loading from " + targetfile + ".json");
+        CompleteSaveData savefile = new CompleteSaveData();
+        string fullpath = Path.Combine(path, targetfile  + ".json");
+        if (File.Exists(fullpath))
+        {
+            string jsonString = File.ReadAllText(fullpath);
+            savefile = JsonUtility.FromJson<CompleteSaveData>(jsonString);
+            if (foodIds.Count > 0)
+            {
+                int i = 0;
+                foreach (SavedIngredient ingredient in foodIds)
+                {
+                    if (ingredient.id == savefile.data[0].id)
+                    {
+                        print("wtfbro this already exists");
+                    }
+                    else
+                    {
+                        Destroy(FindIngredientByID(ingredient.id).gameObject);
+                    }
+
+                    i++;
+                }
+                foodIds.Clear();
+            }
+        
+            foreach (CompleteSaveData.jsonIngredient jsonIng in savefile.data)
+            {
+                SavedIngredient ingredient = new SavedIngredient();
+                ingredient.id = jsonIng.id;
+                ingredient.IngredientType = jsonIng.IngredientType;
+                ingredient.worldPosition = jsonIng.worldPosition;
+                ingredient.worldRotation = jsonIng.worldRotation;
+                ingredient.LinearVelocity = jsonIng.LinearVelocity;
+                ingredient.AngularVelocity = jsonIng.AngularVelocity;
+                foodIds.Add(ingredient);
+            }
+            LoadIngredients();
+        }
+        else
+        {
+            Debug.LogError("File not found: " + fullpath + ".json");
+        }
+    }
 
     #endregion
 }
