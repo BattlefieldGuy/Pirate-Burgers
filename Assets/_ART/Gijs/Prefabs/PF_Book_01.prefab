@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5040321626875628189, guid: 5b1319e89f19f7f4f9d2d7b867329cee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d6b5410338632e54680fc52da2bad1c4, type: 2}
     - target: {fileID: -4153014384403274924, guid: 5b1319e89f19f7f4f9d2d7b867329cee, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d4817ad87dcbb3144aa82f61ba7e63fe, type: 2}
+    - target: {fileID: -2249048295786412908, guid: 5b1319e89f19f7f4f9d2d7b867329cee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d6b5410338632e54680fc52da2bad1c4, type: 2}
     - target: {fileID: 758264614527824526, guid: 5b1319e89f19f7f4f9d2d7b867329cee, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -64,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Book_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4686898833051540663, guid: 5b1319e89f19f7f4f9d2d7b867329cee, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d6b5410338632e54680fc52da2bad1c4, type: 2}
     - target: {fileID: 5802354179454671968, guid: 5b1319e89f19f7f4f9d2d7b867329cee, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
