@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Sliceable
+  - HandAttachable
+  - MainIngredient
+  - RealHand
+  - SecondaryIngredient
   layers:
   - Default
   - TransparentFX
@@ -16,6 +20,7 @@ TagManager:
   - 
   - 
   - 
+  - Ingredients
   - 
   - 
   - 
@@ -25,6 +30,8 @@ TagManager:
   - 
   - 
   - 
+  - Dish
+  - Receipt
   - 
   - 
   - 
@@ -34,10 +41,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - HandAttachable
   m_SortingLayers:
   - name: Default
     uniqueID: 0
