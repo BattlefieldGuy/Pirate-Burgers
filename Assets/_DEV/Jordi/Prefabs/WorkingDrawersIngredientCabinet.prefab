@@ -50,8 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f6cceac5d8827489ddfa9b18a41d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawer
-  MinDistance: 0
-  MaxDistance: 0.4
+  BackwardsDistance: 0
+  ForwardDistance: 0.4
+  Handle: {fileID: 2658311352969625363}
 --- !u!1 &1017848586093843278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,8 +1683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f6cceac5d8827489ddfa9b18a41d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawer
-  MinDistance: 0
-  MaxDistance: 0.4
+  BackwardsDistance: 0
+  ForwardDistance: 0.4
+  Handle: {fileID: 3997302599821131708}
 --- !u!1 &7437517518700962943
 GameObject:
   m_ObjectHideFlags: 0

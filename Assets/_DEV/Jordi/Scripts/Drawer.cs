@@ -5,13 +5,16 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Drawer : MonoBehaviour
 {
     [Header("Settings")]
-    public float MinDistance = 0f;
-    public float MaxDistance = 0.4f;
+    public float BackwardsDistance = 0f;
+    public float ForwardDistance = 0.4f;
+
+    public GameObject Handle;
 
     private Vector3 localMoveAxis = Vector3.forward;
     private XRGrabInteractable grabInteractable;
     private Transform drawerRoot;
     private Vector3 beginLocalPos;
+    private Vector3 currentLocalPos;
     private Transform interactor;
     private float beginOffset;
 
@@ -24,7 +27,7 @@ public class Drawer : MonoBehaviour
     private void Start()
     {
         beginLocalPos = transform.localPosition;
-
+        currentLocalPos = transform.localPosition;
         grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnRelease);
     }
@@ -35,11 +38,13 @@ public class Drawer : MonoBehaviour
         //converts the WorldSpace to the LocalSpace of DrawerRoot
         Vector3 _localHandPos = drawerRoot.InverseTransformPoint(interactor.position);
         //a float that increases if moving forward and decreases when backwards
-        beginOffset = Vector3.Dot(_localHandPos - beginLocalPos, localMoveAxis.normalized);
+        beginOffset = Vector3.Dot(_localHandPos - currentLocalPos, localMoveAxis.normalized);
     }
 
     private void OnRelease(SelectExitEventArgs args)
     {
+        currentLocalPos = transform.localPosition;
+        grabInteractable.transform.position = Handle.transform.position;
         interactor = null;
     }
 
@@ -50,7 +55,7 @@ public class Drawer : MonoBehaviour
         //converts the WorldSpace to the LocalSpace of DrawerRoot
         Vector3 _localHandPos = drawerRoot.InverseTransformPoint(interactor.position);
         //drawer cant go past minimum or maximum distance
-        float _distance = Mathf.Clamp(Vector3.Dot(_localHandPos - beginLocalPos, localMoveAxis.normalized) - beginOffset, MinDistance, MaxDistance);
+        float _distance = Mathf.Clamp(Vector3.Dot(_localHandPos - beginLocalPos, localMoveAxis.normalized) - beginOffset, BackwardsDistance, ForwardDistance);
         transform.localPosition = beginLocalPos + localMoveAxis.normalized * _distance;
     }
 }
