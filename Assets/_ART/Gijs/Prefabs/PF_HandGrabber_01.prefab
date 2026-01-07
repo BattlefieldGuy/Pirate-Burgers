@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8364891126944793874}
   m_Layer: 0
-  m_Name: SM_HandGrabber_01
+  m_Name: PF_HandGrabber_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
