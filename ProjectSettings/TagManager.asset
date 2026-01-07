@@ -9,6 +9,7 @@ TagManager:
   - MainIngredient
   - RealHand
   - SecondaryIngredient
+  - GrillFood
   layers:
   - Default
   - TransparentFX
