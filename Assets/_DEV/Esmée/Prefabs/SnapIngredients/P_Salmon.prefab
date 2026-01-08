@@ -112,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.16696249, y: 0.061350517, z: 0.2043382}
-  m_Center: {x: -0.0010719672, y: -0.0017247507, z: 0.0009190738}
+  m_Size: {x: 0.14703271, y: 0.054010157, z: 0.1944409}
+  m_Center: {x: -0.0036132017, y: -0.005394932, z: 0.0005747451}
 --- !u!54 &2892325783135575543
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -188,7 +188,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2892325783135575543}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2892325783135575543}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -320,8 +344,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.036349062, y: 0.029277043, z: 0.03190656}
-  m_Center: {x: 0.0041422294, y: 0.04149285, z: 0.01539886}
+  m_Size: {x: 0.058368385, y: 0.01230605, z: 0.062335122}
+  m_Center: {x: -0.00091048534, y: 0.033007342, z: 0.00018457897}
 --- !u!114 &7903790733134071821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,3 +358,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StackBurger
+  snapPoint: {fileID: 1353672322785000309}

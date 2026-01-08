@@ -112,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0035521295, y: 0.00046545384, z: 0.0041924603}
-  m_Center: {x: 0.00000012054807, y: 0.0000013592289, z: 0.00008573523}
+  m_Size: {x: 0.0027943132, y: 0.00046545386, z: 0.003540805}
+  m_Center: {x: 0.00009779786, y: 0.0000013592288, z: 0.000018131626}
 --- !u!54 &5522008747328208750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -188,7 +188,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5522008747328208750}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5522008747328208750}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -280,7 +304,7 @@ GameObject:
   - component: {fileID: 492987324039779848}
   - component: {fileID: 881345785895100390}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: snappoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StackBurger
+  snapPoint: {fileID: 8876192624562527540}
 --- !u!65 &881345785895100390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -332,5 +357,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0009792869, y: 0.0004970726, z: 0.0012532935}
-  m_Center: {x: -0.00010008731, y: 0.00041283993, z: -0.000033490254}
+  m_Size: {x: 0.0009792869, y: 0.00023592157, z: 0.0012532935}
+  m_Center: {x: -0.00010008731, y: 0.00034474753, z: -0.000033490254}

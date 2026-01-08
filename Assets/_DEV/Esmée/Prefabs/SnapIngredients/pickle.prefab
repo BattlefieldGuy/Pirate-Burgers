@@ -56,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0924263, y: 0.0080496445, z: 0.08207369}
-  m_Center: {x: 0.02254963, y: 0.0010444112, z: -0.016379654}
+  m_Size: {x: 0.08603406, y: 0.0080496445, z: 0.07673526}
+  m_Center: {x: 0.022246003, y: 0.0010444112, z: -0.016093254}
 --- !u!54 &1836246276168073603
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,7 +132,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1836246276168073603}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1836246276168073603}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -264,8 +288,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.024719477, y: 0.019657522, z: 0.025658846}
-  m_Center: {x: 0.020862222, y: 0.015325174, z: -0.014236867}
+  m_Size: {x: 0.024719477, y: 0.0060717314, z: 0.025658846}
+  m_Center: {x: 0.020862222, y: 0.008242011, z: -0.014236867}
 --- !u!114 &9114025678250566211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StackBurger
+  snapPoint: {fileID: 2098168430335980948}
 --- !u!1 &4797143148292134347
 GameObject:
   m_ObjectHideFlags: 0

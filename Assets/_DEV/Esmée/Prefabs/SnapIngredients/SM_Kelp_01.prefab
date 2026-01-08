@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StackBurger
+  snapPoint: {fileID: 2179195794379160822}
 --- !u!65 &6622219635935559056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64,8 +65,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00031726024, y: 0.00034873377, z: 0.0002801931}
-  m_Center: {x: 0.0000378982, y: 0.000026825479, z: 0.00023866196}
+  m_Size: {x: 0.00031726024, y: 0.00034873377, z: 0.0001173142}
+  m_Center: {x: 0.0000378982, y: 0.000026825479, z: 0.00015722262}
 --- !u!1 &2968516534409601959
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,8 +206,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0008993505, y: 0.001454423, z: 0.0002678354}
-  m_Center: {x: 0.00005214595, y: 0.00005664413, z: 0.000048450398}
+  m_Size: {x: 0.0008879519, y: 0.0013792013, z: 0.0002678354}
+  m_Center: {x: 0.000046446617, y: 0.00009425519, z: 0.000048450405}
 --- !u!114 &6634574401949833188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +255,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4293444230009160352}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 4293444230009160352}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []

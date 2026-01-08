@@ -139,8 +139,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.14968014, y: 0.015260464, z: 0.16303015}
-  m_Center: {x: 0, y: 0.0076233177, z: 0}
+  m_Size: {x: 0.12255886, y: 0.015260464, z: 0.13950425}
+  m_Center: {x: 0.00032291078, y: 0.007623317, z: -0.0044500097}
 --- !u!114 &6194592992295057820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +188,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 514053930907560446}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 514053930907560446}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -277,8 +301,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8481238837758548392}
-  - component: {fileID: 9092310272490737606}
   - component: {fileID: 1942638633516626611}
+  - component: {fileID: 8224523824989440285}
   m_Layer: 0
   m_Name: SnapPoint (1)
   m_TagString: Untagged
@@ -301,18 +325,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6972626557797930867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9092310272490737606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5052838204444379108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StackBurger
 --- !u!65 &1942638633516626611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -332,5 +344,18 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.03665852, y: 0.015485935, z: 0.039566133}
-  m_Center: {x: 0.0013247933, y: 0.008017266, z: -0.0030330103}
+  m_Size: {x: 0.03665852, y: 0.0054874625, z: 0.039566133}
+  m_Center: {x: 0.0013247933, y: 0.006766013, z: -0.0030330103}
+--- !u!114 &8224523824989440285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052838204444379108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StackBurger
+  snapPoint: {fileID: 8481238837758548392}

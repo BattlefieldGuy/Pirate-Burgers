@@ -234,8 +234,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11540151, y: 0.0068629235, z: 0.12663615}
-  m_Center: {x: 0.023368955, y: 0.0026442036, z: 0.030180812}
+  m_Size: {x: 0.10970688, y: 0.01210713, z: 0.11945009}
+  m_Center: {x: 0.023152113, y: 0.000022100285, z: 0.029808939}
 --- !u!54 &6212387450542116709
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -311,18 +311,6 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3315575728221785263}
-        m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
-        m_MethodName: SetParent
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6212387450542116709}
         m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
         m_MethodName: set_isKinematic
@@ -478,8 +466,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.031658173, y: 0.02270361, z: 0.029550433}
-  m_Center: {x: 0.02164936, y: 0.01948769, z: 0.03180611}
+  m_Size: {x: 0.031658173, y: 0.007389009, z: 0.029550433}
+  m_Center: {x: 0.02164936, y: 0.0118303895, z: 0.03180611}
 --- !u!114 &924362018242669463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,3 +480,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdc387bc24ecf3d4abbb2e8aad05bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StackBurger
+  snapPoint: {fileID: 3993522533705179037}
