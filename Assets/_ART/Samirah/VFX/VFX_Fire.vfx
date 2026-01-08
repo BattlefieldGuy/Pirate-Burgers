@@ -576,7 +576,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":27.652830123901368,"g":15.790343284606934,"b":2.6609320640563967,"a":1.0},"time":0.0},{"color":{"r":1.7735848426818848,"g":0.7588777542114258,"b":0.2509787380695343,"a":1.0},"time":0.5094071626663208},{"color":{"r":6.550941467285156,"g":2.092231035232544,"b":0.8917509913444519,"a":1.0},"time":0.9917601346969605}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":8.484623908996582,"g":2.750805377960205,"b":27.652828216552736,"a":1.0},"time":0.0},{"color":{"r":2.099813938140869,"g":0.3834303915500641,"b":0.17036210000514985,"a":1.0},"time":0.5094071626663208},{"color":{"r":8.746021270751954,"g":2.9456472396850588,"b":0.0,"a":1.0},"time":0.9917601346969605}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: -1
   m_Property:
     name: Color
@@ -1116,7 +1116,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":2.0,"outTangent":2.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":1.0,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":2.0,"outTangent":2.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.5068394541740418,"value":0.7567926645278931,"inTangent":0.986320972442627,"outTangent":0.986320972442627,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.9986572265625,"value":-0.061847686767578128,"inTangent":0.0,"outTangent":0.0,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: -1
   m_Property:
     name: Size
@@ -1567,7 +1567,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Vector, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"vector":{"x":0.3330000042915344,"y":1.0,"z":0.3330000042915344}}'
+      m_SerializableObject: '{"vector":{"x":0.3330000042915344,"y":0.5,"z":0.3330000042915344}}'
     m_Space: 0
   m_Property:
     name: B
