@@ -41,7 +41,7 @@ public class GrillFoodActivater : MonoBehaviour
     public void Disable()
     {
         text.SetActive(false);
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.None;
         cookingManager.enabled = false;
     }
 
