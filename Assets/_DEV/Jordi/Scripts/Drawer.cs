@@ -7,7 +7,9 @@ public class Drawer : MonoBehaviour
     [Header("Settings")]
     public float BackwardsDistance = 0f;
     public float ForwardDistance = 0.4f;
+    [Range(0, 0.4f)] public float OpenedDistance;
 
+    public bool IsOpen; 
     public GameObject Handle;
 
     private Vector3 localMoveAxis = Vector3.forward;
@@ -57,5 +59,10 @@ public class Drawer : MonoBehaviour
         //drawer cant go past minimum or maximum distance
         float _distance = Mathf.Clamp(Vector3.Dot(_localHandPos - beginLocalPos, localMoveAxis.normalized) - beginOffset, BackwardsDistance, ForwardDistance);
         transform.localPosition = beginLocalPos + localMoveAxis.normalized * _distance;
+
+        if (_distance > OpenedDistance)
+            IsOpen = true;
+        else
+            IsOpen = false;
     }
 }
