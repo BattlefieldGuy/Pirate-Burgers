@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class StackBurger : MonoBehaviour
 {
@@ -7,20 +8,19 @@ public class StackBurger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        other.transform.SetParent(transform.parent);
         other.transform.position = snapPoint.position;
-        //GetComponent<BoxCollider>().enabled = false;
+        other.transform.SetParent(transform.parent);
+
+        GetComponentInChildren<BoxCollider>().enabled = false;
+        other.GetComponentInParent<XRGrabInteractable>().enabled = false;
+
+
         Debug.Log("MIAAAUW");
 
         other.attachedRigidbody.useGravity = false;
+        other.attachedRigidbody.isKinematic = true;
     }
 
-
-    /*ontriggerexit werkt niet met vr er moet dan iets komen wat met de exit de items unparent. ik word gek dus hou het hierbij voor nu 
-     
-     de items stacken alleen tis allemaal heel vervelend door het parenten
-    
-     bord is wel gefixt niks kan er onder parenten*/
 }
 
 
