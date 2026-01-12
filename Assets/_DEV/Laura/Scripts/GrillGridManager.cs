@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
@@ -17,15 +15,16 @@ public class GrillGridManager : MonoBehaviour
     #region -- Variables --
 
     // Amount of ingredients allowed on the grill. Should be divisible by INGREDIENTSPERROW.
-    private static int INGREDIENTLIMIT = 25;
+    private static int INGREDIENTLIMIT = 5;
 
-    // The amount of ingredients that should go in each row. For example, if you want a 5x5 grid of ingredients,
-    // set INGREDIENTLIMIT to 25, and INGREDIENTSPERROW to 5.
-    private static int INGREDIENTSPERROW = 5;
+    // Ingredient positioning variables. DISTANCEBETWEENROWS is equal to how much the z position of every
+    // ingredient is changed based on the row they're in.
+    [SerializeField] private int INGREDIENTSPERROW = 3;
+    [SerializeField] private float DISTANCEBETWEENROWS = 5f;
 
-    // The top left point of the grill, and the bottom right point of the grill.
-    [SerializeField] Transform grillTopLeft;
-    [SerializeField] Transform grillBottomRight;
+    // The top left point of the grill, and the top right point of the grill.
+    [SerializeField] Transform grillLeft;
+    [SerializeField] Transform grillRight;
 
     // All created transforms for gridPositions will be parented to this object.
     [SerializeField] Transform gridPosParent;
@@ -50,7 +49,8 @@ public class GrillGridManager : MonoBehaviour
 
     public void RemoveBurger(CallbackContext context)
     {
-        if (context.performed && !context.canceled) {
+        if (context.performed && !context.canceled)
+        {
             Debug.Log(RemoveItemFromGrill(gridItems[0]));
         }
     }
@@ -61,23 +61,20 @@ public class GrillGridManager : MonoBehaviour
     // Sets all of the grid positions beforehand, so the food can snap to the closest position when touching the grill.
     private void Start()
     {
-        for(int i = 0; i < INGREDIENTLIMIT; i++)
+        for (int i = 0; i < INGREDIENTLIMIT; i++)
         {
             Transform newPos = new GameObject().transform;
             newPos.SetParent(gridPosParent);
             newPos.name = "Position " + (i + 1);
             int index = i;
             int rowNumber = 0;
-            while(index >= INGREDIENTSPERROW)
+            while (index >= INGREDIENTSPERROW)
             {
                 index -= INGREDIENTSPERROW;
                 rowNumber++;
             }
-            newPos.position = Vector3.Lerp(grillTopLeft.position, grillTopLeft.position + ((grillBottomRight.localPosition.x - grillTopLeft.localPosition.x) * transform.localScale.x * transform.right), (float)index / ((float)INGREDIENTSPERROW - 1f));
-            float zRowDistance = grillBottomRight.localPosition.z - grillTopLeft.localPosition.z;
-            zRowDistance *= transform.localScale.z;
-            zRowDistance /= ((float)INGREDIENTLIMIT / (float)INGREDIENTSPERROW - 1);
-            newPos.position += rowNumber * zRowDistance * transform.forward;
+            newPos.position = Vector3.Lerp(grillLeft.position, grillRight.position, (float)index / ((float)INGREDIENTSPERROW - 1f));
+            newPos.position -= DISTANCEBETWEENROWS * rowNumber * transform.forward;
             gridPositions[i] = newPos;
         }
     }
@@ -108,16 +105,16 @@ public class GrillGridManager : MonoBehaviour
         for (int i = 0; i < gridItems.Length; i++)
             if (gridItems[i] == null) possibleIndexes.Add(i);
 
-        foreach(int i in possibleIndexes)
+        foreach (int i in possibleIndexes)
         {
-            if(distance == -1 || Vector3.Distance(itemPos, gridPositions[i].position) < distance)
+            if (distance == -1 || Vector3.Distance(itemPos, gridPositions[i].position) < distance)
             {
                 distance = Vector3.Distance(itemPos, gridPositions[i].position);
                 index = i;
             }
         }
 
-        if(index != -1)
+        if (index != -1)
         {
             gridItems[index] = item;
             return true;
@@ -133,7 +130,7 @@ public class GrillGridManager : MonoBehaviour
         else return false;
         return true;
     }
-    
+
     // Returns whether there's a free spot on the grill for an ingredient to be added.
     public bool GrillHasSpace()
     {
