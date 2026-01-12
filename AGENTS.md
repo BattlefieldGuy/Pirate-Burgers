@@ -2,7 +2,7 @@
 - Project name: Pirate-Burgers
 - Unity version: Unity 6000.2.12f1
 - Active game object:
-  - Name: Tomato
-  - Tag: Sliceable
+  - Name: DrawerRoot1
+  - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

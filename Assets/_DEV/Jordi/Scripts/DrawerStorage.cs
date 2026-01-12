@@ -15,7 +15,7 @@ public class DrawerStorage : MonoBehaviour
 
     private void Start()
     {
-        drawer = transform.parent;
+        drawer = transform.root;
     }
 
     private void OnTriggerEnter(Collider other)
