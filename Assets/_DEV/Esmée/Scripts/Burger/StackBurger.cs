@@ -14,13 +14,17 @@ public class StackBurger : MonoBehaviour
         if (grab == null || rb == null)
             return;
 
-        other.transform.position = snapPoint.position;
 
+        var y = other.transform.rotation.y; //hij neemt niet de rotatie van de hand mee ofzo dus y is altijd 0 waardoor hij raar rotate. maar iig niet gekantelt so
+
+        other.transform.position = snapPoint.position;
         other.transform.SetParent(snapPoint);
+
+        other.transform.rotation = Quaternion.Euler(0, y, 0);
 
         GetComponentInChildren<BoxCollider>().enabled = false;
         other.GetComponentInParent<BoxCollider>().enabled = false;
-
+        Debug.Log(y);
 
 
         grab.enabled = false;
@@ -32,6 +36,8 @@ public class StackBurger : MonoBehaviour
     }
 
 }
+
+
 
 
 
