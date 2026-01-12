@@ -11154,9 +11154,11 @@ GameObject:
   - component: {fileID: 2540281246501327867}
   - component: {fileID: 648937939171374680}
   - component: {fileID: 3878543158238053561}
+  - component: {fileID: 2713526727800358367}
+  - component: {fileID: 2250131702433506803}
   m_Layer: 0
   m_Name: PF_HandRight_01 (1)
-  m_TagString: Untagged
+  m_TagString: RealHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11213,6 +11215,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HandAnimation
   handNode: 5
+--- !u!65 &2713526727800358367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028000986297501280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.09318423, y: 0.3499321, z: 0.16849749}
+  m_Center: {x: -0.0025503256, y: -0.061478578, z: -0.0240629}
+--- !u!54 &2250131702433506803
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028000986297501280}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8030003229182834688
 GameObject:
   m_ObjectHideFlags: 0
@@ -12833,6 +12883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_HandLeft_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8212712296813308976, guid: 898dc7e6579943a4f8daddff2cb385b1, type: 3}
+      propertyPath: m_TagString
+      value: RealHand
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12846,6 +12900,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8212712296813308976, guid: 898dc7e6579943a4f8daddff2cb385b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8110760444003094840}
+    - targetCorrespondingSourceObject: {fileID: 8212712296813308976, guid: 898dc7e6579943a4f8daddff2cb385b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3419775050114621672}
   m_SourcePrefab: {fileID: 100100000, guid: 898dc7e6579943a4f8daddff2cb385b1, type: 3}
 --- !u!1 &5502840336945351056 stripped
 GameObject:
@@ -12908,6 +12965,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.09318423, y: 0.3499321, z: 0.16849749}
   m_Center: {x: -0.0025503256, y: -0.061478578, z: -0.0240629}
+--- !u!54 &3419775050114621672
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5502840336945351056}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &7471137026389697136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6487894829213829072, guid: 898dc7e6579943a4f8daddff2cb385b1, type: 3}
