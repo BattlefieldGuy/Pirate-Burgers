@@ -2,7 +2,7 @@
 - Project name: Pirate-Burgers
 - Unity version: Unity 6000.2.12f1
 - Active game object:
-  - Name: Cubby
-  - Tag: Untagged
+  - Name: Lemon
+  - Tag: Sliceable
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
