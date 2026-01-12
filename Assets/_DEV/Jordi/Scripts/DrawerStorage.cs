@@ -20,10 +20,21 @@ public class DrawerStorage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RealHand") && this.GetComponentInParent<Drawer>().IsOpen)
+        if (other.CompareTag("RealHand"))
         {
-            spawnedObject = Instantiate(DrawerIngredient, this.transform.position, this.transform.rotation);
-            handInTrigger = other.transform.parent.gameObject;
+            if(this.GetComponentInParent<Drawer>() != null)
+            {
+                if (this.GetComponentInParent<Drawer>().IsOpen)
+                {
+                    spawnedObject = Instantiate(DrawerIngredient, this.transform.position, this.transform.rotation);
+                    handInTrigger = other.transform.parent.gameObject;
+                }
+            }
+            else
+            {
+                spawnedObject = Instantiate(DrawerIngredient, this.transform.position, this.transform.rotation);
+                handInTrigger = other.transform.parent.gameObject;
+            }
         }
     }
 
