@@ -8,17 +8,27 @@ public class StackBurger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        var grab = other.GetComponentInParent<XRGrabInteractable>();
+        var rb = other.attachedRigidbody;
+
+        if (grab == null || rb == null)
+            return;
+
         other.transform.position = snapPoint.position;
-        other.transform.SetParent(transform.parent);
+
+        other.transform.SetParent(snapPoint);
 
         GetComponentInChildren<BoxCollider>().enabled = false;
-        other.GetComponentInParent<XRGrabInteractable>().enabled = false;
+        other.GetComponentInParent<BoxCollider>().enabled = false;
 
 
-        Debug.Log("MIAAAUW");
 
-        other.attachedRigidbody.useGravity = false;
-        other.attachedRigidbody.isKinematic = true;
+        grab.enabled = false;
+
+
+        rb.useGravity = false;
+        rb.isKinematic = true;
+
     }
 
 }
