@@ -7,6 +7,9 @@ public class OrderFinished : MonoBehaviour
     BellPress BellPress;
 
     private OrderChecker orderChecker;
+
+    [SerializeField]
+    private ScoreUpdate scoreUpdate; //temp
     void Start()
     {
         BellPress = FindFirstObjectByType<BellPress>();
@@ -23,6 +26,9 @@ public class OrderFinished : MonoBehaviour
             Debug.Log("YAY");
             //gold coins in face
             if (other != null) Destroy(other.gameObject);
+
+            orderChecker.ClearItems();//temp
+            scoreUpdate.AddScore();
         }
         else if (BellPress.PressedBell && !orderChecker.CheckMatchingOrders())
         {
