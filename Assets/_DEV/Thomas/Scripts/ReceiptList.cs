@@ -9,6 +9,8 @@ public class ReceiptList : MonoBehaviour
     /// adds and removes receipts from the list and updates them accordingly
     /// </summary>
 
+    [SerializeField] private CustomerManager customers;
+
     [Header("I was too lazy to learn how to make custom inspectors so have a boolean lmao")]
     public bool RemoveFirstOrder;
     //The rest
@@ -24,9 +26,17 @@ public class ReceiptList : MonoBehaviour
     [SerializeField] List<Receipt> receipts = new List<Receipt>();
 
     [SerializeField] GameObject receiptPrefab;
-    [SerializeField] Transform StartingPoint; //Somehow different than the ReceiptData's starting point don't question it :)))))))))
 
-    public void UpdateAllReceipts()
+    [SerializeField]
+    Transform StartingPoint; //Somehow different than the ReceiptData's starting point don't question it :)))))))))
+
+    void Start()
+    {
+        customers = FindFirstObjectByType(typeof(CustomerManager)) as CustomerManager;
+    }
+
+
+public void UpdateAllReceipts()
     {
         foreach (Receipt receipt in receipts)
         {
@@ -38,6 +48,14 @@ public class ReceiptList : MonoBehaviour
     public void ClearReceipt(int ordernumber)
     {
         if (receipts.Count <= 0 && receipts.Count >= ordernumber) return;
+        
+        BonnetjesManager.Item toreceipt = new BonnetjesManager.Item()
+        {
+            name = receipts[ordernumber].item.name,
+            MainIngredients = receipts[ordernumber].item.MainIngredients,
+            SecondaryIngredients = receipts[ordernumber].item.SecondaryIngredients
+        };
+        customers.DeleteCustomerByReceipt(toreceipt);
         receipts[ordernumber].receiptData.Fuckoff();
         receipts.RemoveAt(ordernumber);
         UpdateAllReceipts();
@@ -59,6 +77,13 @@ public class ReceiptList : MonoBehaviour
         newReceiptData.UpdateCardInfo();
         newReceiptData.transform.parent = transform;
         newReceiptData.transform.localPosition = StartingPoint.localPosition;
+        BonnetjesManager.Item togive = new BonnetjesManager.Item()
+        {
+            name = _item.name,
+            MainIngredients = _item.MainIngredients,
+            SecondaryIngredients = _item.SecondaryIngredients
+        };
+        customers.SpawnCustomer(togive);
 
     }
 
