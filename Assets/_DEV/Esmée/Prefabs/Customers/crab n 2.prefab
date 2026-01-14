@@ -87,8 +87,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 505509935693503793, guid: a292530541b85b64484aa1e7cc351bd2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4662439755657932914}
   m_SourcePrefab: {fileID: 100100000, guid: a292530541b85b64484aa1e7cc351bd2, type: 3}
+--- !u!1 &4372647868472986651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 505509935693503793, guid: a292530541b85b64484aa1e7cc351bd2, type: 3}
+  m_PrefabInstance: {fileID: 4300139991457239338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4662439755657932914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4372647868472986651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33499f36e86259941853f61c404d2ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Customer
+  receipt:
+    name: 
+    MainIngredients: []
+    SecondaryIngredients: []
+    RequiredMachines: []
 --- !u!4 &4779894578310055725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8788970666142340615, guid: a292530541b85b64484aa1e7cc351bd2, type: 3}
