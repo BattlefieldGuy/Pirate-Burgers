@@ -26,6 +26,9 @@ public class MainHand : MonoBehaviour
         bool isRightHandActive = (HandManager.instance.LeftHanded) ? thisHand != Hand.right : thisHand == Hand.right;
         ControllerVisuals.SetActive(!isRightHandActive);
         ToolObject.SetActive(isRightHandActive);
-        interactor.gameObject.SetActive(!isRightHandActive);
+        if(transform.parent.GetComponentInChildren<ToolAttach>().attachedTool.name == "Grabber")
+            interactor.gameObject.SetActive(true);
+        else
+            interactor.gameObject.SetActive(!isRightHandActive);
     }
 }
