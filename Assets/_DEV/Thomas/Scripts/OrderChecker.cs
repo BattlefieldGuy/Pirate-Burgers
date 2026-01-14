@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using static BonnetjesManager;
 
@@ -30,25 +29,35 @@ public class OrderChecker : MonoBehaviour
 
     public Item ActiveOrder;
 
+    public void ClearItems()
+    {
+        ReceiptItem = null;
+        ActiveOrder = null;
+    }
+
     public bool CheckMatchingOrders()
     {
         bool orderMatches = true;
-            for(int i = 0; i < ActiveOrder.MainIngredients.Count; i++)
-            {
-                if (!ReceiptItem.MainIngredients.Contains(ActiveOrder.MainIngredients[i])) orderMatches = false;
-            };  
-            for (int i = 0; i < ReceiptItem.MainIngredients.Count; i++)
-            {
-                if (!ActiveOrder.MainIngredients.Contains(ReceiptItem.MainIngredients[i])) orderMatches = false;
-            };
-            for (int i = 0; i < ActiveOrder.SecondaryIngredients.Count; i++)
-            {
-                if (!ReceiptItem.SecondaryIngredients.Contains(ActiveOrder.SecondaryIngredients[i])) orderMatches = false;
-            };
-            for (int i = 0; i < ReceiptItem.SecondaryIngredients.Count; i++)
-            {
-               if (!ActiveOrder.SecondaryIngredients.Contains(ReceiptItem.SecondaryIngredients[i])) orderMatches = false;
-            };
+        for (int i = 0; i < ActiveOrder.MainIngredients.Count; i++)
+        {
+            if (!ReceiptItem.MainIngredients.Contains(ActiveOrder.MainIngredients[i])) orderMatches = false;
+        }
+        ;
+        for (int i = 0; i < ReceiptItem.MainIngredients.Count; i++)
+        {
+            if (!ActiveOrder.MainIngredients.Contains(ReceiptItem.MainIngredients[i])) orderMatches = false;
+        }
+        ;
+        for (int i = 0; i < ActiveOrder.SecondaryIngredients.Count; i++)
+        {
+            if (!ReceiptItem.SecondaryIngredients.Contains(ActiveOrder.SecondaryIngredients[i])) orderMatches = false;
+        }
+        ;
+        for (int i = 0; i < ReceiptItem.SecondaryIngredients.Count; i++)
+        {
+            if (!ActiveOrder.SecondaryIngredients.Contains(ReceiptItem.SecondaryIngredients[i])) orderMatches = false;
+        }
+        ;
         return orderMatches;
     }
 
