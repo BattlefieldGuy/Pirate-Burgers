@@ -2,7 +2,7 @@
 - Project name: Pirate-Burgers
 - Unity version: Unity 6000.2.12f1
 - Active game object:
-  - Name: Lemon
-  - Tag: Sliceable
-  - Layer: Default
+  - Name: ToolXROrigin
+  - Tag: Untagged
+  - Layer: Ignore Raycast
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
