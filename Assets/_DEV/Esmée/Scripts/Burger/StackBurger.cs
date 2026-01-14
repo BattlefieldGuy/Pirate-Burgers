@@ -5,6 +5,8 @@ public class StackBurger : MonoBehaviour
 {
     [SerializeField] private Transform snapPoint;
 
+    private Recipe recipe;
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -24,6 +26,18 @@ public class StackBurger : MonoBehaviour
 
         GetComponentInChildren<BoxCollider>().enabled = false;
         other.GetComponentInParent<BoxCollider>().enabled = false;
+
+        recipe = GetComponentInParent<Recipe>();
+
+        if (recipe != null)
+        {
+            if (gameObject.tag == "MainIngredient")
+                recipe.AddIngredient(other.gameObject.name, true);
+            else
+                recipe.AddIngredient(other.gameObject.name, false);
+        }
+
+
         Debug.Log(y);
 
 

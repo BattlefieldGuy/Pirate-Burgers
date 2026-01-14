@@ -23,7 +23,7 @@ public class GrillManager : MonoBehaviour
     private VisualEffect grillVFX;
 
     [SerializeField]
-    private string grillFoodTag = "GrillFood";
+    private string grillFoodTag = "SecondaryIgredient";
 
     private GrillGridManager grillGridManager;
 
