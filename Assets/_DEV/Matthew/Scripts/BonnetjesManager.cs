@@ -100,7 +100,7 @@ public class BonnetjesManager : MonoBehaviour
     //Temp enum
     private IEnumerator enumerator()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(20f);
         MakeItem();
         StartCoroutine(enumerator());
     }
