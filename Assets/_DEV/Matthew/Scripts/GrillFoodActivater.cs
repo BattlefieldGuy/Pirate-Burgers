@@ -24,7 +24,7 @@ public class GrillFoodActivater : MonoBehaviour
         // retrieve necessary components
         rb = GetComponent<Rigidbody>();
         cookingManager = GetComponent<CookingManager>();
-        text = transform.GetChild(0).gameObject;
+        text = transform.GetChild(1).gameObject;
     }
 
     #region --- FUNCTIONS ---
