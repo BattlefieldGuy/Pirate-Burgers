@@ -1256,7 +1256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7348599148082481214}
   m_Layer: 0
-  m_Name: SM_Stove_01
+  m_Name: PF_Stove_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
