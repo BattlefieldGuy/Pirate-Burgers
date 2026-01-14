@@ -12,13 +12,8 @@ public class MainHand : MonoBehaviour
     [SerializeField] private GameObject ControllerVisuals;
     [SerializeField] private GameObject ToolObject;
     [SerializeField] private Hand thisHand;
-
-    private NearFarInteractor interactor;
-
-    private void Start()
-    {
-        interactor = this.transform.parent.GetComponentInChildren<NearFarInteractor>();
-    }
+    [SerializeField] private NearFarInteractor interactor;
+    [SerializeField] private NearFarInteractor grabberInteractor;
 
     private void Update()
     {
@@ -26,9 +21,9 @@ public class MainHand : MonoBehaviour
         bool isRightHandActive = (HandManager.instance.LeftHanded) ? thisHand != Hand.right : thisHand == Hand.right;
         ControllerVisuals.SetActive(!isRightHandActive);
         ToolObject.SetActive(isRightHandActive);
-        if(transform.parent.GetComponentInChildren<ToolAttach>().attachedTool.name == "Grabber")
-            interactor.gameObject.SetActive(true);
-        else
-            interactor.gameObject.SetActive(!isRightHandActive);
+        interactor.gameObject.SetActive(!isRightHandActive);
+        if (transform.parent.GetComponentInChildren<ToolAttach>().attachedTool.name == "Grabber")
+            grabberInteractor.gameObject.SetActive(true);
+            
     }
 }

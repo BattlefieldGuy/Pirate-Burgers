@@ -20,7 +20,7 @@ public class DrawerStorage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RealHand"))
+        if (other.CompareTag("RealHand") || other.CompareTag("HandAttachable"))
         {
             if(this.GetComponentInParent<Drawer>() != null)
             {
@@ -40,7 +40,7 @@ public class DrawerStorage : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("RealHand"))
+        if (other.CompareTag("RealHand") || other.CompareTag("HandAttachable"))
         {
             Vector3 _drawerRight = drawer.right;
             Vector3 _drawerPos = this.transform.position;
@@ -57,7 +57,7 @@ public class DrawerStorage : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("RealHand"))
+        if (other.CompareTag("RealHand") || other.CompareTag("HandAttachable"))
         {
             if (spawnedObject.GetComponent<XRGrabInteractable>().isSelected == true)
             {
