@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OrderFinished : MonoBehaviour
 {
+    public List<GameObject> itemsInZone = new List<GameObject>();
+
     [SerializeField] private ParticleSystem poof;
     [SerializeField] private AudioSource yay;
     BellPress BellPress;
@@ -16,6 +19,10 @@ public class OrderFinished : MonoBehaviour
         orderChecker = GetComponent<OrderChecker>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        itemsInZone.Add(other.gameObject);
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -25,7 +32,10 @@ public class OrderFinished : MonoBehaviour
             if (yay != null) yay.Play();
             Debug.Log("YAY");
             //gold coins in face
-            if (other != null) Destroy(other.gameObject);
+            foreach (GameObject _item in itemsInZone)
+            {
+                Destroy(_item);
+            }
 
             orderChecker.ClearItems();//temp
             scoreUpdate.AddScore();
@@ -35,5 +45,10 @@ public class OrderFinished : MonoBehaviour
             //boze klant audio
             Debug.Log("nay");
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        itemsInZone.Remove(other.gameObject);
     }
 }

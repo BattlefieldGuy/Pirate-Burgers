@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreUpdate : MonoBehaviour
 {
@@ -13,5 +14,10 @@ public class ScoreUpdate : MonoBehaviour
         score -= 1;
 
         scoreText.text = "Orders To Complete: " + score.ToString();
+
+        if (score <= 0)
+        {
+            SceneManager.LoadScene("S_MainMenu");
+        }
     }
 }
