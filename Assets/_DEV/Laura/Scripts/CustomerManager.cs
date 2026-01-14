@@ -1,11 +1,5 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
-using static UnityEngine.InputSystem.InputAction;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -23,24 +17,33 @@ public class CustomerManager : MonoBehaviour
     private static int TOTALCUSTOMERLIMIT = 10;
 
     // Horizontal distance between each customer, and longitudal distance between each customer row.
-    [SerializeField] [Range(0, 5)] private float xBaseDistance;
-    [SerializeField] [Range(0, 5)] private float zBaseDistance;
+    [SerializeField][Range(0, 5)] private float xBaseDistance;
+    [SerializeField][Range(0, 5)] private float zBaseDistance;
 
-    [SerializeField] [Range(0, 5)] private float xMinRandomness;
-    [SerializeField] [Range(0, 5)] private float xMaxRandomness;
-    [SerializeField] [Range(0, 5)] private float zMinRandomness;
-    [SerializeField] [Range(0, 5)] private float zMaxRandomness;
+    [SerializeField][Range(0, 5)] private float xMinRandomness;
+    [SerializeField][Range(0, 5)] private float xMaxRandomness;
+    [SerializeField][Range(0, 5)] private float zMinRandomness;
+    [SerializeField][Range(0, 5)] private float zMaxRandomness;
 
     // List of customers, and a list of the positions made for spawned customers.
     private List<GameObject> spawnedCustomers = new();
     private List<Vector3> customerPositions = new();
 
     // Customer prefab.
-    [SerializeField] private GameObject customerPrefab;
+    //[SerializeField] private GameObject customerPrefab;
+    [SerializeField] private List<GameObject> customerPrefabs;
+
+    private int currentSprite = 0;
     public void SpawnCustomer(BonnetjesManager.Item receipt)
     {
-        AddNewCustomer(Instantiate(customerPrefab, spawnPosition, Quaternion.identity));
+        if (customerPrefabs.Count == 0) return;
+
+        GameObject _customerPrefab = customerPrefabs[currentSprite];
+
+        AddNewCustomer(Instantiate(_customerPrefab, spawnPosition, Quaternion.identity));
         spawnedCustomers[^1].GetComponent<Customer>().receipt = receipt;
+
+        currentSprite = (currentSprite + 1) % customerPrefabs.Count;
     }
 
     // Call this when you a customer's order is done, and you just want to remove them from the scene.
@@ -53,9 +56,9 @@ public class CustomerManager : MonoBehaviour
     // Calls DeleteCustomer() on a customer based on the given receipt.
     public void DeleteCustomerByReceipt(BonnetjesManager.Item receipt)
     {
-        foreach(GameObject obj in spawnedCustomers)
+        foreach (GameObject obj in spawnedCustomers)
         {
-            if(obj.GetComponent<Customer>().receipt == receipt)
+            if (obj.GetComponent<Customer>().receipt == receipt)
             {
                 DeleteCustomer(obj);
             }
@@ -77,7 +80,7 @@ public class CustomerManager : MonoBehaviour
     public bool AddNewCustomer(GameObject customerObject)
     {
         // Adds a created customer to the list of customers to manage. Make a customer object first, then assign it through this.
-        if(TOTALCUSTOMERLIMIT > spawnedCustomers.Count)
+        if (TOTALCUSTOMERLIMIT > spawnedCustomers.Count)
         {
             customerPositions.Add(GetNewCustomerPosition());
             spawnedCustomers.Add(customerObject);
@@ -97,12 +100,12 @@ public class CustomerManager : MonoBehaviour
         {
             int _totalCount = spawnedCustomers.Count;
             int _counter = spawnedCustomers.IndexOf(customerObject);
-            while(_counter + ROWCUSTOMERLIMIT < _totalCount)
+            while (_counter + ROWCUSTOMERLIMIT < _totalCount)
             {
                 spawnedCustomers[_counter] = spawnedCustomers[_counter + ROWCUSTOMERLIMIT];
                 _counter += ROWCUSTOMERLIMIT;
             }
-            if(_counter % ROWCUSTOMERLIMIT < (float)ROWCUSTOMERLIMIT / 2f)
+            if (_counter % ROWCUSTOMERLIMIT < (float)ROWCUSTOMERLIMIT / 2f)
                 spawnedCustomers.RemoveAt(_counter);
             else
             {
@@ -122,8 +125,8 @@ public class CustomerManager : MonoBehaviour
         // Gets a new slightly randomized customer position to assign a customer to.
         int _customerCount = customerPositions.Count;
         Vector3 _position = basePosition;
-        while(_customerCount >= ROWCUSTOMERLIMIT)
-        { 
+        while (_customerCount >= ROWCUSTOMERLIMIT)
+        {
             _position += Vector3.back * zBaseDistance;
             _customerCount -= ROWCUSTOMERLIMIT;
         }
