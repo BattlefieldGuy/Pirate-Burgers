@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 68273043978156606, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1650465253364843197, guid: c2b0fc1619dec9e43b009f1fa69b8e11, type: 3}
     - target: {fileID: 1746891599709306390, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: m_Name
-      value: Bread Variant
+      value: Bread
       objectReference: {fileID: 0}
     - target: {fileID: 1746891599709306390, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: m_TagString
