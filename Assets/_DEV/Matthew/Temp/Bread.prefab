@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MainIngredient
       objectReference: {fileID: 0}
+    - target: {fileID: 1942638633516626611, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306744028983366500, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -119,6 +123,10 @@ PrefabInstance:
     - target: {fileID: 6972626557797930867, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224523824989440285, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

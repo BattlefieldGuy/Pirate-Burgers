@@ -24,6 +24,8 @@ public class StackBurger : MonoBehaviour
 
         other.transform.rotation = Quaternion.Euler(0, y, 0);
 
+        other.GetComponentInChildren<BoxCollider>().enabled = true;
+
         GetComponentInChildren<BoxCollider>().enabled = false;
         other.GetComponentInParent<BoxCollider>().enabled = false;
 
@@ -40,9 +42,7 @@ public class StackBurger : MonoBehaviour
 
         Debug.Log(y);
 
-
         grab.enabled = false;
-
 
         rb.useGravity = false;
         rb.isKinematic = true;
