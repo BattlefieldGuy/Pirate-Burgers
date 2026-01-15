@@ -8,13 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 68273043978156606, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -3199074662375659436, guid: 2d7df651f7e3ae74097d01c2cba7bf49, type: 3}
     - target: {fileID: 1746891599709306390, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: m_Name
-      value: Bread Variant
+      value: Bread
       objectReference: {fileID: 0}
     - target: {fileID: 1746891599709306390, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: m_TagString
       value: MainIngredient
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942638633516626611, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306744028983366500, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -115,6 +123,10 @@ PrefabInstance:
     - target: {fileID: 6972626557797930867, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224523824989440285, guid: e3c8d8873fb76f344bec67c502a748b7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

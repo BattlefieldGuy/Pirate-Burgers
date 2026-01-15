@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1642620510499288767}
   - component: {fileID: 1609488683517671036}
   - component: {fileID: 7710969925509786843}
+  - component: {fileID: 4915123042421095056}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -111,3 +112,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4915123042421095056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069936680020345426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33499f36e86259941853f61c404d2ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Customer
+  receipt:
+    name: 
+    MainIngredients: []
+    SecondaryIngredients: []
+    RequiredMachines: []
