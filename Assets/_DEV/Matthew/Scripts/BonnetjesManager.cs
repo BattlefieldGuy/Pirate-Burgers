@@ -44,6 +44,8 @@ public class BonnetjesManager : MonoBehaviour
     [Space(5), Range(0f, 20f), SerializeField]
     private float intervalOffsetRange = 5f;
 
+
+
     #endregion
 
     #region -- CUSTOMER VARIABLES --
@@ -100,7 +102,7 @@ public class BonnetjesManager : MonoBehaviour
     //Temp enum
     private IEnumerator enumerator()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(receiptInterval);
         MakeItem();
         StartCoroutine(enumerator());
     }

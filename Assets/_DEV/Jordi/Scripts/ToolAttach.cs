@@ -15,6 +15,7 @@ public class ToolAttach : MonoBehaviour
     [SerializeField] private ToolBelt toolBelt;
 
     private bool canAttach;
+    private ToolAnimation toolAnimation;
 
     private void Awake()
     {
@@ -26,6 +27,8 @@ public class ToolAttach : MonoBehaviour
         }
         if (attachedTool == null)
             Debug.LogWarning("No tool in hand or not found");
+
+        toolAnimation = GetComponent<ToolAnimation>();
     }
 
     private void Start()
@@ -64,6 +67,10 @@ public class ToolAttach : MonoBehaviour
         attachedTool = _tool;
         if (attachedTool.GetComponent<XRGrabInteractable>())
             attachedTool.GetComponent<XRGrabInteractable>().enabled = false;
+        if(GetComponentInChildren<Animator>() != null)
+            toolAnimation.Animator = GetComponentInChildren<Animator>();
+        else
+            toolAnimation.Animator = null;
     }
 
     private void Detach(GameObject _tool)
