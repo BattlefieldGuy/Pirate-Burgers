@@ -10,9 +10,9 @@ public class EndOfDayFeedback : MonoBehaviour
     [SerializeField] private List<string> badDay;
     private TextMeshProUGUI tmp;
 
-    public int TotalOrders = 5; //hier moet dan even iets van de uiteindelijke scores in de plaats
-    public int GoodOrders = 3;
-    public int BadOrders = 1;
+    public int TotalOrders; //hier moet dan even iets van de uiteindelijke scores in de plaats
+    public int GoodOrders;
+    public int BadOrders;
 
 
     //evt nog avr time per bon, is nog geen logica voor dus voeg het nu nog niet toe
