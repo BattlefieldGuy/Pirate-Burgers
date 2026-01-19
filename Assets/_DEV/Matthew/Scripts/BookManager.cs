@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+
+[ExecuteInEditMode]
 public class BookManager : MonoBehaviour
 {
     [SerializeField]
@@ -13,9 +15,13 @@ public class BookManager : MonoBehaviour
     [SerializeField]
     private MeshRenderer pageMesh2;
 
+
     //temp
     [Header("Temp")]
     public float WaitTime;
+
+    public bool buttonDisplayName; //"run" or "generate" for example
+    public bool buttonDisplayName2; //supports multiple buttons
 
     void Start()
     {
@@ -24,15 +30,21 @@ public class BookManager : MonoBehaviour
 
     void Update()
     {
-
+        if (buttonDisplayName)
+            StartCoroutine(SwitchPageRight());
+        else if (buttonDisplayName2)
+            SwitchPageLeft();
+        buttonDisplayName = false;
+        buttonDisplayName2 = false;
     }
 
 
-    public void SwitchPageRight()
+    public IEnumerator SwitchPageRight()
     {
         if (currentPage < pages.Length - 1)
         {
             currentPage++;
+            yield return new WaitForEndOfFrame();
             pageMesh1.material.mainTexture = pages[currentPage];
             pageMesh2.material.mainTexture = pages[currentPage];
         }
@@ -42,17 +54,18 @@ public class BookManager : MonoBehaviour
         }
     }
 
-    public void SwitchPageLeft()
+    public IEnumerator SwitchPageLeft()
     {
         if (currentPage >= 0)
         {
             currentPage--;
+            yield return new WaitForEndOfFrame();
             pageMesh1.material.mainTexture = pages[currentPage];
             pageMesh2.material.mainTexture = pages[currentPage];
         }
         else
         {
-            currentPage = pages.Length;
+            currentPage = pages.Length - 1;
         }
     }
 
