@@ -167,6 +167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5459117325997700815, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667083549986027193, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8449576209834046323, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_Name
       value: Main scene Prefab
