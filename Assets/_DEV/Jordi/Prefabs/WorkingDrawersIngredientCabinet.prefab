@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29125e072c3c6314483a2f87177af876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrawerStorage
-  DrawerIngredient: {fileID: 5552315658261087424, guid: 20179cfd3f650f642be6912905495c72, type: 3}
+  DrawerIngredient: {fileID: 6493998832718588698, guid: 77ea805f68aad944a93199a3a449019a, type: 3}
   leftDistance: -0.01
   rightDistance: 0.01
 --- !u!1 &490324839906618226
@@ -5397,7 +5397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29125e072c3c6314483a2f87177af876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrawerStorage
-  DrawerIngredient: {fileID: 8009616632558045762, guid: b9aa668fe87ec5a42803b7ce30b45adf, type: 3}
+  DrawerIngredient: {fileID: 1786433842485958343, guid: 61011bc0cc718c24baf9fce860df99eb, type: 3}
   leftDistance: -0.02
   rightDistance: 0.02
 --- !u!1 &8942893097010909859
