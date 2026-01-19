@@ -56,9 +56,41 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e20b5858c29a3e34bbbfcd872fe95d4c, type: 2}
+    - target: {fileID: 266491986201444463, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 266491986201444463, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 266491986201444463, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 266491986201444463, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
       propertyPath: m_Name
       value: PF_Cutting_Board
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611860811305792896, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611860811305792896, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611860811305792896, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611860811305792896, guid: 4651dc5549667b547a0c5eb873b33f57, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
