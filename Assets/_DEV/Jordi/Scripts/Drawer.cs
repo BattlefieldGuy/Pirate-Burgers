@@ -24,6 +24,8 @@ public class Drawer : MonoBehaviour
     {
         grabInteractable = GetComponentInChildren<XRGrabInteractable>();
         drawerRoot = transform.parent;
+        if (drawerRoot == null)
+            drawerRoot = this.transform;
     }
 
     private void Start()
