@@ -6,8 +6,13 @@ public class ToolBelt : MonoBehaviour
     [SerializeField] private GameObject rightHand;
 
     private ToolAttach activeToolAttach;
-    private Transform toolBeltTransform;
     private bool lastLeftHanded;
+    private Camera cam;
+
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
 
     void Update()
     {
@@ -19,15 +24,19 @@ public class ToolBelt : MonoBehaviour
                 activeToolAttach = rightHand.GetComponent<ToolAttach>();
             else
                 activeToolAttach = leftHand.GetComponent<ToolAttach>();
-
-            toolBeltTransform = activeToolAttach.toolTransformBeforeAttach;
         }
+        ToolBeltPosition();
     }
 
     public void ToolToBeltTransform(GameObject tool)
     {
-        tool.transform.position = toolBeltTransform.position;
-        tool.transform.rotation = toolBeltTransform.rotation;
-        tool.transform.SetParent(this.transform);
+        tool.transform.position = activeToolAttach.ToolToBeltTransform.position;
+        tool.transform.rotation = activeToolAttach.ToolToBeltTransform.rotation;
+        tool.transform.SetParent(activeToolAttach.ToolToBeltTransform.transform);
+    }
+
+    public void ToolBeltPosition()
+    {
+        this.transform.position = new Vector3(cam.transform.position.x, this.transform.position.y, cam.transform.position.z);
     }
 }
