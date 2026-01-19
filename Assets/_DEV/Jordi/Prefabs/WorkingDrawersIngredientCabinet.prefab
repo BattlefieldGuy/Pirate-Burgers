@@ -2166,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29125e072c3c6314483a2f87177af876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrawerStorage
-  DrawerIngredient: {fileID: 2387626782566281746, guid: 343fff909b23df64fbce9eb4a7fff505, type: 3}
+  DrawerIngredient: {fileID: 582280897099483290, guid: 8efa7efe10d86d7458dfed69adf80fe9, type: 3}
   leftDistance: -0.02
   rightDistance: 0.02
 --- !u!1 &3055478853401333253
