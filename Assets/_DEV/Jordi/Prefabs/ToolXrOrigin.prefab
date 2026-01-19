@@ -14403,6 +14403,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grabber
       objectReference: {fileID: 0}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3591133346317057035}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToolToBeltTransform
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToolBelt, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7998392826104989656}
+    - target: {fileID: 6056057902648795573, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14411,6 +14443,11 @@ PrefabInstance:
 --- !u!4 &2831355017205291625 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 368116284986462941, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
+  m_PrefabInstance: {fileID: 2472812287408015540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7998392826104989656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5525580607455252332, guid: 4268d8342bc572943aae9961d9315dd6, type: 3}
   m_PrefabInstance: {fileID: 2472812287408015540}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4442641000398824864
@@ -14608,6 +14645,38 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3591133346317057035}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToolToBeltTransform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToolBelt, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1886244752532715968}
+    - target: {fileID: 4620383410820358449, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4673246368122507597, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -14765,6 +14834,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+--- !u!1 &1886244752532715968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5346796440321803603, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
+  m_PrefabInstance: {fileID: 5773309691524054163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2634111115981539887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8399446993870567100, guid: 0b86c5e1efed6e349ad3a975cf4209ad, type: 3}
@@ -14916,11 +14990,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spatula
       objectReference: {fileID: 0}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3591133346317057035}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToolToBeltTransform
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToolBelt, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 6346925828688879761}
+    - target: {fileID: 4027823341706640624, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+--- !u!1 &6346925828688879761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2889307862642933510, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
+  m_PrefabInstance: {fileID: 8073878090990985111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8030176674294405752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2268906544133408239, guid: d96cb33f9aa6c9d4d9d2fd02a8ef9ffd, type: 3}
