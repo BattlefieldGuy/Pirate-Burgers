@@ -3,7 +3,7 @@ using UnityEngine;
 public class Pickle : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    private int randomPickleNumber;
+    [SerializeField] private int randomPickleNumber;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -11,7 +11,7 @@ public class Pickle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "MainIngredient")
+        if (other.gameObject.layer == 10)
         {
             PickleNumber();
 
