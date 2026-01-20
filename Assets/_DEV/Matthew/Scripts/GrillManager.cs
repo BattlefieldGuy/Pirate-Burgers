@@ -5,13 +5,15 @@ using UnityEngine.VFX;
 public class GrillManager : MonoBehaviour
 {
     /// <summary>
-    /// This manager is responsible of hnandeling the grill grid manager and the cooking manager on every item.
+    /// This manager is responsible of handeling the grill grid manager and the cooking manager on every item.
     /// 
     /// Once an item with the grill food tag enters the grill area, it will be put trough the AddFoodToGrill function. 
     /// This function adds the item to the grilling items list to keep track of, add the item to the grill grid manager 
     /// and enables the cooking activator on the item.
     /// 
-    /// the cooking activater manages the cooking but also disables the rigidbody movement and rotation, and activates the text above the item.
+    /// the cooking activator manages the cooking but also disables the rigidbody movement and rotation, and activates the text above the item.
+    ///
+    /// hi thomas here i added the funny sounds heehoo
     /// </summary>
 
 
@@ -26,6 +28,8 @@ public class GrillManager : MonoBehaviour
     private string grillFoodTag = "SecondaryIgredient";
 
     private GrillGridManager grillGridManager;
+    
+    [SerializeField] private AudioSource grillAudioSource;
 
     private bool VFXOn = false;
 
@@ -41,6 +45,7 @@ public class GrillManager : MonoBehaviour
     void Update()
     {
         VFXController();
+        AudioController();
     }
 
     #endregion
@@ -54,6 +59,8 @@ public class GrillManager : MonoBehaviour
         {
             AddFoodToGrill(other.gameObject);
         }
+        
+        //if there is at least one item on the grill, play the grill sound
     }
 
     private void OnTriggerExit(Collider other)
@@ -123,6 +130,18 @@ public class GrillManager : MonoBehaviour
                 grillVFX.Stop();
                 VFXOn = false;
             }
+        }
+    }
+
+    private void AudioController()
+    {
+        if (grillingItems.Count > 0 && !grillAudioSource.isPlaying)
+        {
+            grillAudioSource.Play();
+        }
+        else if (grillingItems.Count == 0 && grillAudioSource.isPlaying)
+        {
+            grillAudioSource.Stop();
         }
     }
 
