@@ -2,13 +2,12 @@ using System.Collections;
 using UnityEngine;
 
 
-[ExecuteInEditMode]
 public class BookManager : MonoBehaviour
 {
     [SerializeField]
     private Texture2D[] pages;
 
-    private int currentPage = 0;
+    public int currentPage = 0;//temp public
 
     [SerializeField, Header("Pages")]
     private MeshRenderer pageMesh1;
@@ -33,40 +32,48 @@ public class BookManager : MonoBehaviour
         if (buttonDisplayName)
             StartCoroutine(SwitchPageRight());
         else if (buttonDisplayName2)
-            SwitchPageLeft();
+            StartCoroutine(SwitchPageLeft());
         buttonDisplayName = false;
         buttonDisplayName2 = false;
     }
 
 
-    public IEnumerator SwitchPageRight()
+    public void SwitchRight() => StartCoroutine(SwitchPageRight());
+    private IEnumerator SwitchPageRight()
     {
         if (currentPage < pages.Length - 1)
         {
             currentPage++;
             yield return new WaitForEndOfFrame();
-            pageMesh1.material.mainTexture = pages[currentPage];
-            pageMesh2.material.mainTexture = pages[currentPage];
+            UpdateVisuals();
         }
         else
         {
             currentPage = 0;
+            UpdateVisuals();
         }
     }
 
-    public IEnumerator SwitchPageLeft()
+    public void SwitchLeft() => StartCoroutine(SwitchPageLeft());
+    private IEnumerator SwitchPageLeft()
     {
-        if (currentPage >= 0)
+        if (currentPage > 0)
         {
             currentPage--;
             yield return new WaitForEndOfFrame();
-            pageMesh1.material.mainTexture = pages[currentPage];
-            pageMesh2.material.mainTexture = pages[currentPage];
+            UpdateVisuals();
         }
         else
         {
             currentPage = pages.Length - 1;
+            UpdateVisuals();
         }
+    }
+
+    private void UpdateVisuals()
+    {
+        pageMesh1.material.mainTexture = pages[currentPage];
+        pageMesh2.material.mainTexture = pages[currentPage];
     }
 
     //temp
