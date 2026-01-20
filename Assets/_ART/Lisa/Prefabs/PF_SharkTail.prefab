@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.083
+      value: 0.87242603
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.605
+      value: 0.666
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.337
+      value: -1.246
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_SharkTail
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
+      propertyPath: m_TagString
+      value: Sliceable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -69,6 +73,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7136665629537707837}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3142336439979575653}
   m_SourcePrefab: {fileID: 100100000, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
 --- !u!1 &3171071555675468523 stripped
 GameObject:
@@ -251,3 +258,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3166262409555039022, guid: 552c1c65388d11a4e91898a15906cdda, type: 3}
+--- !u!114 &3142336439979575653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3171071555675468523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sliceable
+  <PiecePrefab>k__BackingField: {fileID: 5032532275246473923, guid: 3e475c5bc721f2441b252ba6adf95a70, type: 3}
