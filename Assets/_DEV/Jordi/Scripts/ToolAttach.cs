@@ -7,6 +7,7 @@ public class ToolAttach : MonoBehaviour
     public GameObject attachedTool;
     public Transform ToolToBeltTransform;
     public Transform OverlapSphereTransform;
+    public bool pickedUp;
 
     [SerializeField] private float attachRadius = 0.05f;
     [SerializeField] private LayerMask toolLayer;
@@ -64,7 +65,10 @@ public class ToolAttach : MonoBehaviour
 
     private void Attach(GameObject _tool)
     {
-        ToolToBeltTransform = _tool.transform.parent;
+        if (pickedUp)
+            ToolToBeltTransform = toolBelt.ToolTransformOnPickup;
+        else
+            ToolToBeltTransform = _tool.transform.parent;
         SetToolLayer(_tool, 0);
         _tool.GetComponent<Rigidbody>().isKinematic = true;
         _tool.transform.position = this.transform.position;
