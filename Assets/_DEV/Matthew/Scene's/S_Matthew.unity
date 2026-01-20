@@ -403,6 +403,8 @@ MonoBehaviour:
   pageMesh1: {fileID: 484131775}
   pageMesh2: {fileID: 799939034}
   WaitTime: 2
+  buttonDisplayName: 0
+  buttonDisplayName2: 0
 --- !u!1 &147410494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,6 +5780,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521318971796642421, guid: 3f359f36e81d4e44790f687f2fed8bc0, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 12a1e835dc7e0024892d45a80cdedf77, type: 3}
     - target: {fileID: 8736831520374773573, guid: 3f359f36e81d4e44790f687f2fed8bc0, type: 3}
       propertyPath: m_Name
       value: Grill
