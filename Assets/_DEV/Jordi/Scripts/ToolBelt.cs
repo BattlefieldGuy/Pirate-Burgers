@@ -9,6 +9,7 @@ public class ToolBelt : MonoBehaviour
     private ToolAttach activeToolAttach;
     private bool lastLeftHanded;
     private Camera cam;
+    public Transform ToolTransformOnPickup;
 
     private void Awake()
     {
@@ -34,6 +35,21 @@ public class ToolBelt : MonoBehaviour
         tool.transform.position = activeToolAttach.ToolToBeltTransform.position;
         tool.transform.rotation = activeToolAttach.ToolToBeltTransform.rotation;
         tool.transform.SetParent(activeToolAttach.ToolToBeltTransform.transform);
+    }
+
+    public void PickUp(GameObject toolAttach)
+    {
+        ToolTransformOnPickup = toolAttach.transform;
+    }
+
+    public void ToolToBeltOnDrop(GameObject _tool)
+    {
+        if(activeToolAttach.attachedTool != _tool)
+        {
+            _tool.transform.position = ToolTransformOnPickup.position;
+            _tool.transform.rotation = ToolTransformOnPickup.rotation;
+            _tool.transform.SetParent(ToolTransformOnPickup.transform);
+        }
     }
 
     public void ToolBeltPosition()
