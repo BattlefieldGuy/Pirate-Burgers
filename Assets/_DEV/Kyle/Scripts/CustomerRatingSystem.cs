@@ -30,6 +30,10 @@ public class CustomerRatingSystem : MonoBehaviour
     public int FinalCustomerRating;
     public int CoinReward;
 
+
+    [SerializeField] private Sprite satisfied;
+    [SerializeField] private Sprite dissatisfied;
+
     public void GenerateRandomCustomer()
     {
         PickinessSlider = Random.Range(1, 11);
@@ -175,6 +179,16 @@ public class CustomerRatingSystem : MonoBehaviour
         }
 
         //Reactie op de dish
+
+        if (FinalCustomerRating >= 8)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = satisfied;
+        }
+        else if (FinalCustomerRating <= 4)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = dissatisfied;
+        }
+
         string timeReaction = "";
         float maxWait = BaseDishTime * (PatienceSlider / 10f);
         float overtime = dishPreparationTime - maxWait;
