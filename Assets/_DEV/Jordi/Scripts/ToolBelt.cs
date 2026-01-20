@@ -39,6 +39,6 @@ public class ToolBelt : MonoBehaviour
     public void ToolBeltPosition()
     {
         this.transform.position = new Vector3(cam.transform.position.x + ToolBeltOffset.x, 
-            this.transform.position.y + ToolBeltOffset.y, cam.transform.position.z + ToolBeltOffset.z);
+            this.transform.position.y, cam.transform.position.z + ToolBeltOffset.z);
     }
 }
