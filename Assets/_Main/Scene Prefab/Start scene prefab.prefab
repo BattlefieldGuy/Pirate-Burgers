@@ -1515,13 +1515,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5495000273047768896}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -2.6099997, y: 7.741, z: -3.1261835}
+  m_LocalRotation: {x: 0, y: -0.04013178, z: 0.99919444, w: 0}
+  m_LocalPosition: {x: -2.6099997, y: 3.04, z: -8.93}
   m_LocalScale: {x: 1.4699999, y: 1.4699999, z: 1.4699999}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3318964349386870457}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 4.6, y: 0, z: 180}
 --- !u!33 &8705296124897356069
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5644,9 +5644,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2291688960901453335, guid: 947f265cc008e024e9c01c4e2b7168d4, type: 3}
+      propertyPath: m_Intensity
+      value: 7.12
+      objectReference: {fileID: 0}
     - target: {fileID: 2472699650312568008, guid: 947f265cc008e024e9c01c4e2b7168d4, type: 3}
       propertyPath: m_Name
       value: Lighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526226651544808477, guid: 947f265cc008e024e9c01c4e2b7168d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
