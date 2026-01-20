@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 public class RunManager : MonoBehaviour
 {
     [Header("Timer variables"), SerializeField]
-    private float dayLengthInMinutes = 20f;
+    public float dayLengthInMinutes = 20f;
+    private float multiplier;
+    [SerializeField] private int HoursInAShift = 8;
 
-    private float timeInSeconds;
+    [SerializeField] private float timeInSeconds;
+    public float TimeEscalated = 0f;
 
     public static bool dayStarted = false, dayEnded = false;
 
@@ -22,6 +25,8 @@ public class RunManager : MonoBehaviour
     {
         feedbackScript = FindFirstObjectByType<EndOfDayFeedback>();
         StartDay();
+        multiplier = dayLengthInMinutes / (HoursInAShift * 60f);
+        print("Multiplier is: " + multiplier);
     }
 
     void Update()
@@ -48,7 +53,11 @@ public class RunManager : MonoBehaviour
     private void CountdownEvent()
     {
         if (timeInSeconds > 0)
+        {
             timeInSeconds -= Time.deltaTime;
+            TimeEscalated += (Time.deltaTime / multiplier) /60;
+        }
+
     }
 
     private void CountdownChecks()
