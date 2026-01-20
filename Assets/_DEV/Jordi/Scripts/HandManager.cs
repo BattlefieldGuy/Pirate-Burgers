@@ -6,6 +6,14 @@ public class HandManager : MonoBehaviour
 
     public bool LeftHanded;
 
+    public void BoolChange()
+    {
+        if(LeftHanded)
+            LeftHanded = false;
+        else
+            LeftHanded = true;
+    }
+
     private void Awake()
     {
         if(instance == null)

@@ -1,8 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class Sliceable : MonoBehaviour
 {
     [field: SerializeField] public GameObject PiecePrefab { get; set; }
+
+    [SerializeField] private bool destroyIngredient;
 
     private bool HasBeenCut;
 
@@ -14,7 +17,16 @@ public class Sliceable : MonoBehaviour
             HasBeenCut = true;
             GameObject clone = Instantiate(PiecePrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
             clone.transform.parent = null;
-            this.gameObject.SetActive(false);
+            if (destroyIngredient)
+                Destroy(this.gameObject);
+            else
+                StartCoroutine(CutCooldown());
         }
+    }
+
+    IEnumerator CutCooldown()
+    {
+        yield return new WaitForSeconds(.5f);
+        HasBeenCut = false;
     }
 }

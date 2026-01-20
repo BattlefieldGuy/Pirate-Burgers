@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class ToolAttach : MonoBehaviour
 {
     public GameObject attachedTool;
-    public Transform toolTransformBeforeAttach;
+    public Transform ToolToBeltTransform;
     public Transform OverlapSphereTransform;
 
     [SerializeField] private float attachRadius = 0.05f;
@@ -45,7 +45,13 @@ public class ToolAttach : MonoBehaviour
             Collider[] hits = Physics.OverlapSphere(OverlapSphereTransform.position, attachRadius, toolLayer);
             foreach (var hit in hits)
             {
-                if(!hit.transform.IsChildOf(attachedTool.transform))
+                if(attachedTool == null)
+                {
+                    canAttach = false;
+                    Attach(hit.transform.parent.gameObject);
+                    StartCoroutine(AttachCooldown());
+                }
+                else if(!hit.transform.IsChildOf(attachedTool.transform))
                 {
                     canAttach = false;
                     Detach(attachedTool);
@@ -58,7 +64,7 @@ public class ToolAttach : MonoBehaviour
 
     private void Attach(GameObject _tool)
     {
-        toolTransformBeforeAttach = _tool.transform;
+        ToolToBeltTransform = _tool.transform.parent;
         SetToolLayer(_tool, 0);
         _tool.GetComponent<Rigidbody>().isKinematic = true;
         _tool.transform.position = this.transform.position;
@@ -75,9 +81,9 @@ public class ToolAttach : MonoBehaviour
 
     private void Detach(GameObject _tool)
     {
+        toolBelt.ToolToBeltTransform(_tool);
         if (attachedTool.GetComponent<XRGrabInteractable>())
             attachedTool.GetComponent<XRGrabInteractable>().enabled = true;
-        toolBelt.ToolToBeltTransform(_tool);
         SetToolLayer(attachedTool, 31);
     }
 
