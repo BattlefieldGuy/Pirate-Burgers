@@ -4,6 +4,7 @@ public class ToolBelt : MonoBehaviour
 {
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
+    [SerializeField] private Vector3 ToolBeltOffset;
 
     private ToolAttach activeToolAttach;
     private bool lastLeftHanded;
@@ -37,6 +38,7 @@ public class ToolBelt : MonoBehaviour
 
     public void ToolBeltPosition()
     {
-        this.transform.position = new Vector3(cam.transform.position.x, this.transform.position.y, cam.transform.position.z);
+        this.transform.position = new Vector3(cam.transform.position.x + ToolBeltOffset.x, 
+            this.transform.position.y + ToolBeltOffset.y, cam.transform.position.z + ToolBeltOffset.z);
     }
 }

@@ -9182,6 +9182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolBelt
   leftHand: {fileID: 4222956220894348672}
   rightHand: {fileID: 5580991915015420310}
+  ToolBeltOffset: {x: -0.3, y: 0.8, z: 0}
 --- !u!1 &5999463063782998370
 GameObject:
   m_ObjectHideFlags: 0
