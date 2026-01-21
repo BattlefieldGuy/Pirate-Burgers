@@ -766,6 +766,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 821606512292551971, guid: 9423fb53408653c4482645a44335c86f, type: 3}
+      propertyPath: handNode
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5598318314316342755, guid: 9423fb53408653c4482645a44335c86f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.4653349
@@ -1971,6 +1975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7334889216102160300, guid: 8948def2e78fdec4ea736ab35d0ba051, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e8d1ae1917e7ce4582df04713ef7ead, type: 3}
     - target: {fileID: 7970309997288820754, guid: 8948def2e78fdec4ea736ab35d0ba051, type: 3}
       propertyPath: m_Camera
       value: 
