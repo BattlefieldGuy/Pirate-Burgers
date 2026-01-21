@@ -8,6 +8,7 @@ public class RunManager : MonoBehaviour
     public float dayLengthInMinutes = 20f;
     private float multiplier;
     [SerializeField] private int HoursInAShift = 8;
+    private DigitalClock clock;
 
     [SerializeField] private float timeInSeconds;
     public float TimeEscalated = 0f;
@@ -18,12 +19,14 @@ public class RunManager : MonoBehaviour
     private static int totalOrders = 0, goodOrders = 0, badOrders = 0;
     
     private EndOfDayFeedback feedbackScript;
+    [SerializeField] AudioSource EndOfDaySound;
 
     #region --- UNITY METHODS ---
 
     void Start()
     {
         feedbackScript = FindFirstObjectByType<EndOfDayFeedback>();
+        clock = FindFirstObjectByType<DigitalClock>();
         StartDay();
         multiplier = dayLengthInMinutes / (HoursInAShift * 60f);
         print("Multiplier is: " + multiplier);
@@ -58,6 +61,11 @@ public class RunManager : MonoBehaviour
             TimeEscalated += (Time.deltaTime / multiplier) /60;
         }
 
+        if (timeInSeconds <= 4 && !clock.alarmDisabled)
+        {
+            clock.Fuckoff();
+        }
+
     }
 
     private void CountdownChecks()
@@ -81,6 +89,7 @@ public class RunManager : MonoBehaviour
 
     private void OnDayEnd()
     {
+        EndOfDaySound.Play();
         if (feedbackScript != null)
         {
             feedbackScript.TotalOrders = totalOrders;

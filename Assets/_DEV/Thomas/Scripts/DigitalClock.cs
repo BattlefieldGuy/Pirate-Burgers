@@ -21,6 +21,10 @@ public class DigitalClock : MonoBehaviour
     int Min10s = 0; // the 10, 20, 30, 40, 50 of the minute
     int Min1s = 0; // the 1-9 of the minute
 
+    private bool AlarmFinished = true; //prevents alarm from starting on the first hour
+    public bool alarmDisabled = false;
+    private AudioSource source;
+
     
     [Header("Visual")]
     [SerializeField] private List<TMP_Text> TimeDisplay;
@@ -28,6 +32,7 @@ public class DigitalClock : MonoBehaviour
     void Start()
     {
         IngameTime = FindFirstObjectByType(typeof(RunManager)) as RunManager;
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -44,6 +49,20 @@ public class DigitalClock : MonoBehaviour
         string FormattedTime = string.Format("{0:00}:{1:00}", hours, minutes);
         UpdateInts(FormattedTime);
     }
+
+    void Alarm()
+    {
+        if (!AlarmFinished && !alarmDisabled)
+        {
+            AlarmFinished = true;
+            source.Play();
+        }
+    }
+
+    public void Fuckoff() //disables the alarm for the end of the day
+    {
+        alarmDisabled = true;
+    }
     
     void UpdateInts(string Time)
     {
@@ -59,6 +78,15 @@ public class DigitalClock : MonoBehaviour
             {
                 ignorei++;
             }
+        }
+        
+        if (timeChars[3] == '0' && timeChars[4] == '0')
+        {
+            Alarm();
+        }
+        else
+        {
+            AlarmFinished = false;
         }
     }
     
