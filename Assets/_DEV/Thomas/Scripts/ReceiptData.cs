@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static BonnetjesManager;
+using static RunManager;
 
 public class ReceiptData : MonoBehaviour
 {
@@ -20,16 +21,22 @@ public class ReceiptData : MonoBehaviour
     [SerializeField] TMP_Text Title;
     [SerializeField] TMP_Text SecondIng;
 
+    [SerializeField] float ordertime = 0;
+    
+
     public void Awake()
     {
         transform.localPosition = new Vector3(transform.localPosition.x, 0, 0);
         startPoint = FindFirstObjectByType<ReceiptList>().transform.Find("Start");
+        ordertime = Time.time;
     }
 
     public void Fuckoff()
     {
         //For non-tween nerds: move downwards using an InQuad (check a quide on easing styles) ease over .5seconds and destroy afterwards
         //All localspace btw
+        float sendTime = Time.time - ordertime;
+        RecordOrder(false, sendTime);
         transform.DOLocalMove(new Vector3(transform.localPosition.x, -10, transform.localPosition.z), 0.5f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.InQuad);
     }
 
