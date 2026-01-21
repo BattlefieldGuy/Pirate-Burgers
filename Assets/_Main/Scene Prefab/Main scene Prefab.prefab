@@ -1403,6 +1403,7 @@ Transform:
   - {fileID: 5944729781985789221}
   - {fileID: 5606287467209307202}
   - {fileID: 4693520915388168274}
+  - {fileID: 1312480432876273198}
   m_Father: {fileID: 5047946973874081629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2254627691674663849
@@ -8814,6 +8815,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5255078029170593450, guid: 3462fff5b6b0c12409e6861ca979262d, type: 3}
   m_PrefabInstance: {fileID: 8506925583016905693}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8511087776422375693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8765214144469109473}
+    m_Modifications:
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25216007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.6175995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025546951147574681, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      propertyPath: m_Name
+      value: PF_Shutter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8025546951147574681, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 405195314766183065}
+  m_SourcePrefab: {fileID: 100100000, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+--- !u!4 &1312480432876273198 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7218048382557654819, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+  m_PrefabInstance: {fileID: 8511087776422375693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1836638874823943316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8025546951147574681, guid: 1f1ab533538475a4fb5e6346cf5df895, type: 3}
+  m_PrefabInstance: {fileID: 8511087776422375693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &405195314766183065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836638874823943316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f39ee162195574e8efbeba83fe1709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShutterOpening
+  door: {fileID: 1836638874823943316}
 --- !u!1001 &8535026099305075777
 PrefabInstance:
   m_ObjectHideFlags: 0
