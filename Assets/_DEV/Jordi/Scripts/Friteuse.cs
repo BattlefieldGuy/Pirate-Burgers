@@ -30,6 +30,12 @@ public class Friteuse : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.CompareTag("Fries"))
+        {
+            Debug.Log("poepkleur");
+            other.GetComponent<GrillFoodActivater>().Disable();
+            
+        }
         FriteuseBak friteuseBak = other.gameObject.GetComponent<FriteuseBak>();
         if (friteuseBak != null)
         {

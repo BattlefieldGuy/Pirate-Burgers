@@ -35,7 +35,6 @@ public class GrillFoodActivater : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeAll;
         this.transform.rotation = new Quaternion(0, 0, 0, 1);
         text.SetActive(true);
-
     }
 
     public void Disable()
