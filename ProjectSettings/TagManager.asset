@@ -10,6 +10,7 @@ TagManager:
   - RealHand
   - SecondaryIngredient
   - GrillFood
+  - Fries
   layers:
   - Default
   - TransparentFX
