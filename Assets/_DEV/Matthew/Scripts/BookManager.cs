@@ -14,6 +14,8 @@ public class BookManager : MonoBehaviour
     [SerializeField]
     private MeshRenderer pageMesh2;
 
+    [SerializeField]
+    private AudioSource audioSrc;
 
     //temp
     [Header("Temp")]
@@ -25,6 +27,8 @@ public class BookManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaitAndSwitch(WaitTime));
+        if (audioSrc == null)
+            audioSrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -74,6 +78,7 @@ public class BookManager : MonoBehaviour
     {
         pageMesh1.material.mainTexture = pages[currentPage];
         pageMesh2.material.mainTexture = pages[currentPage];
+        audioSrc.Play();
     }
 
     //temp
