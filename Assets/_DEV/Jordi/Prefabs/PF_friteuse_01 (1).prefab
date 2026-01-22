@@ -141,10 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7461bd93b80e42aa00df2bfae7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Friteuse
-  grillingItems: []
+  FriteuseItems: []
   BubbleParticles: {fileID: 3566318591514425982}
-  grillFoodTag: Fries
-  grillAudioSource: {fileID: 6960603157070381057}
+  FriesFoodTag: Fries
+  FriteuseAudioSource: {fileID: 0}
 --- !u!65 &3534386423447174457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1039,10 +1039,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7461bd93b80e42aa00df2bfae7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Friteuse
-  grillingItems: []
+  FriteuseItems: []
   BubbleParticles: {fileID: 8610314725796300841}
-  grillFoodTag: Fries
-  grillAudioSource: {fileID: 6960603157070381057}
+  FriesFoodTag: Fries
+  FriteuseAudioSource: {fileID: 0}
 --- !u!65 &5071481162505553774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1348,7 +1348,7 @@ AudioSource:
   m_GameObject: {fileID: 6442022902175039794}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 427431985414883167, guid: 2ed2258289736494d9f4224c9017c6fc, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 12a1e835dc7e0024892d45a80cdedf77, type: 3}
   m_PlayOnAwake: 0
@@ -2098,10 +2098,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc7461bd93b80e42aa00df2bfae7392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Friteuse
-  grillingItems: []
+  FriteuseItems: []
   BubbleParticles: {fileID: 2555273940925438623}
-  grillFoodTag: Fries
-  grillAudioSource: {fileID: 6960603157070381057}
+  FriesFoodTag: Fries
+  FriteuseAudioSource: {fileID: 0}
 --- !u!65 &1823407431425156997
 BoxCollider:
   m_ObjectHideFlags: 0
