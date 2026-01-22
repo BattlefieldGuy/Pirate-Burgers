@@ -252,9 +252,9 @@ MonoBehaviour:
   mediumColor: {r: 0.96981126, g: 0.7807724, b: 0.47392663, a: 1}
   wellDoneColor: {r: 0.9245283, g: 0.5965716, b: 0.15873975, a: 1}
   burntColor: {r: 0, g: 0, b: 0, a: 1}
-  rawTime: 2
-  mediumTime: 3
-  wellDoneTime: 3
+  rawTime: 20
+  mediumTime: 10
+  wellDoneTime: 10
 --- !u!114 &4390932593596365417
 MonoBehaviour:
   m_ObjectHideFlags: 0

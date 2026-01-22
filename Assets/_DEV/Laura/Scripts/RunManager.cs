@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,9 +16,12 @@ public class RunManager : MonoBehaviour
 
     // Run variables
     private static int totalOrders = 0, goodOrders = 0, badOrders = 0;
-    
+
     private EndOfDayFeedback feedbackScript;
     [SerializeField] AudioSource EndOfDaySound;
+
+    [SerializeField] private GameObject feedback;
+
 
     #region --- UNITY METHODS ---
 
@@ -34,7 +36,7 @@ public class RunManager : MonoBehaviour
 
     void Update()
     {
-        if(dayStarted && !dayEnded)
+        if (dayStarted && !dayEnded)
         {
             CountdownEvent();
             CountdownChecks();
@@ -58,7 +60,7 @@ public class RunManager : MonoBehaviour
         if (timeInSeconds > 0)
         {
             timeInSeconds -= Time.deltaTime;
-            TimeEscalated += (Time.deltaTime / multiplier) /60;
+            TimeEscalated += (Time.deltaTime / multiplier) / 60;
         }
 
         if (timeInSeconds <= 4 && !clock.alarmDisabled)
@@ -70,12 +72,12 @@ public class RunManager : MonoBehaviour
 
     private void CountdownChecks()
     {
-        if(timeInSeconds <= 0)
+        if (timeInSeconds <= 0)
         {
             dayEnded = true;
             OnDayEnd();
         }
-        if(timeInSeconds <= dayLengthInMinutes * 30)
+        if (timeInSeconds <= dayLengthInMinutes * 30)
         {
             OnDayHalfway();
         }
@@ -86,7 +88,6 @@ public class RunManager : MonoBehaviour
         // Odds are this function isn't necessary, but if you want things to happen the moment the day is 50% done,
         // put that code here. Like Parrot voicelines for example, if we somehow manage to cram those in, lol.
     }
-
     private void OnDayEnd()
     {
         EndOfDaySound.Play();
@@ -95,7 +96,7 @@ public class RunManager : MonoBehaviour
             feedbackScript.TotalOrders = totalOrders;
             feedbackScript.GoodOrders = goodOrders;
             feedbackScript.BadOrders = badOrders;
-            feedbackScript.enabled = true;
+            feedback.SetActive(true);
         }
         else Debug.LogError("There is no EndOfDayFeedback component in the scene to log results to!");
     }

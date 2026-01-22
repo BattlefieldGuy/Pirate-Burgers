@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2802960945291063332}
   - component: {fileID: 2012827279244780773}
   - component: {fileID: 7753222053098744806}
-  - component: {fileID: 8022027090400352481}
+  - component: {fileID: 61452806902780541}
   m_Layer: 0
   m_Name: prullenbak
   m_TagString: Untagged
@@ -113,7 +113,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8022027090400352481
+--- !u!114 &61452806902780541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,17 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6930171967586646185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88f55dbb6bacf9e4d8a3cc43bec6f786, type: 3}
+  m_Script: {fileID: 11500000, guid: e35dc3f66510a9944bdabed4cbe4eb70, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OrderChecker
-  _LoggedReceipt: {fileID: 0}
-  ReceiptItem:
-    name: 
-    MainIngredients: []
-    SecondaryIngredients: []
-    RequiredMachines: []
-  ActiveOrder:
-    name: 
-    MainIngredients: []
-    SecondaryIngredients: []
-    RequiredMachines: []
+  m_EditorClassIdentifier: Assembly-CSharp::prullenbak
