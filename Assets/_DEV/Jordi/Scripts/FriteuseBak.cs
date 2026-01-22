@@ -58,7 +58,8 @@ public class FriteuseBak : MonoBehaviour
         // When an item get's removed from the grill it will stop cooking
         if (grillingItems.Contains(other.gameObject))
         {
-            RemoveFoodFromGrill(other.gameObject);
+            RemoveFoodFromFriteuseBak(other.gameObject);
+            other.GetComponent<GrillFoodActivater>().Disable();
         }
     }
 
@@ -70,22 +71,12 @@ public class FriteuseBak : MonoBehaviour
     {
         grillingItems.Add(_food);
         _food.transform.parent = this.transform;
-        //GrillFoodActivater _grillFoodManager = _food.GetComponent<GrillFoodActivater>();
-        //if (_grillFoodManager != null)
-        //{
-        //    _grillFoodManager.Enable();
-        //}
     }
 
-    private void RemoveFoodFromGrill(GameObject _food)
+    private void RemoveFoodFromFriteuseBak(GameObject _food)
     {
-        _food.transform.SetParent(null);
         grillingItems.Remove(_food);
-        //GrillFoodActivater _grillFoodManager = _food.GetComponent<GrillFoodActivater>();
-        //if (_grillFoodManager != null)
-        //{
-        //    _grillFoodManager.Disable();
-        //}
+        _food.transform.SetParent(null);
     }
 
     #endregion
