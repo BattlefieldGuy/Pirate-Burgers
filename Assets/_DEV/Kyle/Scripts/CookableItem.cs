@@ -1,18 +1,12 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class CookableItem : MonoBehaviour
 {
-    public Renderer rend;
+    public List<Renderer> renderers = new List<Renderer>();
     public TMP_Text statusText;
     public Transform lookTarget;
-
-    Material mat;
-
-    void Awake()
-    {
-        mat = rend.material;
-    }
 
     void Update()
     {
@@ -25,7 +19,10 @@ public class CookableItem : MonoBehaviour
 
     public void SetColor(Color color)
     {
-        mat.color = color;
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.material.color = color;
+        }
     }
 
     public void SetText(string text)

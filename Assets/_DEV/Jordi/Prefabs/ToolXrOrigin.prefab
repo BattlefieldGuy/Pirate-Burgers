@@ -5344,6 +5344,7 @@ MonoBehaviour:
   attachedTool: {fileID: 0}
   ToolToBeltTransform: {fileID: 0}
   OverlapSphereTransform: {fileID: 6160808590297768569}
+  pickedUp: 0
   attachRadius: 0.06
   toolLayer:
     serializedVersion: 2
@@ -8414,6 +8415,7 @@ MonoBehaviour:
   attachedTool: {fileID: 0}
   ToolToBeltTransform: {fileID: 0}
   OverlapSphereTransform: {fileID: 998736466960752174}
+  pickedUp: 0
   attachRadius: 0.06
   toolLayer:
     serializedVersion: 2
