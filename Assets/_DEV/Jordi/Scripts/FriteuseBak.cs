@@ -14,7 +14,7 @@ public class FriteuseBak : MonoBehaviour
     public List<GameObject> grillingItems = new List<GameObject>();
 
     [SerializeField]
-    private VisualEffect grillVFX;
+    private ParticleSystem BubbleParticles;
 
     [SerializeField]
     private string grillFoodTag = "Fries";
@@ -27,15 +27,11 @@ public class FriteuseBak : MonoBehaviour
 
     #region --- BASIC UNITY METHODS ---
 
-    void Start()
-    {
-        grillAudioSource = GetComponent<AudioSource>();
-    }
-
     void Update()
     {
-        //VFXController();
-        //AudioController();
+        VFXController();
+        AudioController();
+        Debug.Log(grillAudioSource.isPlaying);
     }
 
     #endregion
@@ -90,7 +86,7 @@ public class FriteuseBak : MonoBehaviour
             if (!VFXOn)
             {
                 // Start grill VFX
-                grillVFX.Play();
+                BubbleParticles.Play();
                 VFXOn = true;
             }
         }
@@ -99,7 +95,7 @@ public class FriteuseBak : MonoBehaviour
             if (VFXOn)
             {
                 // Stop grill VFX
-                grillVFX.Stop();
+                BubbleParticles.Stop();
                 VFXOn = false;
             }
         }
