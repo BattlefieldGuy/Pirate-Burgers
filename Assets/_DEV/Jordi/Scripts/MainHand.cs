@@ -22,7 +22,7 @@ public class MainHand : MonoBehaviour
         ControllerVisuals.SetActive(!isRightHandActive);
         ToolObject.SetActive(isRightHandActive);
         interactor.gameObject.SetActive(!isRightHandActive);
-        if (transform.parent.GetComponentInChildren<ToolAttach>().attachedTool.name == "Grabber")
+        if (transform.GetComponentInChildren<ToolAttach>() && transform.GetComponentInChildren<ToolAttach>().attachedTool.name == "Grabber")
             grabberInteractor.gameObject.SetActive(true);
         else
             grabberInteractor.gameObject.SetActive(false);

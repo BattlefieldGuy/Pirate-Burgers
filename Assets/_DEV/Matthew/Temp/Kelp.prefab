@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2606145354130400316, guid: 779f68f15e3489045964e1a295aa7a6e, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: b276ad24513e65c4bbe04dcbf8d90ef8, type: 2}
     - target: {fileID: 2968516534409601959, guid: 779f68f15e3489045964e1a295aa7a6e, type: 3}
       propertyPath: m_Name
       value: Kelp
@@ -54,10 +50,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5073540753729891457, guid: 779f68f15e3489045964e1a295aa7a6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622219635935559056, guid: 779f68f15e3489045964e1a295aa7a6e, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

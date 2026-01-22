@@ -90,6 +90,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 39818608818898276, guid: 359e095f63ac0eb4e9da4fb5e6460378, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1017230433178336799}
+    - targetCorrespondingSourceObject: {fileID: 39818608818898276, guid: 359e095f63ac0eb4e9da4fb5e6460378, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5490054982385121945}
   m_SourcePrefab: {fileID: 100100000, guid: 359e095f63ac0eb4e9da4fb5e6460378, type: 3}
 --- !u!1 &3893030103838150379 stripped
@@ -97,6 +100,30 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 39818608818898276, guid: 359e095f63ac0eb4e9da4fb5e6460378, type: 3}
   m_PrefabInstance: {fileID: 3930416040427981711}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1017230433178336799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893030103838150379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421ef9d2f3da4354787ab431dde2b3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerRatingSystem
+  PickinessSlider: 1
+  TippingSlider: 1
+  PatienceSlider: 1
+  BaseDishTime: 90
+  dishPreparationTime: 0
+  PickinessScore: 0
+  TippingScore: 0
+  PatienceScore: 0
+  FinalCustomerRating: 0
+  CoinReward: 0
+  satisfied: {fileID: 21300000, guid: 40ebeb01ea604f843affa3159baab578, type: 3}
+  dissatisfied: {fileID: 21300000, guid: d721ee3278aa179458384c34bde3cc3e, type: 3}
 --- !u!114 &5490054982385121945
 MonoBehaviour:
   m_ObjectHideFlags: 0

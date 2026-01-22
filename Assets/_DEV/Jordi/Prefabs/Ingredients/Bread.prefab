@@ -160,7 +160,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sliceable
   <PiecePrefab>k__BackingField: {fileID: 5568481670232596600, guid: 547764de3535db74fbb225a0d1d738c4, type: 3}
+  destroyIngredient: 0
 --- !u!1001 &5618489895277464832
 PrefabInstance:
   m_ObjectHideFlags: 0

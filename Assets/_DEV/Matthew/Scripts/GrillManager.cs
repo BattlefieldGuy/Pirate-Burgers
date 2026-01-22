@@ -28,7 +28,7 @@ public class GrillManager : MonoBehaviour
     private string grillFoodTag = "SecondaryIgredient";
 
     private GrillGridManager grillGridManager;
-    
+
     [SerializeField] private AudioSource grillAudioSource;
 
     private bool VFXOn = false;
@@ -40,6 +40,10 @@ public class GrillManager : MonoBehaviour
     void Start()
     {
         grillGridManager = GetComponentInChildren<GrillGridManager>();
+        if (grillGridManager == null)
+        {
+            grillAudioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -59,7 +63,7 @@ public class GrillManager : MonoBehaviour
         {
             AddFoodToGrill(other.gameObject);
         }
-        
+
         //if there is at least one item on the grill, play the grill sound
     }
 

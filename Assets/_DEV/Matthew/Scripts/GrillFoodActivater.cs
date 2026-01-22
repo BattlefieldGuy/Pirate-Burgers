@@ -24,7 +24,7 @@ public class GrillFoodActivater : MonoBehaviour
         // retrieve necessary components
         rb = GetComponent<Rigidbody>();
         cookingManager = GetComponent<CookingManager>();
-        text = transform.GetChild(1).gameObject;
+        text = transform.Find("Canvas").gameObject;
     }
 
     #region --- FUNCTIONS ---
@@ -32,17 +32,20 @@ public class GrillFoodActivater : MonoBehaviour
     public void Enable()
     {
         cookingManager.enabled = true;
-        text.SetActive(true);
+        print("Cooking Enabled");
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        print("Cooking Enabled");
         this.transform.rotation = new Quaternion(0, 0, 0, 1);
-
+        print("Cooking Enabled");
+        text.SetActive(true);
+        print("Cooking Enabled");
     }
 
     public void Disable()
     {
-        text.SetActive(false);
         rb.constraints = RigidbodyConstraints.None;
         cookingManager.enabled = false;
+        text.SetActive(false);
     }
 
     #endregion
