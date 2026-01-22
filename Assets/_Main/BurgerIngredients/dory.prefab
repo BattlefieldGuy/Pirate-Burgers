@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 1347434780830325576}
   - component: {fileID: 8446234286977097644}
   - component: {fileID: 8512104201507912635}
+  - component: {fileID: 979796554615922751}
+  - component: {fileID: 1326465960204957377}
+  - component: {fileID: 4214905331581244444}
   m_Layer: 10
   m_Name: dory
-  m_TagString: Untagged
+  m_TagString: SecondaryIngredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,6 +213,56 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &979796554615922751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413134502790169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c576618f28456c54c88e722e24d03309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrillFoodActivater
+--- !u!114 &1326465960204957377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413134502790169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c859225c789354ab98da2953a93044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookableItem
+  renderers:
+  - {fileID: 7871550958211155461}
+  - {fileID: 7962748553910199458}
+  statusText: {fileID: 0}
+  lookTarget: {fileID: 0}
+--- !u!114 &4214905331581244444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413134502790169}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a774251fd29b409fc0c627bccc33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookingManager
+  items:
+  - {fileID: 1326465960204957377}
+  rawColor: {r: 0.2509804, g: 0.07058824, b: 0.24705884, a: 1}
+  mediumColor: {r: 0.8, g: 0.5, b: 0.3, a: 1}
+  wellDoneColor: {r: 0.5, g: 0.25, b: 0.1, a: 1}
+  burntColor: {r: 0, g: 0, b: 0, a: 1}
+  rawTime: 5
+  mediumTime: 10
+  wellDoneTime: 10
 --- !u!1 &7349491952235680878
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,5 +409,15 @@ PrefabInstance:
 --- !u!4 &5267841563752748744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4982399203499406864, guid: 152cfebb9bd42a2499cb8c9068ce0001, type: 3}
+  m_PrefabInstance: {fileID: 882186903376371928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7871550958211155461 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6990560465496565469, guid: 152cfebb9bd42a2499cb8c9068ce0001, type: 3}
+  m_PrefabInstance: {fileID: 882186903376371928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7962748553910199458 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7115535470449296506, guid: 152cfebb9bd42a2499cb8c9068ce0001, type: 3}
   m_PrefabInstance: {fileID: 882186903376371928}
   m_PrefabAsset: {fileID: 0}

@@ -81,9 +81,12 @@ GameObject:
   - component: {fileID: 3202894516517847517}
   - component: {fileID: 135184546935816617}
   - component: {fileID: 2940501007550904315}
+  - component: {fileID: 2779726042817043298}
+  - component: {fileID: 3452292458449238408}
+  - component: {fileID: 9109091277773376916}
   m_Layer: 10
   m_Name: PF_SharkMeat
-  m_TagString: Untagged
+  m_TagString: SecondaryIngredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,3 +338,52 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &2779726042817043298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032532275246473923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c576618f28456c54c88e722e24d03309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrillFoodActivater
+--- !u!114 &3452292458449238408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032532275246473923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c859225c789354ab98da2953a93044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookableItem
+  renderers:
+  - {fileID: 5967478414060684793}
+  statusText: {fileID: 0}
+  lookTarget: {fileID: 0}
+--- !u!114 &9109091277773376916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032532275246473923}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253a774251fd29b409fc0c627bccc33f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookingManager
+  items:
+  - {fileID: 3452292458449238408}
+  rawColor: {r: 0.2509804, g: 0.07058824, b: 0.24705884, a: 1}
+  mediumColor: {r: 0.8, g: 0.5, b: 0.3, a: 1}
+  wellDoneColor: {r: 0.5, g: 0.25, b: 0.1, a: 1}
+  burntColor: {r: 0, g: 0, b: 0, a: 1}
+  rawTime: 5
+  mediumTime: 10
+  wellDoneTime: 10

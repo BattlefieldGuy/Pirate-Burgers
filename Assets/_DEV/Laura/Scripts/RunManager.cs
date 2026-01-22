@@ -105,7 +105,7 @@ public class RunManager : MonoBehaviour
     #region --- DATA MANAGEMENT ---
 
     // After an order is finished, call RunManager.RecordOrder() to save it.
-    public static void RecordOrder(bool goodOrder)
+    public static void RecordOrder(bool goodOrder, float ordertime)
     {
         totalOrders++;
         if (goodOrder)
