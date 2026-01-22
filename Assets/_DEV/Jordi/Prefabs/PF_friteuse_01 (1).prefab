@@ -144,7 +144,7 @@ MonoBehaviour:
   FriteuseItems: []
   BubbleParticles: {fileID: 3566318591514425982}
   FriesFoodTag: Fries
-  FriteuseAudioSource: {fileID: 0}
+  FriteuseAudioSource: {fileID: 6960603157070381057}
 --- !u!65 &3534386423447174457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   FriteuseItems: []
   BubbleParticles: {fileID: 8610314725796300841}
   FriesFoodTag: Fries
-  FriteuseAudioSource: {fileID: 0}
+  FriteuseAudioSource: {fileID: 6960603157070381057}
 --- !u!65 &5071481162505553774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1396,7 +1396,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1818,7 +1818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7573196145686832879}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7077311, y: 0.01044035, z: -0.072600365}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2101,7 +2101,7 @@ MonoBehaviour:
   FriteuseItems: []
   BubbleParticles: {fileID: 2555273940925438623}
   FriesFoodTag: Fries
-  FriteuseAudioSource: {fileID: 0}
+  FriteuseAudioSource: {fileID: 6960603157070381057}
 --- !u!65 &1823407431425156997
 BoxCollider:
   m_ObjectHideFlags: 0
