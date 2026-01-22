@@ -224,7 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 5188265468771861588, guid: 45f969bd7f7c2d54198477be4fe2bc1e, type: 3}
+  <PiecePrefab>k__BackingField: {fileID: 741838008516689612, guid: ed2dc33653ed6b149ae0a1f1fb7b3105, type: 3}
+  destroyIngredient: 0
 --- !u!1001 &7364443797029027334
 PrefabInstance:
   m_ObjectHideFlags: 0

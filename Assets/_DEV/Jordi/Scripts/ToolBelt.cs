@@ -40,6 +40,7 @@ public class ToolBelt : MonoBehaviour
     public void PickUp(GameObject toolAttach)
     {
         ToolTransformOnPickup = toolAttach.transform;
+        activeToolAttach.pickedUp = true;
     }
 
     public void ToolToBeltOnDrop(GameObject _tool)
@@ -50,6 +51,7 @@ public class ToolBelt : MonoBehaviour
             _tool.transform.rotation = ToolTransformOnPickup.rotation;
             _tool.transform.SetParent(ToolTransformOnPickup.transform);
         }
+        activeToolAttach.pickedUp = false;
     }
 
     public void ToolBeltPosition()
