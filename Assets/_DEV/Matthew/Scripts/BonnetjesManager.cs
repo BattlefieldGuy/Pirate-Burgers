@@ -44,7 +44,7 @@ public class BonnetjesManager : MonoBehaviour
     [Space(5), Range(0f, 20f), SerializeField]
     private float intervalOffsetRange = 5f;
 
-
+    private int amountOfItemsMade = 0;
 
     #endregion
 
@@ -90,11 +90,12 @@ public class BonnetjesManager : MonoBehaviour
     public void MakeItem()
     {
         // Create a new item with random ingredients
-        //pick random item
         Item item_ = ItemList[Random.Range(0, ItemList.Count)];
 
         if (receiptList != null)
             receiptList.AddOrder(item_);
+
+        amountOfItemsMade++;
     }
 
     #region - ENUMARATORS -
