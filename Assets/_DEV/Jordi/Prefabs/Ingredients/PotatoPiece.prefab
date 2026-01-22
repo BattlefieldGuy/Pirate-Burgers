@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8329909933571028003}
   - component: {fileID: 4509243807402374627}
   - component: {fileID: 2502977142557183691}
+  - component: {fileID: 3858686213137477455}
   m_Layer: 10
   m_Name: PotatoPiece
   m_TagString: Sliceable
@@ -282,3 +283,25 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!64 &3858686213137477455
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084848392916373324}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1192779672417111064, guid: 50ebbe89c77e2a6408deb7372ccd6d7e, type: 3}
