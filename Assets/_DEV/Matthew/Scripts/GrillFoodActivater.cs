@@ -32,13 +32,9 @@ public class GrillFoodActivater : MonoBehaviour
     public void Enable()
     {
         cookingManager.enabled = true;
-        print("Cooking Enabled");
         rb.constraints = RigidbodyConstraints.FreezeAll;
-        print("Cooking Enabled");
         this.transform.rotation = new Quaternion(0, 0, 0, 1);
-        print("Cooking Enabled");
         text.SetActive(true);
-        print("Cooking Enabled");
     }
 
     public void Disable()
