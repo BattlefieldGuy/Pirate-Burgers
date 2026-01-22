@@ -11,15 +11,15 @@ public class FriteuseBak : MonoBehaviour
 
     #region --- VARIABLES ---
 
-    public List<GameObject> grillingItems = new List<GameObject>();
+    public List<GameObject> FriteuseItems = new List<GameObject>();
 
     [SerializeField]
-    private VisualEffect grillVFX;
+    private ParticleSystem BubbleParticles;
 
     [SerializeField]
-    private string grillFoodTag = "Fries";
+    private string FriesFoodTag = "Fries";
 
-    [SerializeField] private AudioSource grillAudioSource;
+    [SerializeField] private AudioSource FriteuseAudioSource;
 
     private bool VFXOn = false;
 
@@ -27,15 +27,10 @@ public class FriteuseBak : MonoBehaviour
 
     #region --- BASIC UNITY METHODS ---
 
-    void Start()
-    {
-        grillAudioSource = GetComponent<AudioSource>();
-    }
-
     void Update()
     {
-        //VFXController();
-        //AudioController();
+        VFXController();
+        AudioController();
     }
 
     #endregion
@@ -44,8 +39,8 @@ public class FriteuseBak : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // When an item get's placed on the grill it will start cooking
-        if (other.CompareTag(grillFoodTag))
+        // When fries are inside the Friteusebak add to Friteusebak
+        if (other.CompareTag(FriesFoodTag))
         {
             AddFoodToFriteuseBak(other.gameObject);
         }
@@ -55,10 +50,11 @@ public class FriteuseBak : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // When an item get's removed from the grill it will stop cooking
-        if (grillingItems.Contains(other.gameObject))
+        // When an item get's removed from the Friteusebak it stops cooking
+        if (FriteuseItems.Contains(other.gameObject))
         {
-            RemoveFoodFromGrill(other.gameObject);
+            RemoveFoodFromFriteuseBak(other.gameObject);
+            other.GetComponent<GrillFoodActivater>().Disable();
         }
     }
 
@@ -68,24 +64,14 @@ public class FriteuseBak : MonoBehaviour
 
     private void AddFoodToFriteuseBak(GameObject _food)
     {
-        grillingItems.Add(_food);
+        FriteuseItems.Add(_food);
         _food.transform.parent = this.transform;
-        //GrillFoodActivater _grillFoodManager = _food.GetComponent<GrillFoodActivater>();
-        //if (_grillFoodManager != null)
-        //{
-        //    _grillFoodManager.Enable();
-        //}
     }
 
-    private void RemoveFoodFromGrill(GameObject _food)
+    private void RemoveFoodFromFriteuseBak(GameObject _food)
     {
+        FriteuseItems.Remove(_food);
         _food.transform.SetParent(null);
-        grillingItems.Remove(_food);
-        //GrillFoodActivater _grillFoodManager = _food.GetComponent<GrillFoodActivater>();
-        //if (_grillFoodManager != null)
-        //{
-        //    _grillFoodManager.Disable();
-        //}
     }
 
     #endregion
@@ -94,12 +80,12 @@ public class FriteuseBak : MonoBehaviour
 
     private void VFXController()
     {
-        if (grillingItems.Count > 0)
+        if (FriteuseItems.Count > 0)
         {
             if (!VFXOn)
             {
                 // Start grill VFX
-                grillVFX.Play();
+                BubbleParticles.Play();
                 VFXOn = true;
             }
         }
@@ -108,7 +94,7 @@ public class FriteuseBak : MonoBehaviour
             if (VFXOn)
             {
                 // Stop grill VFX
-                grillVFX.Stop();
+                BubbleParticles.Stop();
                 VFXOn = false;
             }
         }
@@ -116,13 +102,13 @@ public class FriteuseBak : MonoBehaviour
 
     private void AudioController()
     {
-        if (grillingItems.Count > 0 && !grillAudioSource.isPlaying)
+        if (FriteuseItems.Count > 0 && !FriteuseAudioSource.isPlaying)
         {
-            grillAudioSource.Play();
+            FriteuseAudioSource.Play();
         }
-        else if (grillingItems.Count == 0 && grillAudioSource.isPlaying)
+        else if (FriteuseItems.Count == 0 && FriteuseAudioSource.isPlaying)
         {
-            grillAudioSource.Stop();
+            FriteuseAudioSource.Stop();
         }
     }
 
