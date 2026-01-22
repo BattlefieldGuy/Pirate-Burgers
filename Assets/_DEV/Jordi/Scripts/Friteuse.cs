@@ -7,7 +7,7 @@ public class Friteuse : MonoBehaviour
             FriteuseBak friteuseBak = other.gameObject.GetComponent<FriteuseBak>();
             if (friteuseBak != null)
             {
-                foreach(GameObject friet in friteuseBak.grillingItems)
+                foreach(GameObject friet in friteuseBak.FriteuseItems)
                 {
                     friet.GetComponent<GrillFoodActivater>().Enable();
                 }
@@ -19,7 +19,7 @@ public class Friteuse : MonoBehaviour
         FriteuseBak friteuseBak = other.gameObject.GetComponent<FriteuseBak>();
         if (friteuseBak != null)
         {
-            foreach (GameObject friet in friteuseBak.grillingItems)
+            foreach (GameObject friet in friteuseBak.FriteuseItems)
             {
                 friet.GetComponent<GrillFoodActivater>().Enable();
             }
@@ -31,7 +31,7 @@ public class Friteuse : MonoBehaviour
         FriteuseBak friteuseBak = other.gameObject.GetComponent<FriteuseBak>();
         if (friteuseBak != null)
         {
-            foreach (GameObject friet in friteuseBak.grillingItems)
+            foreach (GameObject friet in friteuseBak.FriteuseItems)
             {
                 friet.GetComponent<GrillFoodActivater>().Disable();
             }
