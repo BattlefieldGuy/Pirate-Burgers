@@ -24,7 +24,7 @@ public class Sliceable : MonoBehaviour
             }
         }
         else
-            Destroy(this);
+            Destroy(this.gameObject);
     }
 
     IEnumerator CutCooldown()
