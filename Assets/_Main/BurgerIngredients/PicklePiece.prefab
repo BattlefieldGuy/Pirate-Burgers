@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 3012835019726953762}
   m_Layer: 10
   m_Name: PicklePiece
-  m_TagString: Untagged
+  m_TagString: SecondaryIngredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

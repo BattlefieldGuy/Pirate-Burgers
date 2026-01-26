@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 2136237530729787350}
   m_Layer: 10
   m_Name: SM_Kelp_01 (1)
-  m_TagString: Untagged
+  m_TagString: SecondaryIngredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
