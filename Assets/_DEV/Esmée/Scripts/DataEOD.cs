@@ -13,7 +13,7 @@ public class DataEOD : MonoBehaviour
     void Start()
     {
         string dataText = tmpText.text;
-        dataText = string.Format(dataText, endOfDayFeedback.TotalOrders, endOfDayFeedback.GoodOrders, endOfDayFeedback.BadOrders);
+        dataText = string.Format(dataText, endOfDayFeedback.TotalOrders, endOfDayFeedback.GoodOrders, endOfDayFeedback.BadOrders, endOfDayFeedback.AverageTimePerOrder);
         tmpText.text = dataText;
     }
 }

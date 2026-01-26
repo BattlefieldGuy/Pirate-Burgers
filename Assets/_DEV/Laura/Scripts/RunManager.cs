@@ -16,6 +16,8 @@ public class RunManager : MonoBehaviour
 
     // Run variables
     private static int totalOrders = 0, goodOrders = 0, badOrders = 0;
+    private float totalTime;
+    private float averageOrderTime;
 
     private EndOfDayFeedback feedbackScript;
     [SerializeField] AudioSource EndOfDaySound;
@@ -77,22 +79,16 @@ public class RunManager : MonoBehaviour
             dayEnded = true;
             OnDayEnd();
         }
-        if (timeInSeconds <= dayLengthInMinutes * 30)
-        {
-            OnDayHalfway();
-        }
+
     }
 
-    private void OnDayHalfway()
-    {
-        // Odds are this function isn't necessary, but if you want things to happen the moment the day is 50% done,
-        // put that code here. Like Parrot voicelines for example, if we somehow manage to cram those in, lol.
-    }
     private void OnDayEnd()
     {
         EndOfDaySound.Play();
         if (feedbackScript != null)
         {
+            averageOrderTime = totalTime / totalOrders;
+            feedbackScript.AverageTimePerOrder = averageOrderTime;
             feedbackScript.TotalOrders = totalOrders;
             feedbackScript.GoodOrders = goodOrders;
             feedbackScript.BadOrders = badOrders;
@@ -106,12 +102,16 @@ public class RunManager : MonoBehaviour
     #region --- DATA MANAGEMENT ---
 
     // After an order is finished, call RunManager.RecordOrder() to save it.
-    public static void RecordOrder(bool goodOrder, float ordertime)
+    public void AddOrder(bool _isGood, float ordertime)
     {
-        totalOrders++;
-        if (goodOrder)
+        if (_isGood)
             goodOrders++;
-        else badOrders++;
+        else
+            badOrders++;
+        totalOrders++;
+
+        totalTime += ordertime;
+
     }
 
     // If you need to get the recorded orders, call RunManager.GetOrderRecords().

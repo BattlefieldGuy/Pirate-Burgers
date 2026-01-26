@@ -1,9 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using static BonnetjesManager;
-using static RunManager;
 
 public class ReceiptData : MonoBehaviour
 {
@@ -22,12 +20,15 @@ public class ReceiptData : MonoBehaviour
     [SerializeField] TMP_Text SecondIng;
 
     [SerializeField] float ordertime = 0;
-    
+
+    private RunManager runManager;
+
 
     public void Awake()
     {
         transform.localPosition = new Vector3(transform.localPosition.x, 0, 0);
         startPoint = FindFirstObjectByType<ReceiptList>().transform.Find("Start");
+        runManager = FindFirstObjectByType<RunManager>();
         ordertime = Time.time;
     }
 
@@ -36,7 +37,7 @@ public class ReceiptData : MonoBehaviour
         //For non-tween nerds: move downwards using an InQuad (check a quide on easing styles) ease over .5seconds and destroy afterwards
         //All localspace btw
         float sendTime = Time.time - ordertime;
-        RecordOrder(false, sendTime);
+        runManager.AddOrder(true, sendTime);
         transform.DOLocalMove(new Vector3(transform.localPosition.x, -10, transform.localPosition.z), 0.5f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.InQuad);
     }
 
@@ -47,10 +48,10 @@ public class ReceiptData : MonoBehaviour
         {
             ReturnString += Ingredient + ", ";
         }
-        for(int i = 0; i < item.SecondaryIngredients.Count; i++)
+        for (int i = 0; i < item.SecondaryIngredients.Count; i++)
         {
             ReturnString += item.SecondaryIngredients[i];
-            if(i != item.SecondaryIngredients.Count - 1)
+            if (i != item.SecondaryIngredients.Count - 1)
             {
                 ReturnString += ", ";
             }
@@ -60,7 +61,7 @@ public class ReceiptData : MonoBehaviour
 
     public void UpdateCardInfo()
     {
-        Title.text = "Order : "+ Ordernumber.ToString();
+        Title.text = "Order : " + Ordernumber.ToString();
         FoodName.text = foodItem.name;
         SecondIng.text = IngredientsCombined(foodItem);
 

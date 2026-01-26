@@ -13,7 +13,7 @@ public class EndOfDayFeedback : MonoBehaviour
     public int TotalOrders; //hier moet dan even iets van de uiteindelijke scores in de plaats
     public int GoodOrders;
     public int BadOrders;
-
+    public float AverageTimePerOrder;
 
     //evt nog avr time per bon, is nog geen logica voor dus voeg het nu nog niet toe
 

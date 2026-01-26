@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ public class OrderFinished : MonoBehaviour
     BellPress BellPress;
 
     private OrderChecker orderChecker;
+    private ReceiptList receiptList;
+    private RunManager runManager;
 
     [SerializeField]
     private ScoreUpdate scoreUpdate; //temp
@@ -17,6 +20,8 @@ public class OrderFinished : MonoBehaviour
     {
         BellPress = FindFirstObjectByType<BellPress>();
         orderChecker = GetComponent<OrderChecker>();
+        receiptList = FindFirstObjectByType<ReceiptList>();
+        runManager = FindFirstObjectByType<RunManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,16 +39,24 @@ public class OrderFinished : MonoBehaviour
             //gold coins in face
             foreach (GameObject _item in itemsInZone)
             {
-                Destroy(_item);
+                if (_item.GetComponent<ReceiptData>() != null)
+                {
+                    int _orderNumber = _item.GetComponent<ReceiptData>().Ordernumber;
+                    receiptList.ClearReceipt(_orderNumber);
+                }
+                else
+                    _item.transform.DOLocalMove(new Vector3(transform.localPosition.x, -10, transform.localPosition.z), 0.5f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.InQuad);
             }
 
-            orderChecker.ClearItems();//temp
+            orderChecker.ClearItems();
+            //temp
             scoreUpdate.AddScore();
         }
-        else if (BellPress.PressedBell && !orderChecker.CheckMatchingOrders())
+        else if (BellPress.PressedBell && !orderChecker.CheckMatchingOrders() && orderChecker.ReceiptItem != null && orderChecker.ActiveOrder != null)
         {
             //boze klant audio
             Debug.Log("nay");
+            runManager.AddOrder(false, 0);
         }
     }
 
