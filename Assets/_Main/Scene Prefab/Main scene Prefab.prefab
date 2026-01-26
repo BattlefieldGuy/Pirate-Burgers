@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1981541408243231433
 Transform:
   m_ObjectHideFlags: 0
@@ -6602,7 +6602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1678263695990092706, guid: 7dbc0f1941accbc43a4cbd94844872ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5255995
+      value: 5.435
       objectReference: {fileID: 0}
     - target: {fileID: 1678263695990092706, guid: 7dbc0f1941accbc43a4cbd94844872ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6952,6 +6952,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c08abbcf8569e9e42bb4bbae94d2ac56, type: 2}
+    - target: {fileID: 1078830490836350492, guid: 9423fb53408653c4482645a44335c86f, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078830490836350492, guid: 9423fb53408653c4482645a44335c86f, type: 3}
+      propertyPath: m_StepOffset
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 5598318314316342755, guid: 9423fb53408653c4482645a44335c86f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.29652
@@ -10066,6 +10074,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5567628903882749664, guid: b7feebfbe6764be43b2470e5bd435923, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087908953595045881, guid: b7feebfbe6764be43b2470e5bd435923, type: 3}
+      propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

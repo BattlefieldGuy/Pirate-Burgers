@@ -5,23 +5,26 @@ public class Sliceable : MonoBehaviour
 {
     [field: SerializeField] public GameObject PiecePrefab { get; set; }
 
-    [SerializeField] private bool destroyIngredient;
+    [SerializeField] private int TimesCanCut;
 
     private bool HasBeenCut;
 
     //slice the ingredient in pieces
     public void OnSlice()
     {
-        if(!HasBeenCut)
+        if(TimesCanCut > 0)
         {
-            HasBeenCut = true;
-            GameObject clone = Instantiate(PiecePrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
-            clone.transform.parent = null;
-            if (destroyIngredient)
-                Destroy(this.gameObject);
-            else
+            if (!HasBeenCut)
+            {
+                HasBeenCut = true;
+                TimesCanCut--;
+                GameObject clone = Instantiate(PiecePrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
+                clone.transform.parent = null;
                 StartCoroutine(CutCooldown());
+            }
         }
+        else
+            Destroy(this);
     }
 
     IEnumerator CutCooldown()

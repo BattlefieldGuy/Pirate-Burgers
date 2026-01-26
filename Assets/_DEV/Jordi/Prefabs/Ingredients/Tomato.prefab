@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sliceable
   <PiecePrefab>k__BackingField: {fileID: 741838008516689612, guid: ed2dc33653ed6b149ae0a1f1fb7b3105, type: 3}
-  destroyIngredient: 0
+  TimesCanCut: 1
 --- !u!1001 &7364443797029027334
 PrefabInstance:
   m_ObjectHideFlags: 0
