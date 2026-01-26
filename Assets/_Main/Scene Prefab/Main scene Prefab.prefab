@@ -5549,14 +5549,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e24df48ef8154a44a32b3f17de44deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerPosManager
-  basePosition: {x: 0.1, y: 0, z: 4}
-  spawnPosition: {x: 0, y: 0, z: -100}
-  xBaseDistance: 0
-  zBaseDistance: 0
+  basePosition: {x: 16, y: -2.18, z: 2}
+  spawnPosition: {x: 15.02, y: -2.18, z: -5.6}
+  xBaseDistance: 1.2
+  zBaseDistance: 1
   xMinRandomness: 0
-  xMaxRandomness: 0
+  xMaxRandomness: 0.2
   zMinRandomness: 0
-  zMaxRandomness: 0
+  zMaxRandomness: 0.15
   customerPrefabs:
   - {fileID: 6486522869011597693, guid: 9186c314ed85314439824507b63cd915, type: 3}
   - {fileID: 8804263410828772181, guid: db79af7eda05f0040aabd35fd7ce9dfe, type: 3}
