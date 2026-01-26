@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -40,8 +41,8 @@ public class CustomerManager : MonoBehaviour
 
         GameObject _customerPrefab = customerPrefabs[currentSprite];
 
-        AddNewCustomer(Instantiate(_customerPrefab, spawnPosition, Quaternion.identity));
-        spawnedCustomers[^1].GetComponent<Customer>().receipt = receipt;
+        AddNewCustomer(_customerPrefab);
+        spawnedCustomers[^1].transform.GetChild(0).GetComponent<Customer>().receipt = receipt;
 
         currentSprite = (currentSprite + 1) % customerPrefabs.Count;
     }
@@ -70,11 +71,15 @@ public class CustomerManager : MonoBehaviour
     private void FixedUpdate()
     {
         // Smoothly moves every customer to their respective waiting position.
-        for (int i = 0; i < spawnedCustomers.Count; i++)
+        /*
+         for (int i = 0; i < spawnedCustomers.Count; i++)
         {
             if (spawnedCustomers[i].transform.position != customerPositions[i])
+            {
                 spawnedCustomers[i].transform.position = Vector3.Lerp(spawnedCustomers[i].transform.position, customerPositions[i], 10f * Time.deltaTime);
+            }
         }
+         */
     }
 
     public bool AddNewCustomer(GameObject customerObject)
@@ -82,8 +87,11 @@ public class CustomerManager : MonoBehaviour
         // Adds a created customer to the list of customers to manage. Make a customer object first, then assign it through this.
         if (TOTALCUSTOMERLIMIT > spawnedCustomers.Count)
         {
+            GameObject ActualCustomer = Instantiate(customerObject, spawnPosition, Quaternion.identity);
             customerPositions.Add(GetNewCustomerPosition());
-            spawnedCustomers.Add(customerObject);
+            spawnedCustomers.Add(ActualCustomer);
+
+            ActualCustomer.transform.DOMove(customerPositions[customerPositions.Count - 1], 0.5f).SetEase(Ease.OutQuad);
 
             // If there's room to add a new customer, returns true. Else, returns false.
             return true;
