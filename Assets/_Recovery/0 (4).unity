@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!82 &387477504 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6865756678816008077, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-  m_PrefabInstance: {fileID: 1845027768}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1718136498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -245,10 +240,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5085135719355178966, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-      propertyPath: FriteuseAudioSource
-      value: 
-      objectReference: {fileID: 387477504}
     - target: {fileID: 5090770455477982919, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.0022
@@ -259,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749381539460548462, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: dayLengthInMinutes
-      value: 5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7118617654085495511, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_text
@@ -271,10 +262,6 @@ PrefabInstance:
 
         Avarage
         Time: {3}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7368100509357743057, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-      propertyPath: scoreUpdate
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8373655883263151853, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_IsActive
@@ -299,9 +286,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7566237390741713975, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-    - {fileID: 585316615758087497, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-    - {fileID: 1607765397485401754, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-    - {fileID: 3586496168615219681, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8604665216624208798, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
