@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8445725427699767012}
   - component: {fileID: 4390932593596365417}
   m_Layer: 10
-  m_Name: Frietjes
+  m_Name: Fries
   m_TagString: Fries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

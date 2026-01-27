@@ -250,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749381539460548462, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: dayLengthInMinutes
-      value: 0.1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7118617654085495511, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_text
@@ -262,6 +262,10 @@ PrefabInstance:
 
         Avarage
         Time: {3}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368100509357743057, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: scoreUpdate
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8373655883263151853, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_IsActive

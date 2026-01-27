@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4562336760284579856}
   - component: {fileID: 4156890162782439251}
   m_Layer: 10
-  m_Name: P_Salmon
+  m_Name: Salmon
   m_TagString: SecondaryIngredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

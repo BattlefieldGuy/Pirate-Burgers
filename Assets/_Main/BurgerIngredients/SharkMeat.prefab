@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 3452292458449238408}
   - component: {fileID: 9109091277773376916}
   m_Layer: 10
-  m_Name: PF_SharkMeat
+  m_Name: SharkMeat
   m_TagString: GrillFood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

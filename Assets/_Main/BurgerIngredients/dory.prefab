@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1326465960204957377}
   - component: {fileID: 4214905331581244444}
   m_Layer: 10
-  m_Name: dory
+  m_Name: Dory
   m_TagString: SecondaryIngredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
