@@ -14,24 +14,7 @@ public class FriteuseBak : MonoBehaviour
     public List<GameObject> FriteuseItems = new List<GameObject>();
 
     [SerializeField]
-    private ParticleSystem BubbleParticles;
-
-    [SerializeField]
     private string FriesFoodTag = "Fries";
-
-    [SerializeField] private AudioSource FriteuseAudioSource;
-
-    private bool VFXOn = false;
-
-    #endregion
-
-    #region --- BASIC UNITY METHODS ---
-
-    void Update()
-    {
-        VFXController();
-        AudioController();
-    }
 
     #endregion
 
@@ -66,50 +49,14 @@ public class FriteuseBak : MonoBehaviour
     {
         FriteuseItems.Add(_food);
         _food.transform.parent = this.transform;
+        _food.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     private void RemoveFoodFromFriteuseBak(GameObject _food)
     {
         FriteuseItems.Remove(_food);
         _food.transform.SetParent(null);
-    }
-
-    #endregion
-
-    #region --- VFX ---
-
-    private void VFXController()
-    {
-        if (FriteuseItems.Count > 0)
-        {
-            if (!VFXOn)
-            {
-                // Start grill VFX
-                BubbleParticles.Play();
-                VFXOn = true;
-            }
-        }
-        else
-        {
-            if (VFXOn)
-            {
-                // Stop grill VFX
-                BubbleParticles.Stop();
-                VFXOn = false;
-            }
-        }
-    }
-
-    private void AudioController()
-    {
-        if (FriteuseItems.Count > 0 && !FriteuseAudioSource.isPlaying)
-        {
-            FriteuseAudioSource.Play();
-        }
-        else if (FriteuseItems.Count == 0 && FriteuseAudioSource.isPlaying)
-        {
-            FriteuseAudioSource.Stop();
-        }
+        _food.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     #endregion

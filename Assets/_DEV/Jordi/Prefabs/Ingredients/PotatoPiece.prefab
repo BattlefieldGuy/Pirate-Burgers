@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5277581dffbfe2845b226df09666865c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sliceable
-  <PiecePrefab>k__BackingField: {fileID: 8454519450539389231, guid: 333aaa4a4cf80da428fb94ddfc871fd4, type: 3}
+  <PiecePrefab>k__BackingField: {fileID: 840460968830504680, guid: 8bec4b0f1aaf24b4eb682719465e1bfb, type: 3}
   TimesCanCut: 1
 --- !u!54 &8329909933571028003
 Rigidbody:
