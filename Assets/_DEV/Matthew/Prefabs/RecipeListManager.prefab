@@ -46,27 +46,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RecipeListConstructor
   UnlockedMachines:
   - Grill
-  - 
+  - Fryer
   - 
   recipeList:
   - name: Triple fish burger
-    MainIngredients:
-    - bread
+    MainIngredients: []
     SecondaryIngredients:
+    - Bread
     - Shark
     - Salmon
     - Dory
+    - Bread
     RequiredMachines:
     - Grill
   - name: Basic burger
-    MainIngredients:
-    - Bread
+    MainIngredients: []
     SecondaryIngredients:
+    - Bread
     - Dory
     - Tomato
     - Pickle
     - Kelp
     - Mustard
+    - Bread
     RequiredMachines:
     - Grill
   - name: Crab skewers
@@ -77,7 +79,7 @@ MonoBehaviour:
     - Pickle
     - Potato
     RequiredMachines:
-    - Grill
+    - No
   - name: Tentacle skewers
     MainIngredients:
     - Stick
@@ -86,46 +88,46 @@ MonoBehaviour:
     - Tomato
     - Pickles
     RequiredMachines:
-    - Grill
+    - No
   - name: Fish n Chips
-    MainIngredients:
-    - Patato
-    - Salmon
-    SecondaryIngredients: []
-    RequiredMachines:
-    - Frier
-  - name: Fries
-    MainIngredients:
-    - Patato
-    SecondaryIngredients: []
-    RequiredMachines:
-    - Frier
-  - name: Tentacle fries
-    MainIngredients:
-    - Squid
-    SecondaryIngredients: []
-    RequiredMachines:
-    - Frier
-  - name: Squid bowl
-    MainIngredients:
-    - Squid
+    MainIngredients: []
     SecondaryIngredients:
+    - Fries
+    - Salmon
+    RequiredMachines:
+    - Fryer
+  - name: Fries
+    MainIngredients: []
+    SecondaryIngredients:
+    - Fries
+    RequiredMachines:
+    - Fryer
+  - name: Tentacle fries
+    MainIngredients: []
+    SecondaryIngredients:
+    - Squid
+    RequiredMachines:
+    - Fryer
+  - name: Squid bowl
+    MainIngredients: []
+    SecondaryIngredients:
+    - Squid
     - Kelp
     - Potato
     - Dory
     RequiredMachines:
     - Stove
   - name: Shark steak
-    MainIngredients:
-    - Shark
+    MainIngredients: []
     SecondaryIngredients:
+    - Shark Meat
     - Lemon juice
     RequiredMachines:
     - Stove
   - name: Sea stew
-    MainIngredients:
-    - Water
+    MainIngredients: []
     SecondaryIngredients:
+    - Water
     - Shark
     - Squid
     - Crab
@@ -137,27 +139,27 @@ MonoBehaviour:
     RequiredMachines:
     - Stove
   - name: Fish stew
-    MainIngredients:
-    - Water
+    MainIngredients: []
     SecondaryIngredients:
+    - Water
     - Salmon
     - Dory
     - Kelp
     RequiredMachines:
     - Stove
   - name: Shark stew
-    MainIngredients:
-    - Water
+    MainIngredients: []
     SecondaryIngredients:
+    - Water
     - Shark
     - Lemon juice
     - Potato
     RequiredMachines:
     - Stove
   - name: Vegan stew
-    MainIngredients:
-    - Water
+    MainIngredients: []
     SecondaryIngredients:
+    - Water
     - Kelp
     - Tomato
     - Potato

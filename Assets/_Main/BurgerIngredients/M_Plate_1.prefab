@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3222982745889691197}
   - component: {fileID: 559819566741131698}
   - component: {fileID: 8287338243759795290}
+  - component: {fileID: 5318507452246647172}
+  - component: {fileID: 4293605177858923397}
   m_Layer: 0
   m_Name: M_Plate_1
   m_TagString: Untagged
@@ -269,6 +271,35 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &5318507452246647172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914265520108637831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1fa5c83c6878440ac94bc760d95eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DishManager
+--- !u!114 &4293605177858923397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914265520108637831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9350dc98702fa40b2b65a92871f6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Recipe
+  Dish:
+    name: 
+    MainIngredients: []
+    SecondaryIngredients: []
+    RequiredMachines: []
 --- !u!1 &6389675749747411995
 GameObject:
   m_ObjectHideFlags: 0

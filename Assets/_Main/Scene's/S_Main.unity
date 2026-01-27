@@ -261,6 +261,10 @@ PrefabInstance:
       propertyPath: dayLengthInMinutes
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6552070367355905067, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: plate
+      value: 
+      objectReference: {fileID: 3914265520108637831, guid: 87c061b372a77aa4481ad5cd6a58cb98, type: 3}
     - target: {fileID: 7118617654085495511, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_text
       value: 'Toral orders: {0}

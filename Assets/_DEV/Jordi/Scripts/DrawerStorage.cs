@@ -21,7 +21,7 @@ public class DrawerStorage : MonoBehaviour
     {
         if (other.CompareTag("RealHand") || other.CompareTag("HandAttachable"))
         {
-            if(this.GetComponentInParent<Drawer>() != null)
+            if (this.GetComponentInParent<Drawer>() != null)
             {
                 if (this.GetComponentInParent<Drawer>().IsOpen)
                 {
@@ -33,6 +33,7 @@ public class DrawerStorage : MonoBehaviour
             else
             {
                 spawnedObject = Instantiate(DrawerIngredient, this.transform.position, this.transform.rotation);
+                spawnedObject.name.Replace("(Clone)", "").Trim();
                 handInTrigger = other.transform.parent.gameObject;
             }
         }
