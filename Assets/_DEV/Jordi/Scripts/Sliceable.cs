@@ -12,19 +12,17 @@ public class Sliceable : MonoBehaviour
     //slice the ingredient in pieces
     public void OnSlice()
     {
-        if(TimesCanCut > 0)
+        if (!HasBeenCut)
         {
-            if (!HasBeenCut)
-            {
-                HasBeenCut = true;
-                TimesCanCut--;
-                GameObject clone = Instantiate(PiecePrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
-                clone.transform.parent = null;
-                StartCoroutine(CutCooldown());
-            }
+            HasBeenCut = true;
+            TimesCanCut--;
+            GameObject clone = Instantiate(PiecePrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
+            clone.transform.parent = null;
+            StartCoroutine(CutCooldown());
         }
-        else
+        if (TimesCanCut <= 0)
             Destroy(this.gameObject);
+
     }
 
     IEnumerator CutCooldown()
