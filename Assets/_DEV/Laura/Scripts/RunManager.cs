@@ -29,7 +29,7 @@ public class RunManager : MonoBehaviour
 
     void Start()
     {
-        feedbackScript = FindFirstObjectByType<EndOfDayFeedback>();
+        feedbackScript = feedback.GetComponentInChildren<EndOfDayFeedback>();
         clock = FindFirstObjectByType<DigitalClock>();
         StartDay();
         multiplier = dayLengthInMinutes / (HoursInAShift * 60f);
