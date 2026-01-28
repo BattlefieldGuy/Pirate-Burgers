@@ -623,6 +623,6 @@ MonoBehaviour:
   mediumColor: {r: 0.74509805, g: 0.37895328, b: 0.34117648, a: 1}
   wellDoneColor: {r: 0.5, g: 0.25, b: 0.1, a: 1}
   burntColor: {r: 0, g: 0, b: 0, a: 1}
-  rawTime: 5
-  mediumTime: 10
-  wellDoneTime: 10
+  rawTime: 10
+  mediumTime: 20
+  wellDoneTime: 20

@@ -119,6 +119,276 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &351267761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4487054544986632992, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+  m_PrefabInstance: {fileID: 1845027768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &351267769
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351267761}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 0.1
+  MaxDistance: 2
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1001 &737972380
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2033220648}
+    m_Modifications:
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3661704
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.87711
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9562798
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: recipeList.Array.data[8].name
+      value: Sea stew
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: recipeList.Array.data[9].name
+      value: Shark steak
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[6].RequiredMachines.Array.data[0]'
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[9].RequiredMachines.Array.data[0]'
+      value: Grill
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: recipeList.Array.data[1].SecondaryIngredients.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: recipeList.Array.data[8].SecondaryIngredients.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: recipeList.Array.data[9].SecondaryIngredients.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[1].SecondaryIngredients.Array.data[3]'
+      value: Kelp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[1].SecondaryIngredients.Array.data[4]'
+      value: Mustard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[1].SecondaryIngredients.Array.data[5]'
+      value: Bread
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[0]'
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[1]'
+      value: Shark
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[2]'
+      value: Squid
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[3]'
+      value: Crab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[4]'
+      value: Dory
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[5]'
+      value: Kelp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[6]'
+      value: Lemon juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[7]'
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[8].SecondaryIngredients.Array.data[8]'
+      value: Pickles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341974414624311383, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: 'recipeList.Array.data[9].SecondaryIngredients.Array.data[0]'
+      value: Shark Meat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574629864159072282, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+      propertyPath: m_Name
+      value: RecipeListManager (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+--- !u!4 &737972381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 883793164462051290, guid: 19e8683b59c2615419395d3a9ef3c304, type: 3}
+  m_PrefabInstance: {fileID: 737972380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1478615562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 350461788763221326, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+  m_PrefabInstance: {fileID: 1845027768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1478615567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478615562}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019577073, y: 0.0032195384, z: 0.0010422637}
+  m_Center: {x: -0.008676598, y: 0.020488327, z: 0.011306663}
 --- !u!1001 &1718136498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200,6 +470,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 13f538a20fa0cb049b5a2f50146f6376, type: 3}
+    - target: {fileID: 4487054544986632992, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5047946973874081629, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.82448
@@ -250,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749381539460548462, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: dayLengthInMinutes
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6552070367355905067, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: plate
@@ -268,8 +542,28 @@ PrefabInstance:
         Time: {3}'
       objectReference: {fileID: 0}
     - target: {fileID: 7368100509357743057, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: Wrong
+      value: 
+      objectReference: {fileID: 8300000, guid: 1952c8fe545da1c41bcd8b012728883b, type: 3}
+    - target: {fileID: 7368100509357743057, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: DingDing
+      value: 
+      objectReference: {fileID: 8300000, guid: 50db6b11b74dec64a9c628fffe471349, type: 3}
+    - target: {fileID: 7368100509357743057, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: scoreUpdate
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7633068769594551795, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034117489683676301, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: receiptInterval
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138014726342909594, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      propertyPath: m_Center.y
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 8373655883263151853, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: m_IsActive
@@ -294,9 +588,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7566237390741713975, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    - {fileID: 4030269526482904249, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3728289989891593715, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 737972381}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4487054544986632992, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 351267769}
+    - targetCorrespondingSourceObject: {fileID: 350461788763221326, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1478615567}
   m_SourcePrefab: {fileID: 100100000, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+--- !u!4 &2033220648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3728289989891593715, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
+  m_PrefabInstance: {fileID: 1845027768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

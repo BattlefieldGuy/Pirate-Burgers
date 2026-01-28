@@ -8,6 +8,8 @@ public class OrderFinished : MonoBehaviour
 
     [SerializeField] private ParticleSystem poof;
     [SerializeField] private AudioSource yay;
+    [SerializeField] private AudioClip DingDing;
+    [SerializeField] private AudioClip Wrong;
     BellPress BellPress;
 
     private OrderChecker orderChecker;
@@ -18,6 +20,7 @@ public class OrderFinished : MonoBehaviour
     private ScoreUpdate scoreUpdate; //temp
     void Start()
     {
+        yay = GetComponent<AudioSource>();
         BellPress = FindFirstObjectByType<BellPress>();
         orderChecker = GetComponent<OrderChecker>();
         receiptList = FindFirstObjectByType<ReceiptList>();
@@ -34,7 +37,10 @@ public class OrderFinished : MonoBehaviour
         if (BellPress.PressedBell && orderChecker.CheckMatchingOrders())
         {
             if (poof != null) poof.Play();
-            if (yay != null) yay.Play();
+            if (yay != null)
+            {
+                yay.PlayOneShot(DingDing);
+            }
             Debug.Log("YAY");
             //gold coins in face
             foreach (GameObject _item in itemsInZone)
@@ -49,14 +55,25 @@ public class OrderFinished : MonoBehaviour
             }
 
             orderChecker.ClearItems();
-            //temp
-            scoreUpdate.AddScore();
         }
         else if (BellPress.PressedBell && !orderChecker.CheckMatchingOrders() && orderChecker.ReceiptItem != null && orderChecker.ActiveOrder != null)
         {
             //boze klant audio
             Debug.Log("nay");
-            runManager.AddOrder(false, 0);
+            if (yay != null)
+            {
+                yay.PlayOneShot(Wrong);
+            }
+            foreach (GameObject _item in itemsInZone)
+            {
+                if (_item.GetComponent<ReceiptData>() != null)
+                {
+                    int _orderNumber = _item.GetComponent<ReceiptData>().Ordernumber;
+                    runManager.AddOrder(false, _orderNumber);
+                }
+                else
+                    _item.transform.DOLocalMove(new Vector3(transform.localPosition.x, -10, transform.localPosition.z), 0.5f).OnComplete(() => Destroy(gameObject)).SetEase(Ease.InQuad);
+            }
         }
     }
 

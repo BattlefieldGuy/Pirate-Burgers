@@ -82,6 +82,7 @@ public class BonnetjesManager : MonoBehaviour
     void Start()
     {
         receiptList = FindFirstObjectByType<ReceiptList>();
+        MakeItem();
         StartCoroutine(enumerator());//temp
     }
 

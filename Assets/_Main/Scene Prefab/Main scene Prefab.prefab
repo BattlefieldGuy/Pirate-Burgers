@@ -9658,6 +9658,8 @@ MonoBehaviour:
   itemsInZone: []
   poof: {fileID: 0}
   yay: {fileID: 0}
+  DingDing: {fileID: 0}
+  Wrong: {fileID: 0}
   scoreUpdate: {fileID: 4171782996842258465}
 --- !u!65 &7633068769594551795
 BoxCollider:

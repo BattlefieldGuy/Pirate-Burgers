@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4156890162782439251}
   m_Layer: 10
   m_Name: Salmon
-  m_TagString: SecondaryIngredient
+  m_TagString: GrillFood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,6 +384,6 @@ MonoBehaviour:
   mediumColor: {r: 0.8, g: 0.5, b: 0.3, a: 1}
   wellDoneColor: {r: 0.5, g: 0.25, b: 0.1, a: 1}
   burntColor: {r: 0, g: 0, b: 0, a: 1}
-  rawTime: 5
-  mediumTime: 10
-  wellDoneTime: 10
+  rawTime: 18
+  mediumTime: 23
+  wellDoneTime: 22
