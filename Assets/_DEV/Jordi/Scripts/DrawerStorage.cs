@@ -26,14 +26,16 @@ public class DrawerStorage : MonoBehaviour
                 if (this.GetComponentInParent<Drawer>().IsOpen)
                 {
                     spawnedObject = Instantiate(DrawerIngredient, this.transform.position, this.transform.rotation);
-                    spawnedObject.name.Replace("(Clone)", "").Trim();
+                    //spawnedObject.name.Replace("(Clone)", "").Trim();
+                    spawnedObject.name = DrawerIngredient.name;
                     handInTrigger = other.transform.parent.gameObject;
                 }
             }
             else
             {
                 spawnedObject = Instantiate(DrawerIngredient, this.transform.position, this.transform.rotation);
-                spawnedObject.name.Replace("(Clone)", "").Trim();
+                //spawnedObject.name.Replace("(Clone)", "").Trim();
+                spawnedObject.name = DrawerIngredient.name;
                 handInTrigger = other.transform.parent.gameObject;
             }
         }

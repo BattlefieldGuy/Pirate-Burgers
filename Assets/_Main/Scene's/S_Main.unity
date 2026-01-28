@@ -524,7 +524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749381539460548462, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: dayLengthInMinutes
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6552070367355905067, guid: af9f6674cc7cab742a1ee505665e0c9a, type: 3}
       propertyPath: plate
