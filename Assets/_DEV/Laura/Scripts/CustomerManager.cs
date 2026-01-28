@@ -33,7 +33,6 @@ public class CustomerManager : MonoBehaviour
     // Customer prefab.
     //[SerializeField] private GameObject customerPrefab;
     [SerializeField] private List<GameObject> customerPrefabs;
-
     private int currentSprite = 0;
     public void SpawnCustomer(BonnetjesManager.Item receipt)
     {

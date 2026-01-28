@@ -61,12 +61,12 @@ public class ReceiptData : MonoBehaviour
 
     public void UpdateCardInfo()
     {
-        Title.text = "Order : " + Ordernumber.ToString();
+        Title.text = "Order : " + (Ordernumber + 1).ToString();
         FoodName.text = foodItem.name;
         SecondIng.text = IngredientsCombined(foodItem);
 
         //Move to position based on ordernumber using an InOutSine ease over .5seconds
         transform.DOLocalMoveX(startPoint.localPosition.x + (1.9f * Ordernumber), 0.5f).SetEase(Ease.InOutSine);
-        transform.DOLocalRotate(new Vector3(0, -46.673f + (6f * Ordernumber), 0), 0.5f).SetEase(Ease.InOutSine);
+        transform.DOLocalRotate(new Vector3(0, -46.673f, 0), 0.5f).SetEase(Ease.InOutSine);
     }
 }

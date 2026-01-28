@@ -26,6 +26,7 @@ public class ReceiptList : MonoBehaviour
     [SerializeField] List<Receipt> receipts = new List<Receipt>();
 
     [SerializeField] GameObject receiptPrefab;
+    [SerializeField] private int maxCustomers = 9;
 
     [SerializeField]
     Transform StartingPoint; //Somehow different than the ReceiptData's starting point don't question it :)))))))))
@@ -63,27 +64,34 @@ public void UpdateAllReceipts()
 
     public void AddOrder(Item _item) //Change parameters as needed
     {
-        GameObject newReceiptGO = Instantiate(receiptPrefab, transform);
-        ReceiptData newReceiptData = newReceiptGO.GetComponent<ReceiptData>();
-        Receipt newReceipt = new Receipt()
+        if(receipts.Count+1 > maxCustomers)
         {
-            orderNumber = receipts.Count,
-            receiptData = newReceiptData,
-            item = _item
-        };
-        newReceiptData.Ordernumber = newReceipt.orderNumber;
-        newReceiptData.foodItem = _item;
-        receipts.Add(newReceipt);
-        newReceiptData.UpdateCardInfo();
-        newReceiptData.transform.parent = transform;
-        newReceiptData.transform.localPosition = StartingPoint.localPosition;
-        BonnetjesManager.Item togive = new BonnetjesManager.Item()
+            return;
+        }
+        else
         {
-            name = _item.name,
-            MainIngredients = _item.MainIngredients,
-            SecondaryIngredients = _item.SecondaryIngredients
-        };
-        customers.SpawnCustomer(togive);
+            GameObject newReceiptGO = Instantiate(receiptPrefab, transform);
+            ReceiptData newReceiptData = newReceiptGO.GetComponent<ReceiptData>();
+            Receipt newReceipt = new Receipt()
+            {
+                orderNumber = receipts.Count,
+                receiptData = newReceiptData,
+                item = _item
+            };
+            newReceiptData.Ordernumber = newReceipt.orderNumber;
+            newReceiptData.foodItem = _item;
+            receipts.Add(newReceipt);
+            newReceiptData.UpdateCardInfo();
+            newReceiptData.transform.parent = transform;
+            newReceiptData.transform.localPosition = StartingPoint.localPosition;
+            BonnetjesManager.Item togive = new BonnetjesManager.Item()
+            {
+                name = _item.name,
+                MainIngredients = _item.MainIngredients,
+                SecondaryIngredients = _item.SecondaryIngredients
+            };
+            customers.SpawnCustomer(togive);
+        }
 
     }
 
